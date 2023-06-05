@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3194697080267242834}
   - component: {fileID: 3194697080267242836}
   - component: {fileID: 3194697080267242837}
+  - component: {fileID: 8506138651857619011}
   m_Layer: 0
   m_Name: BasicEnemy
   m_TagString: Untagged
@@ -99,9 +100,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b03ec2caf44647948b5b78519824dba3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetDestination: {fileID: 0}
-  speed: 2
   rgdbd2d: {fileID: 3194697080267242836}
+  speed: 2
+  hp: 4
+  damage: 1
+  experience_reward: 400
 --- !u!50 &3194697080267242836
 Rigidbody2D:
   serializedVersion: 4
@@ -149,3 +152,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &8506138651857619011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3194697080267242835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20bf1af61082d954c8a98c28906f25dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dropItemPickup: {fileID: 5139286629046556583, guid: ca33844692e50e94e9526d5747362aad, type: 3}
+  chance: 0.7
