@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Level : MonoBehaviour
 {
-    int level = 1;
-    int experience = 0;
+    public int level = 1;
+    public int experience = 0;
     [SerializeField] ExperienceBar experienceBar;
 
-    int TO_LEVEL_UP
+    public int TO_LEVEL_UP
     {
         get
         {
