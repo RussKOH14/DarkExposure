@@ -627,6 +627,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetDestination: {fileID: 239059288}
   speed: 2
+  rgdbd2d: {fileID: 199873503}
 --- !u!212 &199873500
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -755,7 +756,7 @@ GameObject:
   - component: {fileID: 239059286}
   - component: {fileID: 239059289}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

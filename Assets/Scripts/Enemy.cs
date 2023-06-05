@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] Transform targetDestination;
-    [SerializeField] float speed;
+    [SerializeField] private Transform targetDestination;
+    [SerializeField] private float speed;
 
-    Rigidbody2D rgdbd2d;
+    public Rigidbody2D rgdbd2d;
+    
 
     private void Awake()
     {
@@ -22,7 +23,7 @@ public class Enemy : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        if (collision.gameObject.GetComponent<Character>())
+        if (collision.gameObject.name.Equals("Character"))
         {
             Attack();
         }
