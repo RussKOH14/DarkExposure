@@ -19,13 +19,14 @@ public class Level : MonoBehaviour
     private void Start()
     {
         experienceBar.UpdateExperienceSlider(experience, TO_LEVEL_UP);
+        experienceBar.SetLevelText(level);
     }
 
     public void AddExperince(int amount)
     {
         experience += amount;
         CheckLevelUp();
-        experienceBar.UpdateExperienceSlider(experience, TO_LEVEL_UP);
+        experienceBar.UpdateExperienceSlider(experience,TO_LEVEL_UP);
     }
 
     public void CheckLevelUp()
@@ -34,6 +35,7 @@ public class Level : MonoBehaviour
         {
             experience -= TO_LEVEL_UP;
             level += 1;
+            experienceBar.SetLevelText(level);
         }
     }
 }
