@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 8506138651857619011}
   - component: {fileID: -7213148370220711336}
   - component: {fileID: -4183797087695138805}
+  - component: {fileID: -7566805016151653639}
   m_Layer: 0
   m_Name: BasicEnemy
   m_TagString: Untagged
@@ -196,3 +197,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dropItemPickup: {fileID: 5703790778436924279, guid: c5e2a7a450ebc0b41b9ae67c5d385e16, type: 3}
   chance: 0.3
+--- !u!114 &-7566805016151653639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3194697080267242835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3fc778d34821f649bb449ab9ad539a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
