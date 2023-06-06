@@ -29,7 +29,6 @@ public class WhipWeapon : MonoBehaviour
 
     private void Attack()
     {
-        Debug.Log("Attack");
         timer = timeToAttack;
 
         if (playerMovement.lastHorizontalVector > 0)

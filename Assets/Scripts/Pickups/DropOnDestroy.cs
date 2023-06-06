@@ -7,7 +7,7 @@ public class DropOnDestroy : MonoBehaviour
     [SerializeField] GameObject dropItemPickup;
     [SerializeField] [Range(0f, 1f)] float chance = 1f;
 
-    private void OnDestroy()
+    public void CheckDrop()
     {
         if(Random.value < chance)
         {
