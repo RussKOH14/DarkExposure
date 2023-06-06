@@ -27,6 +27,8 @@ public class knifeProjectile : MonoBehaviour
 
         if(Time.frameCount % 6 == 0)
         {
+
+
             Collider2D[] hit = Physics2D.OverlapCircleAll(transform.position, 0.7f);
             foreach (Collider2D c in hit)
             {
@@ -44,4 +46,6 @@ public class knifeProjectile : MonoBehaviour
             }
         } 
     }
+
+
 }
