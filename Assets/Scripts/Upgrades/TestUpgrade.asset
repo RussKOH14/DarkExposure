@@ -9,11 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c4db98843b833a4c915e72140250f98, type: 3}
-  m_Name: Whip
+  m_Script: {fileID: 11500000, guid: 7fd6575cbe46d3a47a9988d41211cde8, type: 3}
+  m_Name: TestUpgrade
   m_EditorClassIdentifier: 
-  Name: Whip
-  stats:
-    damage: 100
-    timeToAttack: 1.2
-  weaponBasePrefab: {fileID: 5660275041710216601, guid: 3a8da2cae3754c44e9cb2984f580c806, type: 3}
+  upgradeType: 0
+  Name: Test1
+  icon: {fileID: 21300000, guid: 6562971fbc255164fa42e6a3b0bfd507, type: 3}

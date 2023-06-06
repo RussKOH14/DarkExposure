@@ -53,7 +53,7 @@ MonoBehaviour:
   timeToAttack: 1.2
   leftWhipObject: {fileID: 5660275042400938517}
   rightWhipObject: {fileID: 5660275041957572769}
-  attackSize: {x: 1, y: 1}
+  attackSize: {x: 4, y: 2}
 --- !u!1 &5660275041957572769
 GameObject:
   m_ObjectHideFlags: 0
