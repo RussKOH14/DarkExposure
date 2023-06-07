@@ -17,7 +17,9 @@ public class KnifeWeapon : WeaponBase
     {
         GameObject knife = Instantiate(knifePrefab);
         knife.transform.position = transform.position;
-        knife.GetComponent<knifeProjectile>().SetDirection(playerMovement.lastHorizontalVector, 0f);
+        knifeProjectile knifeProjectile = knife.GetComponent<knifeProjectile>();
+        knifeProjectile.SetDirection(playerMovement.lastHorizontalVector, 0f);
+        knifeProjectile.damage = weaponStats.damage;
     }
 }
 

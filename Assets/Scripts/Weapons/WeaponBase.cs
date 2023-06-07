@@ -19,7 +19,7 @@ public abstract class WeaponBase : MonoBehaviour
         if (timer < 0f)
         {
             Attack();
-            timer = timeToAttack;
+            timer = weaponStats.timeToAttack;
         }
     }
 
@@ -36,5 +36,9 @@ public abstract class WeaponBase : MonoBehaviour
     {
         MessageSystem.instance.PostMessage(damage.ToString(), targetPosition);
     }
-    
+
+    public void Upgrade(UpgradeData upgradeData)
+    {
+        weaponStats.Sum(upgradeData.weaponUpgradeStats);
+    }
 }

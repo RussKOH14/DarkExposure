@@ -14,6 +14,12 @@ public class WeaponStats
         this.damage = damage;
         this.timeToAttack = timeToAttack;
     }
+
+    internal void Sum(WeaponStats weaponUpgradeStats)
+    {
+        this.damage += weaponUpgradeStats.damage;
+        this.timeToAttack += weaponUpgradeStats.timeToAttack;
+    }
 }
 
 [CreateAssetMenu]
@@ -22,4 +28,6 @@ public class WeaponData : ScriptableObject
     public string Name;
     public WeaponStats stats;
     public GameObject weaponBasePrefab;
+
+    public List<UpgradeData> upgrades;
 }
