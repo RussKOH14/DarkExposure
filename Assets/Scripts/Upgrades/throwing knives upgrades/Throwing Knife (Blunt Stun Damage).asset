@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeType: 0
   Name: Blunt Stun Damage
-  icon: {fileID: 21300000, guid: be4f1a86a852af84bb9d8b4324d0c63e, type: 3}
+  icon: {fileID: 21300000, guid: e6da07040ce03ef44860fbc46d377c54, type: 3}
   weaponData: {fileID: 11400000, guid: 9ae9205f9919cd24cb14e5793462750e, type: 2}
   weaponUpgradeStats:
     damage: 100
