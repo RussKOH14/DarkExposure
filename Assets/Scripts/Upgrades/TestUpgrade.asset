@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: TestUpgrade
   m_EditorClassIdentifier: 
   upgradeType: 0
-  Name: Test1
+  Name: Test2
   icon: {fileID: 21300000, guid: 6562971fbc255164fa42e6a3b0bfd507, type: 3}

@@ -56,7 +56,7 @@ public class Level : MonoBehaviour
     {
         if(selecetedUpgrade == null) { selecetedUpgrade = new List<UpgradeData>(); }
         selecetedUpgrade.Clear();
-        selecetedUpgrade.AddRange(GetUpgrades(4));
+        selecetedUpgrade.AddRange(GetUpgrades(3));
 
         upgradePanel.OpenPanel(selecetedUpgrade);
         experience -= TO_LEVEL_UP;
