@@ -8,6 +8,9 @@ public class knifeProjectile : MonoBehaviour
 
     [SerializeField] float speed;
     public int damage = 5;
+
+    float timeToLeave = 6f;
+
     public void SetDirection(float dir_x, float dir_y)
     {
         direction = new Vector3(dir_x, dir_y);
@@ -25,7 +28,7 @@ public class knifeProjectile : MonoBehaviour
     {
         transform.position += direction * speed * Time.deltaTime;
 
-        if(Time.frameCount % 6 == 0)
+        if (Time.frameCount % 6 == 0)
         {
 
 
@@ -44,8 +47,13 @@ public class knifeProjectile : MonoBehaviour
             {
                 Destroy(gameObject);
             }
-        } 
-    }
+        }
 
+        timeToLeave -= Time.deltaTime;
+        if (timeToLeave < 0f)
+        {
+            Destroy(gameObject);
+        }
+    }
 
 }

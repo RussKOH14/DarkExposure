@@ -24,7 +24,7 @@ public class KnifeWeapon : WeaponBase
             if (weaponStats.numberOfAttacks > 1)
             {
                 newKnifePosition.y -= (spread * (weaponStats.numberOfAttacks -1 )) / 2;
-                newKnifePosition.y -= i * spread;
+                newKnifePosition.y += i * spread;
             }
 
             knife.transform.position = newKnifePosition;
