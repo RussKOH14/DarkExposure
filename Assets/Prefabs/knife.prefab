@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6512046427278164244}
   - component: {fileID: 3610807295928929528}
-  - component: {fileID: 2865349123318876952}
   - component: {fileID: 4250030386037828236}
+  - component: {fileID: 2326770085034553507}
   m_Layer: 0
   m_Name: knife
   m_TagString: Untagged
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 19af8e1ddae46b84b9218c1f54b031cb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: adcd2d2551255444fbc5f516f00aa4ec, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -86,20 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2865349123318876952
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519020583564691286}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ba8fc6786004c84480da3d16d614e92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 5
-  damage: 500
 --- !u!114 &4250030386037828236
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112,3 +98,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3fc778d34821f649bb449ab9ad539a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2326770085034553507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519020583564691286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ba8fc6786004c84480da3d16d614e92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10
+  damage: 5
