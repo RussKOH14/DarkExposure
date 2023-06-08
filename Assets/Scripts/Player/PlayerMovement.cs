@@ -15,6 +15,8 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] float speed = 3f;
 
+    public Animator animator;
+
     private void Awake()
     {
         rgbd2d = GetComponent<Rigidbody2D>();
@@ -40,6 +42,10 @@ public class PlayerMovement : MonoBehaviour
         {
             lastVerticalVector = movementVector.y;
         }
+        animator.SetFloat("Horizontal", movementVector.x);
+        animator.SetFloat("Vertical", movementVector.y);
+        animator.SetFloat("Speed", movementVector.sqrMagnitude);
+
 
 
         movementVector *= speed;
