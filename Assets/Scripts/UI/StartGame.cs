@@ -8,5 +8,6 @@ public class StartGame : MonoBehaviour
     public void StartGameplay()
     {
         SceneManager.LoadScene("TestScene");
+        Time.timeScale = 1f;
     }
 }
