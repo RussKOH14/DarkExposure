@@ -893,6 +893,7 @@ GameObject:
   - component: {fileID: 239059293}
   - component: {fileID: 239059294}
   - component: {fileID: 239059295}
+  - component: {fileID: 239059296}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -916,6 +917,7 @@ MonoBehaviour:
   lastHorizontalVector: 0
   lastVerticalVector: 0
   speed: 8
+  animator: {fileID: 239059296}
 --- !u!50 &239059286
 Rigidbody2D:
   serializedVersion: 4
@@ -978,7 +980,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: -1050052104, guid: ffcb52a7fcace1744bb82c0c79aeab2b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1020,18 +1022,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.00000047683716, y: -0.051446736}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 1.6, y: 1.6}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.3601255, y: 1.5144668}
   m_EdgeRadius: 0
 --- !u!114 &239059290
 MonoBehaviour:
@@ -1128,6 +1130,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponObjectContainer: {fileID: 1413399416}
   startingWeapon: {fileID: 11400000, guid: 30ea1c1569a949b46a020e8dcf69d18d, type: 2}
+--- !u!95 &239059296
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 239059284}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 084dd1c387dbc491eac5c7c433c0c6a7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &274183874
 GameObject:
   m_ObjectHideFlags: 0
