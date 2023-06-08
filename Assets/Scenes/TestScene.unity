@@ -1050,7 +1050,7 @@ MonoBehaviour:
   maxHp: 1000
   currentHp: 500
   armour: 0
-  hpRegenerationRate: 50
+  hpRegenerationRate: 15
   hpRegenerationTimer: 0
   hpBar: {fileID: 789970164}
   level: {fileID: 0}
