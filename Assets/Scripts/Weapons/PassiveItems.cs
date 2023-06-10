@@ -5,7 +5,7 @@ using UnityEngine;
 public class PassiveItems : MonoBehaviour
 {
     [SerializeField] List<Item> items;
-    [SerializeField] Item armourTest;
+    
 
     Character character;
     private void Awake()
@@ -15,7 +15,7 @@ public class PassiveItems : MonoBehaviour
 
     private void Start()
     {
-        Equip(armourTest);
+        
     }
     public void Equip (Item itemToEquip)
     {
