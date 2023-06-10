@@ -34,6 +34,12 @@ public class WorldScrolling : MonoBehaviour
 
         playerTilePosition.x -= playerTransform.position.x < 0 ? 1 : 0;
         playerTilePosition.y -= playerTransform.position.y < 0 ? 1 : 0;
+        UpdateTilesOnScreen();
+
+    }
+
+    private void UpdateTilesOnScreen()
+    {
 
         if (currentTilePosition != playerTilePosition)
         {
@@ -43,10 +49,6 @@ public class WorldScrolling : MonoBehaviour
             onTileGridPlayerPosition.y = CalculatePositionOnAxis(onTileGridPlayerPosition.y, false);
             UpdateTilesOnScreen();
         }
-    }
-
-    private void UpdateTilesOnScreen()
-    {
         for (int pov_x = -(fieldOfVisionWidth/2); pov_x <= fieldOfVisionWidth/2; pov_x++)
         {
             for(int pov_y = -(fieldOfVisionHeight/2); pov_y <= fieldOfVisionHeight/2; pov_y++)
