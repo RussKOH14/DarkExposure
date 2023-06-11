@@ -40,6 +40,7 @@ public class knifeProjectile : MonoBehaviour
                 {
                     enemy.TakeDamage(damage);
                     hitDetected = true;
+                    PostDamage(damage,transform.position);
                     break;
                 }
             }
@@ -54,6 +55,11 @@ public class knifeProjectile : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    public void PostDamage(int damage, Vector3 worldPosition)
+    {
+        MessageSystem.instance.PostMessage(damage.ToString(), worldPosition); 
     }
 
 }
