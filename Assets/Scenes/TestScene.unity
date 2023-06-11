@@ -3611,6 +3611,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 3194697080267242835, guid: 7e1784a03de6e59499a685f02e8ef45a, type: 3}
+  possibleEnemies:
+  - {fileID: 3194697080267242835, guid: 654677f87910d9745bc17e90d71554b5, type: 3}
+  - {fileID: 3194697080267242835, guid: 7e1784a03de6e59499a685f02e8ef45a, type: 3}
   spawnArea: {x: 15, y: 15}
   spawnTimer: 1
   player: {fileID: 239059284}

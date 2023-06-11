@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyManager : MonoBehaviour
 {
     [SerializeField] GameObject enemy;
+    [SerializeField] List<GameObject> possibleEnemies;
     [SerializeField] Vector2 spawnArea;
     [SerializeField] float spawnTimer;
     [SerializeField] GameObject player;
@@ -16,6 +17,8 @@ public class EnemyManager : MonoBehaviour
         Vector3 position = GenerateRandomPosition();
 
         position += player.transform.position;
+
+        GameObject enemy = possibleEnemies[Random.Range(0,possibleEnemies.Count)];
 
         GameObject newEnemy = Instantiate(enemy);
         newEnemy.transform.position = position;
