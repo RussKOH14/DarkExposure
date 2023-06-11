@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Character : MonoBehaviour
 {
@@ -18,15 +19,19 @@ public class Character : MonoBehaviour
     [HideInInspector] public Coins coins;
     private bool isDead;
 
+
+    [SerializeField] TextMeshProUGUI healthText; 
     private void Awake()
     {
         level = GetComponent<Level>();
         coins = GetComponent<Coins>();
+          
     }
 
     private void Start()
     {
         hpBar.SetState(currentHp, maxHp);
+        
     }
 
     private void Update()
@@ -39,6 +44,10 @@ public class Character : MonoBehaviour
             hpRegenerationTimer -= 1f;
         }
         hpBar.SetState(currentHp, maxHp);
+
+        string formattedText = $"{currentHp} / {maxHp+armour}";
+        healthText.text = formattedText;
+
     }
     public void TakeDamage(int damage)
     {

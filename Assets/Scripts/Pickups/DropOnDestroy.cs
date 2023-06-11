@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class DropOnDestroy : MonoBehaviour
 {
-    [SerializeField] GameObject dropItemPickup;
+    [SerializeField] List<GameObject> dropItemPickup;
     [SerializeField] [Range(0f, 1f)] float chance = 1f;
 
     public void CheckDrop()
     {
         if(Random.value < chance)
         {
-            Transform t = Instantiate(dropItemPickup).transform;
-            t.position = transform.position;
+            GameObject toDrop = dropItemPickup[Random.Range(0, dropItemPickup.Count)];
+            SpawnManager.instance.SpawnObject(transform.position, toDrop);
         }
     }
 }

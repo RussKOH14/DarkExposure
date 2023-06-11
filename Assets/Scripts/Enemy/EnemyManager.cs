@@ -5,26 +5,20 @@ using UnityEngine;
 public class EnemyManager : MonoBehaviour
 {
     [SerializeField] GameObject enemy;
+    [SerializeField] List<GameObject> possibleEnemies;
     [SerializeField] Vector2 spawnArea;
     [SerializeField] float spawnTimer;
     [SerializeField] GameObject player;
-    float timer;
+    
 
-    private void Update()
-    {
-        timer -= Time.deltaTime;
-        if(timer < 0f)
-        {
-            SpawnEnemy();
-            timer = spawnTimer;
-        }
-    }
 
-    private void SpawnEnemy()
+    public void SpawnEnemy()
     {
         Vector3 position = GenerateRandomPosition();
 
         position += player.transform.position;
+
+        GameObject enemy = possibleEnemies[Random.Range(0,possibleEnemies.Count)];
 
         GameObject newEnemy = Instantiate(enemy);
         newEnemy.transform.position = position;

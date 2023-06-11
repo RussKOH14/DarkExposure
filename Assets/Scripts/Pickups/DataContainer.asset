@@ -9,8 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83dfb554e7bd13740905dfcaf0c9f76d, type: 3}
-  m_Name: Armour
+  m_Script: {fileID: 11500000, guid: d7e13f0c21d8292479ced41b66af8a2d, type: 3}
+  m_Name: DataContainer
   m_EditorClassIdentifier: 
-  Name: Armour
-  armour: 10
+  coins: 0

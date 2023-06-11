@@ -34,6 +34,12 @@ public class WorldScrolling : MonoBehaviour
 
         playerTilePosition.x -= playerTransform.position.x < 0 ? 1 : 0;
         playerTilePosition.y -= playerTransform.position.y < 0 ? 1 : 0;
+        UpdateTilesOnScreen();
+
+    }
+
+    private void UpdateTilesOnScreen()
+    {
 
         if (currentTilePosition != playerTilePosition)
         {
@@ -43,10 +49,6 @@ public class WorldScrolling : MonoBehaviour
             onTileGridPlayerPosition.y = CalculatePositionOnAxis(onTileGridPlayerPosition.y, false);
             UpdateTilesOnScreen();
         }
-    }
-
-    private void UpdateTilesOnScreen()
-    {
         for (int pov_x = -(fieldOfVisionWidth/2); pov_x <= fieldOfVisionWidth/2; pov_x++)
         {
             for(int pov_y = -(fieldOfVisionHeight/2); pov_y <= fieldOfVisionHeight/2; pov_y++)
@@ -55,10 +57,16 @@ public class WorldScrolling : MonoBehaviour
                 int tileToUpdate_y = CalculatePositionOnAxis(playerTilePosition.y + pov_y, false);
 
                 GameObject tile = terrainTiles[tileToUpdate_x, tileToUpdate_y];
-                tile.transform.position = CalculateTilePosition(
+                Vector3 newPosition = CalculateTilePosition(
                     playerTilePosition.x + pov_x,
                     playerTilePosition.y + pov_y
                     );
+                if(newPosition!= tile.transform.position)
+                {
+                    tile.transform.position = newPosition;
+                    terrainTiles[tileToUpdate_x, tileToUpdate_y].GetComponent<TerrainTile>().Spawn();
+                }
+                         
             }
         }
     }
