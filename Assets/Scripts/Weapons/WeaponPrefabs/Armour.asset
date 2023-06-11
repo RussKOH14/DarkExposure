@@ -13,4 +13,7 @@ MonoBehaviour:
   m_Name: Armour
   m_EditorClassIdentifier: 
   Name: Armour
-  armour: 10
+  stats:
+    armour: 10
+  upgrades:
+  - {fileID: 11400000, guid: ebc889e3da7190647aac570b19f7e46e, type: 2}

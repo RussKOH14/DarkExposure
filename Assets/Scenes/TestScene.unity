@@ -953,9 +953,6 @@ MonoBehaviour:
   upgradePanel: {fileID: 846057740}
   upgrades:
   - {fileID: 11400000, guid: 90e003a7ae7881341ba7502edd1f61cb, type: 2}
-  - {fileID: 11400000, guid: 4c3fe5ac91f28044a85acb4d0ac1c496, type: 2}
-  - {fileID: 11400000, guid: 57f40dc5915ae9147ba06142ced00de7, type: 2}
-  - {fileID: 11400000, guid: dc1fda0db1bb2964da9741663bbe262c, type: 2}
   acquiredUpgrades: []
   upgradesAvvailableOnStart:
   - {fileID: 11400000, guid: 05ff6cdc010af4842ab3b79253714731, type: 2}
