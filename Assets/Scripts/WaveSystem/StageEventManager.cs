@@ -23,13 +23,19 @@ public class StageEventManager : MonoBehaviour
 
         if (stageTimer.time > stageData.stageEvent[eventIndexer].time)
         {
-            Debug.Log(stageData.stageEvent[eventIndexer].message);
-
-            for(int i = 0; i < stageData.stageEvent[eventIndexer].count; i++)
+            switch (stageData.stageEvent[eventIndexer].eventType)
             {
-                enemyManager.SpawnEnemy();
+                case StageEventType.SpawnEnemy:
+                    for (int i = 0; i < stageData.stageEvent[eventIndexer].count; i++)
+                    {
+                        enemyManager.SpawnEnemy();
+                    }
+                    break;
+                case StageEventType.SpawnObject:
+
+                    break;
             }
-            
+            Debug.Log(stageData.stageEvent[eventIndexer].message);
             eventIndexer += 1;
         }
     }
