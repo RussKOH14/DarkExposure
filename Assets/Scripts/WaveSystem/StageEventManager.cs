@@ -15,6 +15,7 @@ public class StageEventManager : MonoBehaviour
     }
     private void Update()
     {
+        enemyManager.SpawnEnemy();
 
         if (eventIndexer >= stageData.stageEvent.Count)
         {
@@ -25,15 +26,15 @@ public class StageEventManager : MonoBehaviour
         {
             switch (stageData.stageEvent[eventIndexer].eventType)
             {
-                case StageEventType.SpawnEnemy:
-                    for (int i = 0; i < stageData.stageEvent[eventIndexer].count; i++)
-                    {
-                        enemyManager.SpawnEnemy();
-                    }
-                    break;
-                case StageEventType.SpawnObject:
+                //case StageEventType.SpawnEnemy:
+                //    for (int i = 0; i < stageData.stageEvent[eventIndexer].count; i++)
+                //    {
+                //        enemyManager.SpawnEnemy();
+                //    }
+                //    break;
+                //case StageEventType.SpawnObject:
 
-                    break;
+                //    break;
             }
             Debug.Log(stageData.stageEvent[eventIndexer].message);
             eventIndexer += 1;

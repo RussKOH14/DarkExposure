@@ -3271,7 +3271,6 @@ GameObject:
   - component: {fileID: 761529338}
   - component: {fileID: 761529339}
   - component: {fileID: 761529340}
-  - component: {fileID: 761529341}
   - component: {fileID: 761529342}
   m_Layer: 0
   m_Name: --WORLD--
@@ -3336,20 +3335,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   time: 0
---- !u!114 &761529341
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 761529337}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8a55afca050227458daed21c965927f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stageData: {fileID: 11400000, guid: 42b1064ca3caae94280999713caaf64f, type: 2}
-  enemyManager: {fileID: 914076748}
 --- !u!114 &761529342
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3868,13 +3853,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fd9319eeca135e41a215e8f38cd18dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 3194697080267242835, guid: 7e1784a03de6e59499a685f02e8ef45a, type: 3}
-  possibleEnemies:
-  - {fileID: 3194697080267242835, guid: 654677f87910d9745bc17e90d71554b5, type: 3}
-  - {fileID: 3194697080267242835, guid: 7e1784a03de6e59499a685f02e8ef45a, type: 3}
+  easiestEnemy: {fileID: 3194697080267242835, guid: 7e1784a03de6e59499a685f02e8ef45a, type: 3}
+  numberOfEasiestEnemy: 1
+  harderEnemies: {fileID: 3194697080267242835, guid: 654677f87910d9745bc17e90d71554b5, type: 3}
+  numberOfHarderEnemy: 1
+  spawningHarderEnemies: 0
   spawnArea: {x: 15, y: 15}
   spawnTimer: 1
   player: {fileID: 239059284}
+  delay: 5
+  longerDelay: 5
+  decreaseInterval: 20
+  numberToDecrease: -1
 --- !u!1 &930971237
 GameObject:
   m_ObjectHideFlags: 0

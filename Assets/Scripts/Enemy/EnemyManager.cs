@@ -4,12 +4,50 @@ using UnityEngine;
 
 public class EnemyManager : MonoBehaviour
 {
-    [SerializeField] GameObject enemy;
-    [SerializeField] List<GameObject> possibleEnemies;
-    [SerializeField] Vector2 spawnArea;
-    [SerializeField] float spawnTimer;
-    [SerializeField] GameObject player;
+    [SerializeField] GameObject easiestEnemy;
+    [SerializeField] int numberOfEasiestEnemy = 01;
     
+    [SerializeField] GameObject harderEnemies;
+    [SerializeField] int numberOfHarderEnemy = 01;
+    public bool spawningHarderEnemies=false;
+
+    [SerializeField] Vector2 spawnArea;
+    [SerializeField] float spawnTimer = 0f;
+    [SerializeField] GameObject player;
+    public float delay = 5f;
+    public float longerDelay = 5f;
+
+
+    public float decreaseInterval = 20f; 
+    public int numberToDecrease = -1;
+    
+    private void Awake()
+    {
+        SpawnEnemy();
+    }
+
+    private void Update()
+    {
+        
+        if (delay >1)
+        {
+            spawnTimer += Time.deltaTime; // Increase the timer with the elapsed time
+            if (spawnTimer >= decreaseInterval)
+            {
+                // Increase the number
+                delay += numberToDecrease;
+
+                // Reset the timer by subtracting the increase interval multiple times
+                spawnTimer -= decreaseInterval * (int)(spawnTimer / decreaseInterval);
+            }
+        }
+        if (delay == 1 && !spawningHarderEnemies)
+        {
+            SpawnHarderEnemy();
+            spawningHarderEnemies = true;
+        }
+       
+    }
 
 
     public void SpawnEnemy()
@@ -18,12 +56,33 @@ public class EnemyManager : MonoBehaviour
 
         position += player.transform.position;
 
-        GameObject enemy = possibleEnemies[Random.Range(0,possibleEnemies.Count)];
+        for (int i = 0; i < numberOfEasiestEnemy; i++) 
+        {
+            GameObject easiestEnemy = Instantiate(this.easiestEnemy);
+            easiestEnemy.transform.position = position;
+            easiestEnemy.GetComponent<Enemy>().SetTarget(player);
+            easiestEnemy.transform.parent = transform;
+            
 
-        GameObject newEnemy = Instantiate(enemy);
-        newEnemy.transform.position = position;
-        newEnemy.GetComponent<Enemy>().SetTarget(player);
-        newEnemy.transform.parent = transform;
+        }
+        Invoke("SpawnEnemy", delay);
+    }
+    public void SpawnHarderEnemy()
+    {
+        Vector3 position = GenerateRandomPosition();
+
+        position += player.transform.position;
+
+        for (int i = 0; i < numberOfHarderEnemy; i++) 
+        {
+            GameObject harderEnemies = Instantiate(this.harderEnemies);
+            harderEnemies.transform.position = position;
+            harderEnemies.GetComponent<Enemy>().SetTarget(player);
+            harderEnemies.transform.parent = transform;
+            
+
+        }
+        Invoke("SpawnHarderEnemy", longerDelay);
     }
 
     private Vector3 GenerateRandomPosition()

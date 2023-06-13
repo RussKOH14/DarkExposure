@@ -6,6 +6,8 @@ public class StageTimer : MonoBehaviour
 {
     public float time;
     TimerUI timerUI;
+    
+
     private void Awake()
     {
         timerUI = FindObjectOfType<TimerUI>();
