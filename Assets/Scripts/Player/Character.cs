@@ -25,7 +25,7 @@ public class Character : MonoBehaviour
     {
         level = GetComponent<Level>();
         coins = GetComponent<Coins>();
-          
+        
     }
 
     private void Start()
@@ -45,7 +45,7 @@ public class Character : MonoBehaviour
         }
         hpBar.SetState(currentHp, maxHp);
 
-        string formattedText = $"{currentHp} / {maxHp+armour}";
+        string formattedText = $"{currentHp} / {maxHp}";
         healthText.text = formattedText;
 
     }
