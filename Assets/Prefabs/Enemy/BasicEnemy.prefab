@@ -14,7 +14,9 @@ GameObject:
   - component: {fileID: 3194697080267242836}
   - component: {fileID: 3194697080267242837}
   - component: {fileID: 8506138651857619011}
+  - component: {fileID: 7510783194470725260}
   - component: {fileID: -7566805016151653639}
+  - component: {fileID: -2201513977542879538}
   - component: {fileID: -7423602602218832003}
   m_Layer: 0
   m_Name: BasicEnemy
@@ -104,9 +106,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rgdbd2d: {fileID: 3194697080267242836}
   speed: 2
-  hp: 300
+  hp: 150
   damage: 10
-  experience_reward: 100
+  experience_reward: 25
 --- !u!50 &3194697080267242836
 Rigidbody2D:
   serializedVersion: 4
@@ -167,10 +169,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dropItemPickup:
-  - {fileID: 5703790778436924279, guid: c5e2a7a450ebc0b41b9ae67c5d385e16, type: 3}
   - {fileID: 7849704173043387361, guid: c5af0d9544ef5084488e2ae16e5ae017, type: 3}
-  - {fileID: 5139286629046556583, guid: ca33844692e50e94e9526d5747362aad, type: 3}
   chance: 1
+--- !u!114 &7510783194470725260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3194697080267242835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20bf1af61082d954c8a98c28906f25dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dropItemPickup:
+  - {fileID: 5703790778436924279, guid: c5e2a7a450ebc0b41b9ae67c5d385e16, type: 3}
+  chance: 0.5
 --- !u!114 &-7566805016151653639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -183,6 +198,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3fc778d34821f649bb449ab9ad539a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-2201513977542879538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3194697080267242835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20bf1af61082d954c8a98c28906f25dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dropItemPickup:
+  - {fileID: 5139286629046556583, guid: ca33844692e50e94e9526d5747362aad, type: 3}
+  chance: 0.2
 --- !u!95 &-7423602602218832003
 Animator:
   serializedVersion: 5
