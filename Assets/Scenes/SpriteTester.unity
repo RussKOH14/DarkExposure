@@ -445,7 +445,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   items: []
-  armourTest: {fileID: 0}
 --- !u!114 &1434313783
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -458,7 +457,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5c5174389973c446b8cd2ffb333c527, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinAcquired: 0
+  data: {fileID: 0}
   coinsCountText: {fileID: 0}
 --- !u!61 &1434313784
 BoxCollider2D:
@@ -526,6 +525,7 @@ MonoBehaviour:
   upgrades:
   - {fileID: 11400000, guid: 90e003a7ae7881341ba7502edd1f61cb, type: 2}
   acquiredUpgrades: []
+  upgradesAvvailableOnStart: []
 --- !u!114 &1434313787
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -546,6 +546,7 @@ MonoBehaviour:
   hpBar: {fileID: 0}
   level: {fileID: 0}
   coins: {fileID: 0}
+  healthText: {fileID: 0}
 --- !u!114 &1434313788
 MonoBehaviour:
   m_ObjectHideFlags: 0
