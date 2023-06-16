@@ -9,6 +9,6 @@ public class Coins : MonoBehaviour
     public void Add (int count)
     {
         data.coins+= count;
-        coinsCountText.text = "Coins:" + data.coins.ToString();
+        coinsCountText.text = data.coins.ToString();
     }
 }
