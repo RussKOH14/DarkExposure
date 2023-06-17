@@ -14,12 +14,12 @@ public class EnemyManager : MonoBehaviour
     [SerializeField] Vector2 spawnArea;
     [SerializeField] float spawnTimer = 0f;
     [SerializeField] GameObject player;
-    public float delay = 5f;
-    public float longerDelay = 5f;
+    public float delay = 1f;
+    public float longerDelay = 2f;
 
 
     public float decreaseInterval = 20f; 
-    public int numberToDecrease = -1;
+    public float numberToDecrease = -0.1f;
     
     private void Awake()
     {
@@ -29,7 +29,7 @@ public class EnemyManager : MonoBehaviour
     private void Update()
     {
         
-        if (delay >1)
+        if (delay >0.2)
         {
             spawnTimer += Time.deltaTime; // Increase the timer with the elapsed time
             if (spawnTimer >= decreaseInterval)
@@ -41,7 +41,7 @@ public class EnemyManager : MonoBehaviour
                 spawnTimer -= decreaseInterval * (int)(spawnTimer / decreaseInterval);
             }
         }
-        if (delay == 1 && !spawningHarderEnemies)
+        if (delay <= 0.8 && !spawningHarderEnemies)
         {
             SpawnHarderEnemy();
             spawningHarderEnemies = true;

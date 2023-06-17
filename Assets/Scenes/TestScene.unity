@@ -2788,7 +2788,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -3.7000122, y: -28.417}
+  m_AnchoredPosition: {x: -3.6999512, y: -28.416992}
   m_SizeDelta: {x: 50, y: 28.383}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &634402507
@@ -4068,17 +4068,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   easiestEnemy: {fileID: 3194697080267242835, guid: 7e1784a03de6e59499a685f02e8ef45a, type: 3}
-  numberOfEasiestEnemy: 5
+  numberOfEasiestEnemy: 1
   harderEnemies: {fileID: 3194697080267242835, guid: 654677f87910d9745bc17e90d71554b5, type: 3}
-  numberOfHarderEnemy: 3
+  numberOfHarderEnemy: 1
   spawningHarderEnemies: 0
   spawnArea: {x: 20, y: 20}
-  spawnTimer: 0.1
+  spawnTimer: 0
   player: {fileID: 239059284}
-  delay: 5
-  longerDelay: 5
+  delay: 1
+  longerDelay: 2
   decreaseInterval: 15
-  numberToDecrease: -1
+  numberToDecrease: -0.1
 --- !u!1 &926612334
 GameObject:
   m_ObjectHideFlags: 0
