@@ -15,7 +15,12 @@ MonoBehaviour:
   upgradeType: 0
   Name: better grip
   icon: {fileID: 21300000, guid: eaa1db71dfc3ecc42ac645b62c9f2b2c, type: 3}
+  description: Throw dagger faster
   weaponData: {fileID: 11400000, guid: 9ae9205f9919cd24cb14e5793462750e, type: 2}
   weaponUpgradeStats:
     damage: 0
     timeToAttack: -1
+    numberOfAttacks: 0
+  item: {fileID: 0}
+  itemStats:
+    armour: 0
