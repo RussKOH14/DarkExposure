@@ -15,8 +15,12 @@ MonoBehaviour:
   upgradeType: 0
   Name: Double Knife
   icon: {fileID: 21300000, guid: e6da07040ce03ef44860fbc46d377c54, type: 3}
+  description: Double dagger damage
   weaponData: {fileID: 11400000, guid: 9ae9205f9919cd24cb14e5793462750e, type: 2}
   weaponUpgradeStats:
     damage: 0
     timeToAttack: 0
     numberOfAttacks: 1
+  item: {fileID: 0}
+  itemStats:
+    armour: 0
