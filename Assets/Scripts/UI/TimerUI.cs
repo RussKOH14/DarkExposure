@@ -15,10 +15,10 @@ public class TimerUI : MonoBehaviour
 
     public void UpdateTime(float time)
     {
-        int minutes = (int)(time / 60f);
+        int seconds = (int)(time += Time.deltaTime);
         //int seconds = (int)(time % 60f);
 
-        text.text = minutes.ToString(); // +":" + seconds.ToString("00");
+        text.text = seconds.ToString(); // +":" + seconds.ToString("00");
     }
 
     internal TextMeshProUGUI textMethod()
