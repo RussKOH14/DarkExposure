@@ -1669,6 +1669,7 @@ MonoBehaviour:
   hpBar: {fileID: 789970164}
   level: {fileID: 0}
   coins: {fileID: 0}
+  stageTimer: {fileID: 0}
   healthText: {fileID: 1634277072}
 --- !u!114 &239059291
 MonoBehaviour:
@@ -1732,6 +1733,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameOverPanel: {fileID: 1591751228}
   weaponParent: {fileID: 1413399415}
+  stageTimer: {fileID: 0}
+  world: {fileID: 761529337}
 --- !u!114 &239059295
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4380,6 +4383,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   time: 0
+  timeRunning: 0
 --- !u!114 &761529342
 MonoBehaviour:
   m_ObjectHideFlags: 0

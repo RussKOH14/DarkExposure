@@ -17,6 +17,7 @@ public class Character : MonoBehaviour
 
     [HideInInspector] public Level level;
     [HideInInspector] public Coins coins;
+    [HideInInspector] public StageTimer stageTimer;
     private bool isDead;
 
 
@@ -25,7 +26,7 @@ public class Character : MonoBehaviour
     {
         level = GetComponent<Level>();
         coins = GetComponent<Coins>();
-        
+        stageTimer = GetComponent<StageTimer>();
     }
 
     private void Start()
@@ -60,6 +61,7 @@ public class Character : MonoBehaviour
         {
             GetComponent<CharacterGameOver>().GameOver();
             isDead = true;
+            
         }
         hpBar.SetState(currentHp, maxHp);
     }
