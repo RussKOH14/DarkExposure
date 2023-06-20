@@ -11,13 +11,15 @@ public class LeaderBoard : MonoBehaviour
     [SerializeField]
     private List<TextMeshProUGUI> scores;
 
-    private string publicLeaderboardKey = "bcd274a705af664f97c8766ad3e2c1c8b045a9c213560ef1b03c808f7815d15c";
+    private string publicLeaderboardKey = "4d1357ac6ea5f1535aac8f799ccf2111a9703456abe3f247e752ff281dec3d14";
 
     public void GetLeaderboard()
     {
         LeaderboardCreator.GetLeaderboard(publicLeaderboardKey, ((msg) =>
         {
-            for(int i=0; i < names.Count; ++i)
+
+            int loopLength = (msg.Length < names.Count) ? msg.Length : names.Count;
+            for(int i=0; i < loopLength; ++i)
             {
                 names[i].text = msg[i].Username;
                 scores[i].text = msg[i].Score.ToString();
@@ -29,7 +31,7 @@ public class LeaderBoard : MonoBehaviour
     {
         LeaderboardCreator.UploadNewEntry(publicLeaderboardKey, username, score, ((msg) =>
            {
-               if (System.Array.IndexOf(badWords, name) != -1) return;
+               //if (System.Array.IndexOf(badWords, name) != -1) return;
                GetLeaderboard();
            }));
     }
