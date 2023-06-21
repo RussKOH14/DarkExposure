@@ -21,18 +21,16 @@ public class Character : MonoBehaviour
     private bool isDead;
 
 
-    [SerializeField] TextMeshProUGUI healthText; 
+    [SerializeField] TextMeshProUGUI healthText;
     private void Awake()
     {
         level = GetComponent<Level>();
         coins = GetComponent<Coins>();
-       
     }
 
     private void Start()
     {
-        hpBar.SetState(currentHp, maxHp);
-        
+        UpdateHpBar();
     }
 
     private void Update()
@@ -44,32 +42,36 @@ public class Character : MonoBehaviour
             Heal(1);
             hpRegenerationTimer -= 1f;
         }
-        hpBar.SetState(currentHp, maxHp);
 
-        string formattedText = $"{currentHp} / {maxHp}";
-        healthText.text = formattedText;
-
+        UpdateHpBar();
+        UpdateHealthText();
     }
+
     public void TakeDamage(int damage)
     {
-        if (isDead == true) { return; }
-        ApplyArmour(ref damage);
+        if (isDead) { return; }
 
         currentHp -= damage;
 
-        if(currentHp <= 0)
+        if (currentHp <= 0)
         {
             GetComponent<CharacterGameOver>().GameOver();
             isDead = true;
-            
         }
-        hpBar.SetState(currentHp, maxHp);
+
+        UpdateHpBar();
     }
 
-    private void ApplyArmour(ref int damage)
+    private void UpdateHpBar()
     {
-        damage -= armour;
-        if (damage < 0 ) { damage = 0; }
+        int currentMaxHp = maxHp + armour; // Calculate current max HP with added armor
+        hpBar.SetState(currentHp, currentMaxHp);
+    }
+
+    private void UpdateHealthText()
+    {
+        string formattedText = $"{currentHp} / {maxHp + armour}";
+        healthText.text = formattedText;
     }
 
     public void Heal(int amount)
@@ -77,9 +79,9 @@ public class Character : MonoBehaviour
         if (currentHp <= 0) { return; }
 
         currentHp += amount;
-        if (currentHp > maxHp)
+        if (currentHp > maxHp + armour)
         {
-            currentHp = maxHp;
+            currentHp = maxHp + armour;
         }
     }
 }

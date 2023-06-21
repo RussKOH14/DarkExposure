@@ -6,6 +6,11 @@ public class Coins : MonoBehaviour
 {
     [SerializeField] DataContainer data;
     [SerializeField] TMPro.TextMeshProUGUI coinsCountText;
+
+    private void Awake()
+    {
+        coinsCountText.text = data.coins.ToString();
+    }
     public void Add (int count)
     {
         data.coins+= count;

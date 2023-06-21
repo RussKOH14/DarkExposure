@@ -13,6 +13,7 @@ public class LeaderBoard : MonoBehaviour
 
     private string publicLeaderboardKey = "4d1357ac6ea5f1535aac8f799ccf2111a9703456abe3f247e752ff281dec3d14";
 
+    
     public void GetLeaderboard()
     {
         LeaderboardCreator.GetLeaderboard(publicLeaderboardKey, ((msg) =>
@@ -31,7 +32,7 @@ public class LeaderBoard : MonoBehaviour
     {
         LeaderboardCreator.UploadNewEntry(publicLeaderboardKey, username, score, ((msg) =>
            {
-               //if (System.Array.IndexOf(badWords, name) != -1) return;
+               
                GetLeaderboard();
            }));
     }
