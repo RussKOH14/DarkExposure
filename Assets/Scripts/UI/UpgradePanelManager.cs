@@ -18,7 +18,17 @@ public class UpgradePanelManager : MonoBehaviour
     {
         HideButtons();
     }
-
+    private void Update()
+    {
+        if (panel.activeInHierarchy)
+        {
+            Time.timeScale = 0;
+        }
+        else
+        {
+            Time.timeScale = 1;
+        }
+    }
     public void OpenPanel(List<UpgradeData> upgradeDatas)
     {
         Clean();

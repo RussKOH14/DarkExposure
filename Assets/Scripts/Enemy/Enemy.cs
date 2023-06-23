@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+#if ENABLE_CLOUD_SERVICES_ANALYTICS
+using UnityEngine.Analytics;
+#endif
 
 public class Enemy : MonoBehaviour
 {
@@ -72,6 +75,12 @@ public class Enemy : MonoBehaviour
             targetGameObject.GetComponent<Level>().AddExperince(experience_reward);
             GetComponent<DropOnDestroy>().CheckDrop();
             Destroy(gameObject);
+            //analytics
+#if ENABLE_CLOUD_SERVICES_ANALYTICS
+            Analytics.CustomEvent("enemyKilled");
+            Debug.Log("fired event");
+#endif
+
         }
     }
 }
