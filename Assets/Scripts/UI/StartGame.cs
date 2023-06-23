@@ -10,4 +10,9 @@ public class StartGame : MonoBehaviour
         SceneManager.LoadScene("TestScene");
         Time.timeScale = 1f;
     }
+
+    public void Quit()
+    {
+        Application.Quit();
+    }
 }
