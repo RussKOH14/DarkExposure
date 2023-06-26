@@ -12,7 +12,7 @@ public class ObjectDispose : MonoBehaviour
         playerTransform = GameManager.instance.playerTransform;
     }
     private void Update()
-    { if(gameObject.tag != "Enemy")
+    { if(gameObject.tag == "Destroy")
         {
             float distance = Vector3.Distance(transform.position, playerTransform.position);
             if (distance > maxDistance)
