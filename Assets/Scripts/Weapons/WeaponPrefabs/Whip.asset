@@ -19,6 +19,8 @@ MonoBehaviour:
     numberOfAttacks: 1
   weaponBasePrefab: {fileID: 5660275041710216601, guid: 3a8da2cae3754c44e9cb2984f580c806, type: 3}
   upgrades:
-  - {fileID: 11400000, guid: 4c3fe5ac91f28044a85acb4d0ac1c496, type: 2}
-  - {fileID: 11400000, guid: 57f40dc5915ae9147ba06142ced00de7, type: 2}
+  - {fileID: 11400000, guid: dc1fda0db1bb2964da9741663bbe262c, type: 2}
+  - {fileID: 11400000, guid: dc1fda0db1bb2964da9741663bbe262c, type: 2}
+  - {fileID: 11400000, guid: dc1fda0db1bb2964da9741663bbe262c, type: 2}
+  - {fileID: 11400000, guid: dc1fda0db1bb2964da9741663bbe262c, type: 2}
   - {fileID: 11400000, guid: dc1fda0db1bb2964da9741663bbe262c, type: 2}

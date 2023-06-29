@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7fd6575cbe46d3a47a9988d41211cde8, type: 3}
-  m_Name: Throwing knife (better grip)
+  m_Name: Whip upgrade
   m_EditorClassIdentifier: 
   upgradeType: 0
-  Name: better grip
-  icon: {fileID: 21300000, guid: eaa1db71dfc3ecc42ac645b62c9f2b2c, type: 3}
-  description: Throw dagger faster
-  weaponData: {fileID: 11400000, guid: 9ae9205f9919cd24cb14e5793462750e, type: 2}
+  Name: More Damage
+  icon: {fileID: 21300000, guid: c52d3af5f2e8ced4caa514bec0b5014b, type: 3}
+  description: Whip Upgrade
+  weaponData: {fileID: 11400000, guid: 30ea1c1569a949b46a020e8dcf69d18d, type: 2}
   weaponUpgradeStats:
-    damage: 0
-    timeToAttack: -1
+    damage: 20
+    timeToAttack: -0.5
     numberOfAttacks: 0
   item: {fileID: 0}
   itemStats:
