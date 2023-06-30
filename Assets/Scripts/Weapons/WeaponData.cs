@@ -21,7 +21,7 @@ public class WeaponStats
     {
 
         this.damage += weaponUpgradeStats.damage;
-        if(timeToAttack >0.5f)
+        if(timeToAttack > 0.5f)
         {
             this.timeToAttack += weaponUpgradeStats.timeToAttack;
         }
