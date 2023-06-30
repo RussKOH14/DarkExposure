@@ -19,8 +19,12 @@ public class WeaponStats
 
     internal void Sum(WeaponStats weaponUpgradeStats)
     {
+
         this.damage += weaponUpgradeStats.damage;
-        this.timeToAttack += weaponUpgradeStats.timeToAttack;
+        if(timeToAttack >0.5f)
+        {
+            this.timeToAttack += weaponUpgradeStats.timeToAttack;
+        }
         this.numberOfAttacks += weaponUpgradeStats.numberOfAttacks;
     }
 }
