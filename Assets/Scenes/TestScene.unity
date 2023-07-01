@@ -2709,7 +2709,7 @@ GameObject:
   - component: {fileID: 459947978}
   m_Layer: 0
   m_Name: Eldest Wand Collider
-  m_TagString: Untagged
+  m_TagString: EldestWand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5465,7 +5465,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 39.759705, y: 33.22911}
+  m_AnchoredPosition: {x: 39.759766, y: 33.229126}
   m_SizeDelta: {x: 48.4593, y: 48.7582}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &872409228

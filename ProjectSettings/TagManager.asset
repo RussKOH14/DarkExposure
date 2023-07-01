@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - coin
   - Destroy
+  - EldestWand
   layers:
   - Default
   - TransparentFX

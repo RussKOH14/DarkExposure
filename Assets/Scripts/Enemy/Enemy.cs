@@ -86,7 +86,7 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        while (collision.CompareTag("EldestWand"))  
+        if (collision.CompareTag("EldestWand"))  
         {
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
