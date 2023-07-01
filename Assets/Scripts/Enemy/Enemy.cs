@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 #if ENABLE_CLOUD_SERVICES_ANALYTICS
 using UnityEngine.Analytics;
+using TMPro;
 #endif
 
 public class Enemy : MonoBehaviour
@@ -18,9 +19,18 @@ public class Enemy : MonoBehaviour
     [SerializeField] int damage = 1;
     [SerializeField] int experience_reward = 400;
 
+    useEldestWand useEldestWand;
+    public GameObject gameManager;
+
     private void Awake()
     {
         rgdbd2d = GetComponent<Rigidbody2D>();
+       
+    }
+    private void Start()
+    {
+        gameManager = GameObject.Find("--GAMEMANAGER--");
+        useEldestWand = gameManager.GetComponent<useEldestWand>();
     }
 
     public void SetTarget(GameObject target)
@@ -86,16 +96,21 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.CompareTag("EldestWand"))  
+        if (Input.GetMouseButton(0))
         {
-            if (Input.GetKeyDown(KeyCode.Mouse0))
+            
+            if (collision.CompareTag("EldestWand"))
             {
                 targetGameObject.GetComponent<Level>().AddExperince(experience_reward);
                 GetComponent<DropOnDestroy>().CheckDrop();
                 Destroy(gameObject);
-                Analytics.CustomEvent("enemyKilled");
                 Debug.Log("fired event");
+
+                collision.gameObject.SetActive(false);
+                useEldestWand.StartTimer();
+
             }
+            
         }
     }
 }

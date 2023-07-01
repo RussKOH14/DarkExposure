@@ -15,4 +15,9 @@ public class useEldestWand : MonoBehaviour
         }
         
     }
+
+    public void StartTimer()
+    {
+        coolDownOver = false;
+    }
 }

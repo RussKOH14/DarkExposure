@@ -5120,6 +5120,7 @@ GameObject:
   - component: {fileID: 846057738}
   - component: {fileID: 846057739}
   - component: {fileID: 846057740}
+  - component: {fileID: 846057741}
   m_Layer: 0
   m_Name: --GAMEMANAGER--
   m_TagString: Untagged
@@ -5198,6 +5199,20 @@ MonoBehaviour:
   - {fileID: 544133281}
   - {fileID: 1607741543}
   - {fileID: 1957361603}
+--- !u!114 &846057741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 846057735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6af769c3f444490489872c10b0631cd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wand: {fileID: 459947974}
+  coolDownOver: 0
 --- !u!1 &853223646
 GameObject:
   m_ObjectHideFlags: 0
@@ -5440,9 +5455,8 @@ GameObject:
   - component: {fileID: 872409230}
   - component: {fileID: 872409229}
   - component: {fileID: 872409228}
-  - component: {fileID: 872409231}
   m_Layer: 5
-  m_Name: Eldest Wand
+  m_Name: EldestWand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5512,7 +5526,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 872409231}
+      - m_Target: {fileID: 846057741}
         m_TargetAssemblyTypeName: useEldestWand, Assembly-CSharp
         m_MethodName: UseWand
         m_Mode: 1
@@ -5562,20 +5576,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 872409226}
   m_CullTransparentMesh: 1
---- !u!114 &872409231
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 872409226}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6af769c3f444490489872c10b0631cd1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  wand: {fileID: 459947974}
-  coolDownOver: 1
 --- !u!1 &874474344
 GameObject:
   m_ObjectHideFlags: 0
