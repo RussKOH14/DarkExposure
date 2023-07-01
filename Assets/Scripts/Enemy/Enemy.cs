@@ -83,4 +83,19 @@ public class Enemy : MonoBehaviour
 
         }
     }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        while (collision.CompareTag("EldestWand"))  
+        {
+            if (Input.GetKeyDown(KeyCode.Mouse0))
+            {
+                targetGameObject.GetComponent<Level>().AddExperince(experience_reward);
+                GetComponent<DropOnDestroy>().CheckDrop();
+                Destroy(gameObject);
+                Analytics.CustomEvent("enemyKilled");
+                Debug.Log("fired event");
+            }
+        }
+    }
 }
