@@ -1797,6 +1797,8 @@ MonoBehaviour:
   hpBar: {fileID: 789970164}
   level: {fileID: 0}
   coins: {fileID: 0}
+  magnet: {fileID: 0}
+  colliderSize: 0
   healthText: {fileID: 1634277072}
 --- !u!114 &239059291
 MonoBehaviour:
@@ -1815,6 +1817,9 @@ MonoBehaviour:
   experienceBar: {fileID: 669205374}
   upgradePanel: {fileID: 846057740}
   upgrades:
+  - {fileID: 11400000, guid: fa6c91deb720c7a4eb2be5283fc95d2b, type: 2}
+  - {fileID: 11400000, guid: fa6c91deb720c7a4eb2be5283fc95d2b, type: 2}
+  - {fileID: 11400000, guid: fa6c91deb720c7a4eb2be5283fc95d2b, type: 2}
   - {fileID: 11400000, guid: 90e003a7ae7881341ba7502edd1f61cb, type: 2}
   acquiredUpgrades: []
   upgradesAvvailableOnStart:
@@ -1845,7 +1850,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d54fbc28e2839b41b1d985ba095cb39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  items: []
+  items:
+  - {fileID: 11400000, guid: 2175b806cb9e89345b745894adcaf021, type: 2}
 --- !u!114 &239059294
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12003,6 +12009,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f65eefcf0a29444785c76800afdc7a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  magnetCollider: {fileID: 1778878926}
 --- !u!58 &1778878926
 CircleCollider2D:
   m_ObjectHideFlags: 0

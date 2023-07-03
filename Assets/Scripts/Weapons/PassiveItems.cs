@@ -6,6 +6,7 @@ using UnityEngine;
 public class PassiveItems : MonoBehaviour
 {
     [SerializeField] List<Item> items;
+   
     
 
     Character character;

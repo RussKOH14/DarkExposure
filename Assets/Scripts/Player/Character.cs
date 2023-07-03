@@ -19,13 +19,16 @@ public class Character : MonoBehaviour
     [HideInInspector] public Coins coins;
     
     private bool isDead;
-
+    public Magnet magnet;
+    public float colliderSize;
 
     [SerializeField] TextMeshProUGUI healthText;
     private void Awake()
     {
         level = GetComponent<Level>();
         coins = GetComponent<Coins>();
+        magnet = FindObjectOfType<Magnet>();
+
     }
 
     private void Start()
@@ -35,6 +38,7 @@ public class Character : MonoBehaviour
 
     private void Update()
     {
+        magnet.magnetCollider.radius += colliderSize;
         hpRegenerationTimer += Time.deltaTime * hpRegenerationRate;
 
         if (hpRegenerationTimer > 1f)
