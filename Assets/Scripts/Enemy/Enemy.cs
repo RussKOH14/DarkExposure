@@ -19,7 +19,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] int damage = 1;
     [SerializeField] int experience_reward = 400;
 
-    useEldestWand useEldestWand;
+    UseManualWeapon useEldestWand;
     public GameObject gameManager;
 
     private void Awake()
@@ -30,7 +30,7 @@ public class Enemy : MonoBehaviour
     private void Start()
     {
         gameManager = GameObject.Find("--GAMEMANAGER--");
-        useEldestWand = gameManager.GetComponent<useEldestWand>();
+        useEldestWand = gameManager.GetComponent<UseManualWeapon>();
     }
 
     public void SetTarget(GameObject target)

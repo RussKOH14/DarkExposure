@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class useEldestWand : MonoBehaviour
+public class UseManualWeapon : MonoBehaviour
 {
     public GameObject wand;
     public bool coolDownOver = true;
