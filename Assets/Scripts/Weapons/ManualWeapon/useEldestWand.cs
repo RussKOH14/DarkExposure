@@ -25,32 +25,24 @@ public class useEldestWand : MonoBehaviour
         {
             wand.SetActive(true);
             timeLeft = 10.0f;
-            timerSlider.value = timeLeft;
-            
+            timerSlider.value = timeLeft;   
         }
-        
     }
 
     private void Update()
     {
-        
         if (!coolDownOver)
         {
             timeLeft -= Time.deltaTime;
             timerSlider.value = timeLeft;
-            
-
             if (timeLeft < 0)
             {
                 coolDownOver = true;
-
             }
         }
-
     }
     public void StartTimer()
     {
-        coolDownOver = false;
-        
+        coolDownOver = false;  
     }
 }
