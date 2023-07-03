@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class useEldestWand : MonoBehaviour
@@ -8,7 +9,15 @@ public class useEldestWand : MonoBehaviour
     public GameObject wand;
     public bool coolDownOver = true;
     public float timeLeft = 10.0f;
-    public TextMeshProUGUI startText;
+    
+
+    public Slider timerSlider;
+
+    private void Start()
+    {
+        timerSlider.maxValue = timeLeft;
+        timerSlider.value = timeLeft;
+    }
 
     public void UseWand()
     {
@@ -16,16 +25,20 @@ public class useEldestWand : MonoBehaviour
         {
             wand.SetActive(true);
             timeLeft = 10.0f;
+            timerSlider.value = timeLeft;
+            
         }
         
     }
 
     private void Update()
     {
-        startText.text = (timeLeft).ToString("0");
+        
         if (!coolDownOver)
         {
             timeLeft -= Time.deltaTime;
+            timerSlider.value = timeLeft;
+            
 
             if (timeLeft < 0)
             {
