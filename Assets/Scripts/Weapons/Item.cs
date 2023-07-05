@@ -9,12 +9,14 @@ public class ItemStats
     public int armour;
     public float magnetRadiusAddition;
     public bool canUseManualWeapon;
+    public float canUseSkulls;
 
 
     internal void Sum(ItemStats stats)
     {
         armour += stats.armour;
         magnetRadiusAddition += stats.magnetRadiusAddition;
+        canUseSkulls += stats.canUseSkulls;
         
     }
     
@@ -46,12 +48,14 @@ public class Item : ScriptableObject
         character.armour += stats.armour;
         character.colliderSize += stats.magnetRadiusAddition;
         character.canUseManualWeapon = stats.canUseManualWeapon;
+        character.canUseSkulls += stats.canUseSkulls;
     }
     public void UnEquip(Character character)
     {
         character.armour -= stats.armour;
         character.colliderSize -= stats.magnetRadiusAddition;
         character.canUseManualWeapon = stats.canUseManualWeapon;
+        character.canUseSkulls -= stats.canUseSkulls;
     }
 
 

@@ -25,6 +25,8 @@ public class Character : MonoBehaviour
     public bool canUseManualWeapon;
     public GameObject buttonManualWeapon;
 
+    public float canUseSkulls = 0f;
+
     [SerializeField] TextMeshProUGUI healthText;
     private void Awake()
     {
@@ -38,6 +40,7 @@ public class Character : MonoBehaviour
     {
         UpdateHpBar();
         canUseManualWeapon = false;
+        //canUseSkulls = 0f;
     }
 
     private void Update()

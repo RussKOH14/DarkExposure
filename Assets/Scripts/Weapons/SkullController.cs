@@ -10,17 +10,31 @@ public class SkullController : MonoBehaviour
     public float spinForce = 100f;    // The force to make the skull spin
     public int skullCount = 10;       // The number of skulls to throw in each batch
     public float throwInterval = 10f;  // The interval between batches of skull throwing
+    
+
+    Character character;
 
     private void Start()
     {
-        // Start throwing skulls automatically
-        StartThrowingSkulls();
+        character = GetComponent<Character>();
+    }
+
+    private void Update()
+    {
+        if (character.canUseSkulls >=1f)
+        {
+            StartThrowingSkulls();
+            character.canUseSkulls = 0f;
+        }
+        
     }
 
     private void StartThrowingSkulls()
     {
         // Create a coroutine to repeatedly throw skulls
         StartCoroutine(ThrowSkullsCoroutine());
+
+        //Invoke("StartThrowingSkulls", delay);
     }
 
     private IEnumerator ThrowSkullsCoroutine()
