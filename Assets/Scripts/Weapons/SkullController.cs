@@ -8,35 +8,51 @@ public class SkullController : MonoBehaviour
     public float throwForce = 5f;    // The initial force to throw the skull
     public float horizontalForce = 2f; // The force to move the skull horizontally
     public float spinForce = 100f;    // The force to make the skull spin
+    public int skullCount = 10;       // The number of skulls to throw in each batch
+    public float throwInterval = 10f;  // The interval between batches of skull throwing
 
-    private void Update()
+    private void Start()
     {
-        // Check if the player throws the skull
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            ThrowSkull();
-        }
+        // Start throwing skulls automatically
+        StartThrowingSkulls();
     }
 
-    private void ThrowSkull()
+    private void StartThrowingSkulls()
     {
-        // Instantiate the skull prefab
-        GameObject skull = Instantiate(skullPrefab, transform.position, Quaternion.identity);
+        // Create a coroutine to repeatedly throw skulls
+        StartCoroutine(ThrowSkullsCoroutine());
+    }
 
-        // Determine the direction to throw (left or right)
-        float throwDirection = transform.localScale.x > 0 ? 1f : -1f;
+    private IEnumerator ThrowSkullsCoroutine()
+    {
+        while (true)
+        {
+            for (int i = 0; i < skullCount; i++)
+            {
+                // Instantiate the skull prefab
+                GameObject skull = Instantiate(skullPrefab, transform.position, Quaternion.identity);
 
-        // Get the skull's Rigidbody2D component
-        Rigidbody2D skullRb = skull.GetComponent<Rigidbody2D>();
+                // Determine the direction to throw (left or right)
+                float throwDirection = transform.localScale.x > 0 ? 1f : -1f;
 
-        // Apply the throw force
-        skullRb.velocity = new Vector2(throwDirection * throwForce, throwForce);
+                // Get the skull's Rigidbody2D component
+                Rigidbody2D skullRb = skull.GetComponent<Rigidbody2D>();
 
-        // Apply random horizontal force
-        float randomHorizontalForce = Random.Range(-horizontalForce, horizontalForce);
-        skullRb.AddForce(new Vector2(randomHorizontalForce, 0f), ForceMode2D.Impulse);
+                // Apply the throw force
+                skullRb.velocity = new Vector2(throwDirection * throwForce, throwForce);
 
-        // Apply spin force
-        skullRb.angularVelocity = Random.Range(-spinForce, spinForce);
+                // Apply random horizontal force
+                float randomHorizontalForce = Random.Range(-horizontalForce, horizontalForce);
+                skullRb.AddForce(new Vector2(randomHorizontalForce, 0f), ForceMode2D.Impulse);
+
+                // Apply spin force
+                skullRb.angularVelocity = Random.Range(-spinForce, spinForce);
+
+                yield return null; // Yielding null to allow physics updates between instantiating each skull
+            }
+
+            // Wait for the specified interval before throwing the next batch of skulls
+            yield return new WaitForSecondsRealtime(throwInterval);
+        }
     }
 }
