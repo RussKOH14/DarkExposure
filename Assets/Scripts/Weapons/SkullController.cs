@@ -7,7 +7,7 @@ public class SkullController : MonoBehaviour
     public GameObject skullPrefab;   // Reference to the skull prefab
     public float throwForce = 5f;    // The initial force to throw the skull
     public float horizontalForce = 2f; // The force to move the skull horizontally
-
+    public float spinForce = 100f;    // The force to make the skull spin
 
     private void Update()
     {
@@ -35,5 +35,8 @@ public class SkullController : MonoBehaviour
         // Apply random horizontal force
         float randomHorizontalForce = Random.Range(-horizontalForce, horizontalForce);
         skullRb.AddForce(new Vector2(randomHorizontalForce, 0f), ForceMode2D.Impulse);
+
+        // Apply spin force
+        skullRb.angularVelocity = Random.Range(-spinForce, spinForce);
     }
 }
