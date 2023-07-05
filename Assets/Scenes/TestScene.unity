@@ -1794,6 +1794,8 @@ MonoBehaviour:
   coins: {fileID: 0}
   magnet: {fileID: 1778878925}
   colliderSize: 0
+  canUseManualWeapon: 0
+  buttonManualWeapon: {fileID: 1552455797}
   healthText: {fileID: 1634277072}
 --- !u!114 &239059291
 MonoBehaviour:
@@ -1816,6 +1818,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: fa6c91deb720c7a4eb2be5283fc95d2b, type: 2}
   - {fileID: 11400000, guid: fa6c91deb720c7a4eb2be5283fc95d2b, type: 2}
   - {fileID: 11400000, guid: 90e003a7ae7881341ba7502edd1f61cb, type: 2}
+  - {fileID: 11400000, guid: 690b2634ff0b14244a21383ba7d71caf, type: 2}
   acquiredUpgrades: []
   upgradesAvvailableOnStart: []
 --- !u!114 &239059292
@@ -1846,6 +1849,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   items:
   - {fileID: 11400000, guid: 2175b806cb9e89345b745894adcaf021, type: 2}
+  - {fileID: 11400000, guid: ad5ea45eac7a97f4895c7f49eba890b7, type: 2}
 --- !u!114 &239059294
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2855,7 +2859,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -9961,7 +9965,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1552455798
 Transform:
   m_ObjectHideFlags: 0

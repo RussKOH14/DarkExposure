@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 83dfb554e7bd13740905dfcaf0c9f76d, type: 3}
-  m_Name: Magnet
+  m_Name: ManualWeapon
   m_EditorClassIdentifier: 
-  Name: Magnet
+  Name: Manual Weapon
   stats:
-    armour: 30
+    armour: 0
     magnetRadiusAddition: 0
-    canUseManualWeapon: 0
+    canUseManualWeapon: 1
   upgrades:
-  - {fileID: 11400000, guid: fa6c91deb720c7a4eb2be5283fc95d2b, type: 2}
+  - {fileID: 11400000, guid: 690b2634ff0b14244a21383ba7d71caf, type: 2}
   magnet: {fileID: 0}

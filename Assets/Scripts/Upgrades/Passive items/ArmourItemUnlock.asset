@@ -15,7 +15,7 @@ MonoBehaviour:
   upgradeType: 3
   Name: 
   icon: {fileID: 21300000, guid: 4255c4b39b3342341a79e54ab7ea655f, type: 3}
-  description: 
+  description: Armour
   weaponData: {fileID: 0}
   weaponUpgradeStats:
     damage: 0
@@ -24,3 +24,5 @@ MonoBehaviour:
   item: {fileID: 11400000, guid: 176121e90669b294ea23da578f6844b8, type: 2}
   itemStats:
     armour: 0
+    magnetRadiusAddition: 0
+    canUseManualWeapon: 0

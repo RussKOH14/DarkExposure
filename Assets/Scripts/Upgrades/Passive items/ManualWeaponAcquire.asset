@@ -10,19 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7fd6575cbe46d3a47a9988d41211cde8, type: 3}
-  m_Name: MagnetUpgrade
+  m_Name: ManualWeaponAcquire
   m_EditorClassIdentifier: 
   upgradeType: 1
-  Name: MagnetUpgrade
-  icon: {fileID: 21300000, guid: 6d6e0dcb1e577d3448f157a84994e0a4, type: 3}
-  description: Magnet Upgrade
+  Name: ManualWeaponAqcuire
+  icon: {fileID: 21300000, guid: 68f3ea7e8b1b92347bea4770b1f2d24e, type: 3}
+  description: Manual Wand
   weaponData: {fileID: 0}
   weaponUpgradeStats:
     damage: 0
     timeToAttack: 0
     numberOfAttacks: 0
-  item: {fileID: 11400000, guid: 2175b806cb9e89345b745894adcaf021, type: 2}
+  item: {fileID: 11400000, guid: ad5ea45eac7a97f4895c7f49eba890b7, type: 2}
   itemStats:
     armour: 0
-    magnetRadiusAddition: 0.001
-    canUseManualWeapon: 0
+    magnetRadiusAddition: 0
+    canUseManualWeapon: 1

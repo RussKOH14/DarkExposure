@@ -22,6 +22,9 @@ public class Character : MonoBehaviour
     public Magnet magnet;
     public float colliderSize;
 
+    public bool canUseManualWeapon;
+    public GameObject buttonManualWeapon;
+
     [SerializeField] TextMeshProUGUI healthText;
     private void Awake()
     {
@@ -34,6 +37,7 @@ public class Character : MonoBehaviour
     private void Start()
     {
         UpdateHpBar();
+        canUseManualWeapon = false;
     }
 
     private void Update()
@@ -49,7 +53,18 @@ public class Character : MonoBehaviour
 
         UpdateHpBar();
         UpdateHealthText();
+
+        if (canUseManualWeapon)
+        {
+            buttonManualWeapon.SetActive(true);
+        }
+        else
+        {
+            buttonManualWeapon.SetActive(false);
+        }
     }
+
+
 
     public void TakeDamage(int damage)
     {
