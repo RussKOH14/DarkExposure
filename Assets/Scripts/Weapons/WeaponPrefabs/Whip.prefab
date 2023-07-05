@@ -50,6 +50,7 @@ MonoBehaviour:
   weaponStats:
     damage: 0
     timeToAttack: 4
+    numberOfAttacks: 0
   timeToAttack: 1.2
   leftWhipObject: {fileID: 5660275042400938517}
   rightWhipObject: {fileID: 5660275041957572769}
@@ -71,7 +72,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5660275041957572775
 Transform:
   m_ObjectHideFlags: 0
@@ -80,7 +81,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5660275041957572769}
   m_LocalRotation: {x: -0, y: -0, z: -0.2588186, w: 0.965926}
-  m_LocalPosition: {x: 1.5, y: 0, z: 0}
+  m_LocalPosition: {x: 1.5, y: -0.8, z: 0}
   m_LocalScale: {x: 0.3, y: 0.25, z: 0.2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -168,7 +169,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5660275042400938506
 Transform:
   m_ObjectHideFlags: 0
@@ -177,7 +178,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5660275042400938517}
   m_LocalRotation: {x: -0, y: -0, z: 0.2588195, w: 0.96592575}
-  m_LocalPosition: {x: -1.5, y: 0, z: 0}
+  m_LocalPosition: {x: -1.5, y: -0.8, z: 0}
   m_LocalScale: {x: -0.3, y: 0.25, z: 0.2}
   m_ConstrainProportionsScale: 0
   m_Children: []
