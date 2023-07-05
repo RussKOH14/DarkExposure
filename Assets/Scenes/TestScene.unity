@@ -306,8 +306,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tilePosition: {x: 0, y: 4}
-  spawnObjects:
-  - {fileID: 840340334}
+  spawnObjects: []
 --- !u!212 &25720936
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -846,8 +845,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tilePosition: {x: 3, y: 2}
-  spawnObjects:
-  - {fileID: 840270320}
+  spawnObjects: []
 --- !u!1 &94678010
 GameObject:
   m_ObjectHideFlags: 0
@@ -1030,8 +1028,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tilePosition: {x: 3, y: 0}
-  spawnObjects:
-  - {fileID: 269936934}
+  spawnObjects: []
 --- !u!212 &145360178
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1345,8 +1342,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tilePosition: {x: 0, y: 2}
-  spawnObjects:
-  - {fileID: 2120563129}
+  spawnObjects: []
 --- !u!212 &216399218
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1447,8 +1443,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tilePosition: {x: 0, y: 1}
-  spawnObjects:
-  - {fileID: 926612336}
+  spawnObjects: []
 --- !u!212 &218091952
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1797,7 +1792,7 @@ MonoBehaviour:
   hpBar: {fileID: 789970164}
   level: {fileID: 0}
   coins: {fileID: 0}
-  magnet: {fileID: 0}
+  magnet: {fileID: 1778878925}
   colliderSize: 0
   healthText: {fileID: 1634277072}
 --- !u!114 &239059291
@@ -1822,8 +1817,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: fa6c91deb720c7a4eb2be5283fc95d2b, type: 2}
   - {fileID: 11400000, guid: 90e003a7ae7881341ba7502edd1f61cb, type: 2}
   acquiredUpgrades: []
-  upgradesAvvailableOnStart:
-  - {fileID: 11400000, guid: 05ff6cdc010af4842ab3b79253714731, type: 2}
+  upgradesAvvailableOnStart: []
 --- !u!114 &239059292
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2512,8 +2506,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tilePosition: {x: 4, y: 0}
-  spawnObjects:
-  - {fileID: 574429458}
+  spawnObjects: []
 --- !u!212 &312893304
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3065,8 +3058,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tilePosition: {x: 1, y: 0}
-  spawnObjects:
-  - {fileID: 1167085765}
+  spawnObjects: []
 --- !u!212 &499885606
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3212,8 +3204,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tilePosition: {x: 4, y: 2}
-  spawnObjects:
-  - {fileID: 2055400822}
+  spawnObjects: []
 --- !u!212 &518279313
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4562,8 +4553,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tilePosition: {x: 0, y: 3}
-  spawnObjects:
-  - {fileID: 172107483}
+  spawnObjects: []
 --- !u!212 &703573118
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6152,7 +6142,7 @@ MonoBehaviour:
   player: {fileID: 239059284}
   delay: 1
   longerDelay: 2
-  decreaseInterval: 15
+  decreaseInterval: 20
   numberToDecrease: -0.1
 --- !u!1 &926612334
 GameObject:
@@ -6436,8 +6426,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tilePosition: {x: 2, y: 3}
-  spawnObjects:
-  - {fileID: 1261863483}
+  spawnObjects: []
 --- !u!1 &943596569
 GameObject:
   m_ObjectHideFlags: 0
@@ -6485,8 +6474,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tilePosition: {x: 3, y: 4}
-  spawnObjects:
-  - {fileID: 1818677660}
+  spawnObjects: []
 --- !u!212 &943596572
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6837,8 +6825,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tilePosition: {x: 1, y: 2}
-  spawnObjects:
-  - {fileID: 1132865000}
+  spawnObjects: []
 --- !u!1 &1059150065
 GameObject:
   m_ObjectHideFlags: 0
@@ -7269,8 +7256,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tilePosition: {x: 2, y: 1}
-  spawnObjects:
-  - {fileID: 1925575857}
+  spawnObjects: []
 --- !u!1 &1108703411
 GameObject:
   m_ObjectHideFlags: 0
@@ -7980,8 +7966,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tilePosition: {x: 1, y: 1}
-  spawnObjects:
-  - {fileID: 89784389}
+  spawnObjects: []
 --- !u!1 &1190611035
 GameObject:
   m_ObjectHideFlags: 0
@@ -8614,8 +8599,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tilePosition: {x: 1, y: 4}
-  spawnObjects:
-  - {fileID: 90007679}
+  spawnObjects: []
 --- !u!212 &1275763238
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8850,8 +8834,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tilePosition: {x: 0, y: 0}
-  spawnObjects:
-  - {fileID: 1953662411}
+  spawnObjects: []
 --- !u!212 &1357738601
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9547,8 +9530,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tilePosition: {x: 4, y: 1}
-  spawnObjects:
-  - {fileID: 389822194}
+  spawnObjects: []
 --- !u!212 &1460039821
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10179,8 +10161,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tilePosition: {x: 4, y: 3}
-  spawnObjects:
-  - {fileID: 1642154188}
+  spawnObjects: []
 --- !u!212 &1572668507
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10509,8 +10490,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tilePosition: {x: 2, y: 4}
-  spawnObjects:
-  - {fileID: 1660125742}
+  spawnObjects: []
 --- !u!212 &1609402398
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10948,8 +10928,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tilePosition: {x: 2, y: 0}
-  spawnObjects:
-  - {fileID: 1108703413}
+  spawnObjects: []
 --- !u!212 &1659423350
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12201,8 +12180,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tilePosition: {x: 1, y: 3}
-  spawnObjects:
-  - {fileID: 1429364802}
+  spawnObjects: []
 --- !u!4 &1810753805 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3870209827752517591, guid: e8e7acb28d0ab214faffa6691d13e5ff, type: 3}
@@ -12940,8 +12918,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tilePosition: {x: 4, y: 4}
-  spawnObjects:
-  - {fileID: 1109591702}
+  spawnObjects: []
 --- !u!212 &1997096271
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13093,8 +13070,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tilePosition: {x: 3, y: 1}
-  spawnObjects:
-  - {fileID: 1709342748}
+  spawnObjects: []
 --- !u!1 &2013507931
 GameObject:
   m_ObjectHideFlags: 0
@@ -13195,8 +13171,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tilePosition: {x: 3, y: 3}
-  spawnObjects:
-  - {fileID: 515625399}
+  spawnObjects: []
 --- !u!1 &2043929106
 GameObject:
   m_ObjectHideFlags: 0

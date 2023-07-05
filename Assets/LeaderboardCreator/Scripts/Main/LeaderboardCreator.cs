@@ -217,9 +217,9 @@ namespace Dan.Main
         /// <summary>
         /// Resets a player's unique identifier and allows them to submit a new entry to the leaderboard.
         /// </summary>
-        public static void ResetPlayer()
+        public static void ResetPlayer(Action onReset = null)
         {
-            _behaviour.ResetAndAuthorize(OnAuthorizationAttempted);
+            _behaviour.ResetAndAuthorize(OnAuthorizationAttempted, onReset);
         }
 
         internal static void Log(string message)
