@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PickupSound : MonoBehaviour
-
 {
     public AudioClip heartSound;
     public AudioClip coinSound;
     public AudioClip gemSound;
 
-    private AudioSource audioSource;
+    public AudioSource audioSource;
 
     private void Awake()
     {

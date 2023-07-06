@@ -5,9 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
-  - coin
   - Destroy
   - EldestWand
+  - Gem
+  - Heart
+  - Coin
   layers:
   - Default
   - TransparentFX
