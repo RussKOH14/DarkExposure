@@ -1798,6 +1798,7 @@ MonoBehaviour:
   canUseManualWeapon: 0
   buttonManualWeapon: {fileID: 1552455797}
   canUseSkulls: 0
+  skullCount: 0
   healthText: {fileID: 1634277072}
 --- !u!114 &239059291
 MonoBehaviour:

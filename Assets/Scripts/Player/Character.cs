@@ -26,6 +26,8 @@ public class Character : MonoBehaviour
     public GameObject buttonManualWeapon;
 
     public float canUseSkulls = 0f;
+    SkullController skullController;
+    public int skullCount;
 
     [SerializeField] TextMeshProUGUI healthText;
     private void Awake()
@@ -33,6 +35,8 @@ public class Character : MonoBehaviour
         level = GetComponent<Level>();
         coins = GetComponent<Coins>();
         magnet = FindObjectOfType<Magnet>();
+        skullController = FindObjectOfType<SkullController>();
+        skullCount = skullController.skullCount;
 
     }
 

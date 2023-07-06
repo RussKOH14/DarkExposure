@@ -10,6 +10,7 @@ public class ItemStats
     public float magnetRadiusAddition;
     public bool canUseManualWeapon;
     public float canUseSkulls;
+    public int skullCount;
 
 
     internal void Sum(ItemStats stats)
@@ -17,6 +18,7 @@ public class ItemStats
         armour += stats.armour;
         magnetRadiusAddition += stats.magnetRadiusAddition;
         canUseSkulls += stats.canUseSkulls;
+        skullCount += stats.skullCount;
         
     }
     
@@ -27,13 +29,6 @@ public class Item : ScriptableObject
     public string Name;
     public ItemStats stats;
     public List<UpgradeData> upgrades;
-
-    public Magnet magnet;
-
-    private void Awake()
-    {
-        magnet = FindObjectOfType<Magnet>();
-    }
 
 
     public void Init(string Name)
@@ -49,6 +44,7 @@ public class Item : ScriptableObject
         character.colliderSize += stats.magnetRadiusAddition;
         character.canUseManualWeapon = stats.canUseManualWeapon;
         character.canUseSkulls += stats.canUseSkulls;
+        character.skullCount += stats.skullCount;
     }
     public void UnEquip(Character character)
     {
@@ -56,6 +52,7 @@ public class Item : ScriptableObject
         character.colliderSize -= stats.magnetRadiusAddition;
         character.canUseManualWeapon = stats.canUseManualWeapon;
         character.canUseSkulls -= stats.canUseSkulls;
+        character.skullCount -= stats.skullCount;
     }
 
 
