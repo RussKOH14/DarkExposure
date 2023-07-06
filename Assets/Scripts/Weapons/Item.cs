@@ -8,7 +8,7 @@ public class ItemStats
 {
     public int armour;
     public float magnetRadiusAddition;
-    public bool canUseManualWeapon;
+    public float canUseManualWeapon;
     public float canUseSkulls;
     public int skullCount;
 
@@ -17,6 +17,7 @@ public class ItemStats
     {
         armour += stats.armour;
         magnetRadiusAddition += stats.magnetRadiusAddition;
+        canUseManualWeapon += stats.canUseManualWeapon;
         canUseSkulls += stats.canUseSkulls;
         skullCount += stats.skullCount;
         
@@ -42,7 +43,7 @@ public class Item : ScriptableObject
     {
         character.armour += stats.armour;
         character.colliderSize += stats.magnetRadiusAddition;
-        character.canUseManualWeapon = stats.canUseManualWeapon;
+        character.canUseManualWeapon += stats.canUseManualWeapon;
         character.canUseSkulls += stats.canUseSkulls;
         character.skullCount += stats.skullCount;
     }
@@ -50,7 +51,7 @@ public class Item : ScriptableObject
     {
         character.armour -= stats.armour;
         character.colliderSize -= stats.magnetRadiusAddition;
-        character.canUseManualWeapon = stats.canUseManualWeapon;
+        character.canUseManualWeapon -= stats.canUseManualWeapon;
         character.canUseSkulls -= stats.canUseSkulls;
         character.skullCount -= stats.skullCount;
     }

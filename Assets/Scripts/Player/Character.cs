@@ -19,12 +19,16 @@ public class Character : MonoBehaviour
     [HideInInspector] public Coins coins;
     
     private bool isDead;
+    
+    [Header("Magnet")]
     public Magnet magnet;
     public float colliderSize;
 
-    public bool canUseManualWeapon;
+    [Header("Manual Wand")]
+    public float canUseManualWeapon = 0f;
     public GameObject buttonManualWeapon;
 
+    [Header("Skulls")]
     public float canUseSkulls = 0f;
     SkullController skullController;
     public int skullCount;
@@ -43,8 +47,6 @@ public class Character : MonoBehaviour
     private void Start()
     {
         UpdateHpBar();
-        canUseManualWeapon = false;
-        //canUseSkulls = 0f;
     }
 
     private void Update()
@@ -61,7 +63,7 @@ public class Character : MonoBehaviour
         UpdateHpBar();
         UpdateHealthText();
 
-        if (canUseManualWeapon)
+        if (canUseManualWeapon>=1f)
         {
             buttonManualWeapon.SetActive(true);
         }

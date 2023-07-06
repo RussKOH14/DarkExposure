@@ -17,6 +17,6 @@ MonoBehaviour:
     armour: 0
     magnetRadiusAddition: 0
     canUseManualWeapon: 1
-  upgrades:
-  - {fileID: 11400000, guid: 690b2634ff0b14244a21383ba7d71caf, type: 2}
-  magnet: {fileID: 0}
+    canUseSkulls: 0
+    skullCount: 0
+  upgrades: []

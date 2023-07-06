@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7fd6575cbe46d3a47a9988d41211cde8, type: 3}
-  m_Name: ManualWeaponAcquire
+  m_Name: ManualWeaponUpgrade
   m_EditorClassIdentifier: 
-  upgradeType: 3
-  Name: ManualWeaponAqcuire
-  icon: {fileID: 21300000, guid: 68f3ea7e8b1b92347bea4770b1f2d24e, type: 3}
-  description: Manual Wand
+  upgradeType: 1
+  Name: Manual Weapon
+  icon: {fileID: 0}
+  description: Manual Weapon
   weaponData: {fileID: 0}
   weaponUpgradeStats:
     damage: 0
@@ -25,6 +25,6 @@ MonoBehaviour:
   itemStats:
     armour: 0
     magnetRadiusAddition: 0
-    canUseManualWeapon: 1
+    canUseManualWeapon: 0
     canUseSkulls: 0
     skullCount: 0
