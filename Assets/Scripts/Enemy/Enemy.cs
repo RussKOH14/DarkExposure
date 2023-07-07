@@ -31,7 +31,8 @@ public class Enemy : MonoBehaviour
     {
         gameManager = GameObject.Find("--GAMEMANAGER--");
         useEldestWand = gameManager.GetComponent<UseManualWeapon>();
-    }
+        
+    }   
 
     public void SetTarget(GameObject target)
     {

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3194697080267242837}
   - component: {fileID: 8506138651857619011}
   - component: {fileID: -7566805016151653639}
+  - component: {fileID: -8886132276055672989}
   m_Layer: 0
   m_Name: StrongerEnemy
   m_TagString: Enemy
@@ -29,7 +30,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3194697080267242835}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.0008508191, w: 0.99999964}
   m_LocalPosition: {x: -5.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -183,3 +184,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3fc778d34821f649bb449ab9ad539a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-8886132276055672989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3194697080267242835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 106f00e088be52c49943b4523ae3b3d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waitBetweenWobbles: 0.5
+  Intensity: 39
