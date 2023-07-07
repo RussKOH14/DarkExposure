@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeType: 1
   Name: MagnetUpgrade
-  icon: {fileID: 21300000, guid: 8bf50f32abcde2348b79db9a612cf84a, type: 3}
+  icon: {fileID: 21300000, guid: af4e386cb36b9d8409d0563ce6cd717a, type: 3}
   description: Magnet Upgrade
   weaponData: {fileID: 0}
   weaponUpgradeStats:
@@ -27,3 +27,4 @@ MonoBehaviour:
     magnetRadiusAddition: 0.001
     canUseManualWeapon: 0
     canUseSkulls: 0
+    skullCount: 0

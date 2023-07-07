@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeType: 3
   Name: ManualWeaponAqcuire
-  icon: {fileID: 21300000, guid: 68f3ea7e8b1b92347bea4770b1f2d24e, type: 3}
+  icon: {fileID: 21300000, guid: 10143816d85917b44976cf992f6536eb, type: 3}
   description: Manual Wand
   weaponData: {fileID: 0}
   weaponUpgradeStats:

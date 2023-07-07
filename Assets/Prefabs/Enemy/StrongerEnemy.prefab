@@ -197,4 +197,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waitBetweenWobbles: 0.5
-  Intensity: 39
+  Intensity: 50

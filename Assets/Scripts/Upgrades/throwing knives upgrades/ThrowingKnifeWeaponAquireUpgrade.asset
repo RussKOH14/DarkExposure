@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeType: 2
   Name: ThrowingDagger
-  icon: {fileID: 21300000, guid: 34f1e3266420906439ebab5f4fbd97ef, type: 3}
+  icon: {fileID: 21300000, guid: 582d670811bafac43aae893e46ca1f97, type: 3}
   description: Throw a dagger
   weaponData: {fileID: 11400000, guid: 9ae9205f9919cd24cb14e5793462750e, type: 2}
   weaponUpgradeStats:
@@ -24,3 +24,7 @@ MonoBehaviour:
   item: {fileID: 0}
   itemStats:
     armour: 0
+    magnetRadiusAddition: 0
+    canUseManualWeapon: 0
+    canUseSkulls: 0
+    skullCount: 0
