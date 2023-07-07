@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeType: 3
   Name: 
-  icon: {fileID: 21300000, guid: 4255c4b39b3342341a79e54ab7ea655f, type: 3}
+  icon: {fileID: 21300000, guid: 698cf5cdccd716b4bba7a2e2edefcbc2, type: 3}
   description: Armour
   weaponData: {fileID: 0}
   weaponUpgradeStats:
@@ -26,3 +26,5 @@ MonoBehaviour:
     armour: 0
     magnetRadiusAddition: 0
     canUseManualWeapon: 0
+    canUseSkulls: 0
+    skullCount: 0

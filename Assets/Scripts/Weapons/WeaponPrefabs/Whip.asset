@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c4db98843b833a4c915e72140250f98, type: 3}
   m_Name: Whip
   m_EditorClassIdentifier: 
-  Name: Whip
+  Name: Sword
   stats:
     damage: 100
     timeToAttack: 1.5
