@@ -22,10 +22,12 @@ public class Enemy : MonoBehaviour
     UseManualWeapon useEldestWand;
     public GameObject gameManager;
 
+    EnemyKilledScore enemyKilledScore;
+
     private void Awake()
     {
         rgdbd2d = GetComponent<Rigidbody2D>();
-       
+        enemyKilledScore = FindObjectOfType<EnemyKilledScore>();
     }
     private void Start()
     {
@@ -86,6 +88,7 @@ public class Enemy : MonoBehaviour
             targetGameObject.GetComponent<Level>().AddExperince(experience_reward);
             GetComponent<DropOnDestroy>().CheckDrop();
             Destroy(gameObject);
+            enemyKilledScore.enemiesKilled += 1;
             //analytics
 #if ENABLE_CLOUD_SERVICES_ANALYTICS
             Analytics.CustomEvent("enemyKilled");
