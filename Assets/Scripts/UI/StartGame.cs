@@ -11,6 +11,12 @@ public class StartGame : MonoBehaviour
         Time.timeScale = 1f;
     }
 
+    public void Shop()
+    {
+        SceneManager.LoadScene("Shop");
+        Time.timeScale = 1f;
+    }
+
     public void Quit()
     {
         Application.Quit();
