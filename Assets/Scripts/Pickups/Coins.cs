@@ -13,10 +13,16 @@ public class Coins : MonoBehaviour
         coinsCountText.text = coinsAquired.ToString();
         
     }
+    private void Update()
+    {
+        int coinsAquired = PlayerPrefs.GetInt("coinsAquired");
+        coinsCountText.text = coinsAquired.ToString();
+    }
     public void Add (int count)
     {
+        int coinsAquired = PlayerPrefs.GetInt("coinsAquired");
+        coinsCountText.text = coinsAquired.ToString();
         dataContainer.coins += count;
-        coinsCountText.text = dataContainer.coins.ToString();
         PlayerPrefs.SetInt("coinsAquired", dataContainer.coins);
         PlayerPrefs.Save();
     }
