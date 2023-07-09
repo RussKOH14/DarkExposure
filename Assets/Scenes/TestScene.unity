@@ -1839,7 +1839,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5c5174389973c446b8cd2ffb333c527, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: 0da467fe86fe1104182c0ce055588267, type: 2}
+  dataContainer: {fileID: 11400000, guid: 0da467fe86fe1104182c0ce055588267, type: 2}
   coinsCountText: {fileID: 634402507}
 --- !u!114 &239059293
 MonoBehaviour:

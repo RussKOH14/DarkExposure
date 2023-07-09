@@ -4,18 +4,21 @@ using UnityEngine;
 
 public class Coins : MonoBehaviour
 {
-    [SerializeField] int dataCoins;
+    [SerializeField] DataContainer dataContainer;
     [SerializeField] TMPro.TextMeshProUGUI coinsCountText;
 
     private void Awake()
     {
-        dataCoins = DataContainer.coins; 
-        coinsCountText.text = dataCoins.ToString();
+        int coinsAquired = PlayerPrefs.GetInt("coinsAquired");
+        coinsCountText.text = coinsAquired.ToString();
+        
     }
     public void Add (int count)
     {
-        dataCoins += count;
-        coinsCountText.text = dataCoins.ToString();
+        dataContainer.coins += count;
+        coinsCountText.text = dataContainer.coins.ToString();
+        PlayerPrefs.SetInt("coinsAquired", dataContainer.coins);
+        PlayerPrefs.Save();
     }
     
 }

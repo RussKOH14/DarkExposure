@@ -5,5 +5,5 @@ using UnityEngine;
 [CreateAssetMenu]
 public class DataContainer : ScriptableObject
 {
-    public static int coins;
+    public int coins;
 }
