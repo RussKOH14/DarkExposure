@@ -24,6 +24,8 @@ public class WhipWeapon : WeaponBase
             {
                 PostDamage(weaponStats.damage, colliders[i].transform.position);
                 e.TakeDamage(weaponStats.damage);
+
+            
             }
         }
     }

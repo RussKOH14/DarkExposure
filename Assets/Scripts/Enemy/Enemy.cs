@@ -83,6 +83,11 @@ public class Enemy : MonoBehaviour
     {
         hp -= damage;
 
+        // Apply knockback force
+        Vector3 knockbackDirection = (transform.position - targetGameObject.transform.position).normalized;
+        transform.position += knockbackDirection * 0.9f;
+
+
         if (hp < 1)
         {
             targetGameObject.GetComponent<Level>().AddExperince(experience_reward);
@@ -94,6 +99,7 @@ public class Enemy : MonoBehaviour
             Analytics.CustomEvent("enemyKilled");
             Debug.Log("fired event");
 #endif
+
 
         }
     }
