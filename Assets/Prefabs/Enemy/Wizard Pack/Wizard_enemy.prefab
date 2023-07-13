@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 513653857962949094}
   - component: {fileID: 3493452381641693879}
-  - component: {fileID: -1156497426759015090}
   - component: {fileID: 202031817709393681}
+  - component: {fileID: 1951123895952881842}
   - component: {fileID: -7889517759160082636}
-  - component: {fileID: 7031298047574051545}
+  - component: {fileID: 2299687588721268804}
   m_Layer: 0
   m_Name: Wizard_enemy
   m_TagString: Enemy
@@ -88,27 +88,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &-1156497426759015090
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 283096892470129156}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!61 &202031817709393681
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -135,6 +114,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.57, y: 0.86}
   m_EdgeRadius: 0
+--- !u!50 &1951123895952881842
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 283096892470129156}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!95 &-7889517759160082636
 Animator:
   serializedVersion: 5
@@ -156,7 +156,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &7031298047574051545
+--- !u!114 &2299687588721268804
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -165,12 +165,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 283096892470129156}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b03ec2caf44647948b5b78519824dba3, type: 3}
+  m_Script: {fileID: 11500000, guid: fd1f459a8ef294df4a97a9298288cf33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rgdbd2d: {fileID: -1156497426759015090}
-  speed: 0
-  hp: 4
-  damage: 1
-  experience_reward: 400
-  gameManager: {fileID: 6858895889101701366, guid: b525b6d38aec2bc488f0516f51fb5551, type: 3}
+  player: {fileID: 0}
+  movementSpeed: 3
+  stoppingRadius: 2
