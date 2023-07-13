@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class TestWizardAI : MonoBehaviour
+
 {
     public Transform player;
     public float movementSpeed = 3f;
@@ -14,7 +15,6 @@ public class TestWizardAI : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        rb.freezeRotation = true;
     }
 
     private void Update()
