@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 202031817709393681}
   - component: {fileID: 1951123895952881842}
   - component: {fileID: -7889517759160082636}
-  - component: {fileID: 4701117554841787691}
+  - component: {fileID: 7879879257149289935}
   m_Layer: 0
   m_Name: Wizard_enemy
   m_TagString: Enemy
@@ -156,7 +156,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &4701117554841787691
+--- !u!114 &7879879257149289935
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -169,5 +169,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  moveSpeed: 5
-  stoppingDistance: 2
+  movementSpeed: 3
+  stoppingRadius: 2

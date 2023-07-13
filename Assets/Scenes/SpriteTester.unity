@@ -6634,6 +6634,14 @@ PrefabInstance:
       propertyPath: speed
       value: 2.61
       objectReference: {fileID: 0}
+    - target: {fileID: 7832492399903539173, guid: 89aa53e6730c64a2fbccb4ecfb08b453, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 6858895889101701366, guid: b525b6d38aec2bc488f0516f51fb5551, type: 3}
+    - target: {fileID: 7879879257149289935, guid: 89aa53e6730c64a2fbccb4ecfb08b453, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1105825120}
     m_RemovedComponents:
     - {fileID: 7031298047574051545, guid: 89aa53e6730c64a2fbccb4ecfb08b453, type: 3}
     - {fileID: 2299687588721268804, guid: 89aa53e6730c64a2fbccb4ecfb08b453, type: 3}
