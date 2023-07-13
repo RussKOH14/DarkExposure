@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -1156497426759015090}
   - component: {fileID: 202031817709393681}
   - component: {fileID: -7889517759160082636}
+  - component: {fileID: 7031298047574051545}
   m_Layer: 0
   m_Name: Wizard_enemy
   m_TagString: Enemy
@@ -155,3 +156,21 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7031298047574051545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 283096892470129156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b03ec2caf44647948b5b78519824dba3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rgdbd2d: {fileID: -1156497426759015090}
+  speed: 0
+  hp: 4
+  damage: 1
+  experience_reward: 400
+  gameManager: {fileID: 6858895889101701366, guid: b525b6d38aec2bc488f0516f51fb5551, type: 3}
