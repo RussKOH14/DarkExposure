@@ -19,7 +19,6 @@ GameObject:
   - component: {fileID: -2201513977542879538}
   - component: {fileID: -7423602602218832003}
   - component: {fileID: -2284386351752460355}
-  - component: {fileID: -8504537196031047827}
   m_Layer: 0
   m_Name: BasicEnemy
   m_TagString: Enemy
@@ -251,17 +250,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waitBetweenWobbles: 0.1
   Intensity: 50
---- !u!114 &-8504537196031047827
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3194697080267242835}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0fc8e62c7eca79468db29eae06ddbbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  knockbackForce: 10
-  rb: {fileID: 3194697080267242836}
