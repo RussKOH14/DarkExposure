@@ -17,6 +17,10 @@ public class Coins : MonoBehaviour
     {
         int coinsAquired = PlayerPrefs.GetInt("coinsAquired");
         coinsCountText.text = coinsAquired.ToString();
+        if (dataContainer.coins < 0)
+        {
+            dataContainer.coins = 0;
+        }
     }
     public void Add (int count)
     {
