@@ -41,7 +41,7 @@ public class Character : MonoBehaviour
         magnet = FindObjectOfType<Magnet>();
         skullController = FindObjectOfType<SkullController>();
         skullCount = skullController.skullCount;
-
+        
     }
 
     private void Start()
@@ -92,24 +92,27 @@ public class Character : MonoBehaviour
 
     private void UpdateHpBar()
     {
-        int currentMaxHp = maxHp + armour; // Calculate current max HP with added armor
+        int addedHealth = PlayerPrefs.GetInt("addedHealth");
+        int currentMaxHp = maxHp + armour +addedHealth; // Calculate current max HP with added armor
         hpBar.SetState(currentHp, currentMaxHp);
     }
 
     private void UpdateHealthText()
     {
-        string formattedText = $"{currentHp} / {maxHp + armour}";
+        int addedHealth = PlayerPrefs.GetInt("addedHealth");
+        string formattedText = $"{currentHp} / {maxHp + armour +addedHealth}";
         healthText.text = formattedText;
     }
 
     public void Heal(int amount)
     {
+        int addedHealth = PlayerPrefs.GetInt("addedHealth");
         if (currentHp <= 0) { return; }
 
         currentHp += amount;
-        if (currentHp > maxHp + armour)
+        if (currentHp > maxHp + armour +addedHealth)
         {
-            currentHp = maxHp + armour;
+            currentHp = maxHp + armour+addedHealth;
         }
     }
 }

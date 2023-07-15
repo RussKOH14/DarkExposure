@@ -14,6 +14,8 @@ public class ShopManager : MonoBehaviour
     {
         int coinsAquired = PlayerPrefs.GetInt("coinsAquired");
         coins.text = coinsAquired.ToString();
+
+        PlayerPrefs.SetInt("addedHealth",dataContainer.addedHealth);
     }
     private void Update()
     {
@@ -32,6 +34,12 @@ public class ShopManager : MonoBehaviour
             PlayerPrefs.SetInt("coinsAquired", dataContainer.coins);
             PlayerPrefs.Save();
             coins.text = coinsAquired.ToString();
+
+            PlayerPrefs.GetInt("addedHealth");
+            dataContainer.addedHealth += 100;
+            PlayerPrefs.SetInt("addedHealth", dataContainer.addedHealth);
+            PlayerPrefs.Save();
+
         }
         
     }
