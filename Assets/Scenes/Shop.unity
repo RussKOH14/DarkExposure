@@ -409,7 +409,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dataContainer: {fileID: 11400000, guid: 0da467fe86fe1104182c0ce055588267, type: 2}
   coins: {fileID: 1663882189}
-  cost: 10
+  healthCost: 0
+  damageCost: 1
 --- !u!114 &129537187
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1412,7 +1413,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1097527535}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 129537186}
+        m_TargetAssemblyTypeName: ShopManager, Assembly-CSharp
+        m_MethodName: Damage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1097527535
 MonoBehaviour:
   m_ObjectHideFlags: 0

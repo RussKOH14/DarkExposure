@@ -19,7 +19,7 @@ public class WeaponStats
 
     internal void Sum(WeaponStats weaponUpgradeStats)
     {
-
+        
         this.damage += weaponUpgradeStats.damage;
         if(timeToAttack > 0.5f)
         {

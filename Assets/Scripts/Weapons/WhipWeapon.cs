@@ -22,8 +22,9 @@ public class WhipWeapon : WeaponBase
             Enemy e = colliders[i].GetComponent<Enemy>();
             if(e != null)
             {
+                int addedDamage = PlayerPrefs.GetInt("addedDamage");
                 PostDamage(weaponStats.damage, colliders[i].transform.position);
-                e.TakeDamage(weaponStats.damage);
+                e.TakeDamage(weaponStats.damage + addedDamage);
 
             
             }

@@ -7,7 +7,8 @@ public class ShopManager : MonoBehaviour
 {
     [SerializeField] DataContainer dataContainer;
     [SerializeField] TMPro.TextMeshProUGUI coins;
-    public int cost;
+    public int healthCost;
+    public int damageCost;
     
 
     private void Awake()
@@ -16,6 +17,7 @@ public class ShopManager : MonoBehaviour
         coins.text = coinsAquired.ToString();
 
         PlayerPrefs.SetInt("addedHealth",dataContainer.addedHealth);
+        PlayerPrefs.SetInt("addedDamage",dataContainer.addedDamage);
     }
     private void Update()
     {
@@ -26,11 +28,11 @@ public class ShopManager : MonoBehaviour
     public void Health()
     {
        
-        if (dataContainer.coins >= cost)
+        if (dataContainer.coins >= healthCost)
         {
             int coinsAquired = PlayerPrefs.GetInt("coinsAquired");
             
-            dataContainer.coins -=cost;
+            dataContainer.coins -=healthCost;
             PlayerPrefs.SetInt("coinsAquired", dataContainer.coins);
             PlayerPrefs.Save();
             coins.text = coinsAquired.ToString();
@@ -38,6 +40,27 @@ public class ShopManager : MonoBehaviour
             PlayerPrefs.GetInt("addedHealth");
             dataContainer.addedHealth += 100;
             PlayerPrefs.SetInt("addedHealth", dataContainer.addedHealth);
+            PlayerPrefs.Save();
+
+        }
+        
+    }
+    public void Damage()
+    {
+        
+        if (dataContainer.coins >= damageCost)
+        {
+            Debug.Log("worked");
+            int coinsAquired = PlayerPrefs.GetInt("coinsAquired");
+            
+            dataContainer.coins -=damageCost;
+            PlayerPrefs.SetInt("coinsAquired", dataContainer.coins);
+            PlayerPrefs.Save();
+            coins.text = coinsAquired.ToString();
+
+            PlayerPrefs.GetInt("addedDamage");
+            dataContainer.addedDamage += 100;
+            PlayerPrefs.SetInt("addedDamage", dataContainer.addedDamage);
             PlayerPrefs.Save();
 
         }
