@@ -16,7 +16,7 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 582d670811bafac43aae893e46ca1f97, type: 3}
   name: Deadly Daggers
   description: Throw a dagger
-  quote: Pierce thy hearts
+  quote: '"Pierce thy hearts"'
   weaponData: {fileID: 11400000, guid: 9ae9205f9919cd24cb14e5793462750e, type: 2}
   weaponUpgradeStats:
     damage: 0

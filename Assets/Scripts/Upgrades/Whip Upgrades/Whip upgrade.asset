@@ -16,7 +16,7 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 10b5239823837cc4793a43e51f201f68, type: 3}
   name: Cursed Sword
   description: Sword Upgrade
-  quote: Stained with blood it gains power
+  quote: '"Stained with blood it gains power"'
   weaponData: {fileID: 11400000, guid: 30ea1c1569a949b46a020e8dcf69d18d, type: 2}
   weaponUpgradeStats:
     damage: 20

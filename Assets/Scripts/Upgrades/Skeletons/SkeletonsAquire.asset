@@ -15,8 +15,8 @@ MonoBehaviour:
   upgradeType: 3
   icon: {fileID: 21300000, guid: e0449d10082c4a64e863e37ada7a3df1, type: 3}
   name: Skulls of the dead
-  description: Skeletons
-  quote: These skulls came in handy
+  description: Throw Skeletons Upwards
+  quote: '"Spooky Scary Skeletons"'
   weaponData: {fileID: 0}
   weaponUpgradeStats:
     damage: 0
