@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: ManualWeaponAcquire
   m_EditorClassIdentifier: 
   upgradeType: 3
-  Name: ManualWeaponAqcuire
   icon: {fileID: 21300000, guid: 10143816d85917b44976cf992f6536eb, type: 3}
+  name: Elder Wand
   description: Manual Wand
+  quote: You're a wizard Harry
   weaponData: {fileID: 0}
   weaponUpgradeStats:
     damage: 0

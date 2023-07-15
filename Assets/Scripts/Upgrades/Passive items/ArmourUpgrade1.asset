@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: ArmourUpgrade1
   m_EditorClassIdentifier: 
   upgradeType: 1
-  Name: Armour Upgrade 1
   icon: {fileID: 21300000, guid: 698cf5cdccd716b4bba7a2e2edefcbc2, type: 3}
+  name: Stronger Amour
   description: Armour
+  quote: Imbude with blood it grows stronger
   weaponData: {fileID: 0}
   weaponUpgradeStats:
     damage: 0
