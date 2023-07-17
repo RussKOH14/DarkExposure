@@ -15,7 +15,11 @@ public class EnemyManager : MonoBehaviour
     public bool spawningHarderEnemies=false;
     public float longerDelay = 2f;
 
-    [Header("")]
+    [Header("DonCheedle")]
+    [SerializeField] GameObject donCheedle;
+    [SerializeField] int numberOfDonCheedle = 01;
+    public bool spawningDonCheedle = false;
+    public float delayForCheedle = 3f;
 
     [Header("Other stats")]
     [SerializeField] Vector2 spawnArea;
@@ -48,6 +52,12 @@ public class EnemyManager : MonoBehaviour
         {
             SpawnHarderEnemy();
             spawningHarderEnemies = true;
+        }
+        
+        if (delay <= 0.5 && !spawningDonCheedle)
+        {
+            SpawnDonCheedle();
+            spawningDonCheedle = true;
         }
        
     }
@@ -86,6 +96,24 @@ public class EnemyManager : MonoBehaviour
 
         }
         Invoke("SpawnHarderEnemy", longerDelay);
+    }
+    
+    public void SpawnDonCheedle()
+    {
+        Vector3 position = GenerateRandomPosition();
+
+        position += player.transform.position;
+
+        for (int i = 0; i < numberOfDonCheedle; i++) 
+        {
+            GameObject donCheedle = Instantiate(this.donCheedle);
+            donCheedle.transform.position = position;
+            donCheedle.GetComponent<Enemy>().SetTarget(player);
+            donCheedle.transform.parent = transform;
+            
+
+        }
+        Invoke("SpawnDonCheedle", delayForCheedle);
     }
 
     private Vector3 GenerateRandomPosition()
