@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: DataContainer
   m_EditorClassIdentifier: 
   addedHealth: 0
-  coins: 0
+  addedDamage: 100
+  coins: 12

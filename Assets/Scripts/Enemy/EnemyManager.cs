@@ -4,20 +4,23 @@ using UnityEngine;
 
 public class EnemyManager : MonoBehaviour
 {
+    [Header("Knights")]
     [SerializeField] GameObject easiestEnemy;
     [SerializeField] int numberOfEasiestEnemy = 01;
-    
+    public float delay = 1f;
+
+    [Header("Fairies")]
     [SerializeField] GameObject harderEnemies;
     [SerializeField] int numberOfHarderEnemy = 01;
     public bool spawningHarderEnemies=false;
+    public float longerDelay = 2f;
 
+    [Header("")]
+
+    [Header("Other stats")]
     [SerializeField] Vector2 spawnArea;
     [SerializeField] float spawnTimer = 0f;
     [SerializeField] GameObject player;
-    public float delay = 1f;
-    public float longerDelay = 2f;
-
-
     public float decreaseInterval = 20f; 
     public float numberToDecrease = -0.1f;
     
