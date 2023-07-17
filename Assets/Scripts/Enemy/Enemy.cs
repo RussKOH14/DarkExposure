@@ -49,14 +49,14 @@ public class Enemy : MonoBehaviour
         // Calculate the direction to the target
         Vector3 direction = (targetDestination.position - transform.position).normalized;
 
-        // Flip the enemy sprite based on the target's position
-        if (direction.x < 0)
-            transform.localScale = new Vector3(-1, 1, 1);
-        else if (direction.x > 0)
-            transform.localScale = new Vector3(1, 1, 1);
+            // Flip the enemy sprite based on the target's position
+            if (direction.x < 0)
+                transform.localScale = new Vector3(-1, 1, 1);
+            else if (direction.x > 0)
+                transform.localScale = new Vector3(1, 1, 1);
 
-        // Move towards the target
-        rgdbd2d.velocity = direction * speed;
+            // Move towards the target
+            rgdbd2d.velocity = direction * speed;
         }
     }
 

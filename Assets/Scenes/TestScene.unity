@@ -6430,6 +6430,7 @@ MonoBehaviour:
   numberOfDonCheedle: 1
   spawningDonCheedle: 0
   delayForCheedle: 3
+  prefabSize: {x: 0.39688808, y: 0.31750253, z: 0.39688808}
   spawnArea: {x: 20, y: 20}
   spawnTimer: 0
   player: {fileID: 239059284}

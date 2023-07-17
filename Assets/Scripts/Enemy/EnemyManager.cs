@@ -20,6 +20,7 @@ public class EnemyManager : MonoBehaviour
     [SerializeField] int numberOfDonCheedle = 01;
     public bool spawningDonCheedle = false;
     public float delayForCheedle = 3f;
+    public Vector3 prefabSize;
 
     [Header("Other stats")]
     [SerializeField] Vector2 spawnArea;
@@ -107,10 +108,11 @@ public class EnemyManager : MonoBehaviour
         for (int i = 0; i < numberOfDonCheedle; i++) 
         {
             GameObject donCheedle = Instantiate(this.donCheedle);
+            donCheedle.transform.localScale = prefabSize;
             donCheedle.transform.position = position;
             donCheedle.GetComponent<Enemy>().SetTarget(player);
             donCheedle.transform.parent = transform;
-            
+
 
         }
         Invoke("SpawnDonCheedle", delayForCheedle);
