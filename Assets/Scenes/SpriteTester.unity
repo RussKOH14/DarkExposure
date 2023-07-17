@@ -1616,7 +1616,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   icon: {fileID: 859182974}
+  name: {fileID: 0}
   descriptionText: {fileID: 585838942}
+  quote: {fileID: 0}
 --- !u!114 &275794747
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3360,14 +3362,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   easiestEnemy: {fileID: 3194697080267242835, guid: 7e1784a03de6e59499a685f02e8ef45a, type: 3}
   numberOfEasiestEnemy: 1
+  delay: 1
   harderEnemies: {fileID: 3194697080267242835, guid: 654677f87910d9745bc17e90d71554b5, type: 3}
   numberOfHarderEnemy: 1
   spawningHarderEnemies: 0
+  longerDelay: 2
+  donCheedle: {fileID: 0}
+  numberOfDonCheedle: 1
+  spawningDonCheedle: 0
+  delayForCheedle: 3
+  prefabSize: {x: 0, y: 0, z: 0}
   spawnArea: {x: 20, y: 20}
   spawnTimer: 0
   player: {fileID: 1105825105}
-  delay: 1
-  longerDelay: 2
   decreaseInterval: 20
   numberToDecrease: -0.1
 --- !u!4 &507032073
@@ -4496,7 +4503,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   icon: {fileID: 1842988942}
+  name: {fileID: 0}
   descriptionText: {fileID: 1996289556}
+  quote: {fileID: 0}
 --- !u!114 &692515892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5535,7 +5544,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   icon: {fileID: 1672801763}
+  name: {fileID: 0}
   descriptionText: {fileID: 993263938}
+  quote: {fileID: 0}
 --- !u!114 &819424804
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6642,6 +6653,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1105825120}
+    - target: {fileID: 7879879257149289935, guid: 89aa53e6730c64a2fbccb4ecfb08b453, type: 3}
+      propertyPath: stoppingRadius
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7031298047574051545, guid: 89aa53e6730c64a2fbccb4ecfb08b453, type: 3}
     - {fileID: 2299687588721268804, guid: 89aa53e6730c64a2fbccb4ecfb08b453, type: 3}
