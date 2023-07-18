@@ -10,6 +10,7 @@ public class TypewriterEffect : MonoBehaviour
     private string currentText = "";
     private TMP_Text tmpText;
     private int currentLayer = 0;
+    private int charCounter = 0;
     public AudioClip typeSound;
     public AudioSource audioSource;
 
@@ -26,11 +27,21 @@ public class TypewriterEffect : MonoBehaviour
     {
         while (currentLayer < fullTexts.Length)
         {
-            for (int i = 0; i < fullTexts[currentLayer].Length; i++)
+            charCounter = 0;
+
+            while (charCounter < fullTexts[currentLayer].Length)
             {
-                currentText = fullTexts[currentLayer].Substring(0, i);
+                currentText = fullTexts[currentLayer].Substring(0, charCounter + 1);
                 tmpText.text = currentText;
-                audioSource.PlayOneShot(typeSound);
+
+                
+                if (charCounter % 2 == 0)
+                {
+                    audioSource.PlayOneShot(typeSound);
+                }
+
+                charCounter++;
+
                 yield return new WaitForSeconds(delay);
             }
             yield return new WaitForSeconds(3f);
