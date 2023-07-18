@@ -9,55 +9,45 @@ public class Dialogue : MonoBehaviour
     public string[] fullTexts;
     private string currentText = "";
     private TMP_Text tmpText;
-    private int currentLayer = -1; // Initialize with -1 to indicate no current layer
+    private int charCounter = 0;
     public AudioClip typeSound;
     public AudioSource audioSource;
-
-    private bool isTyping = false;
+    public float displayDuration = 10f;
 
     void Start()
     {
         tmpText = GetComponent<TMP_Text>();
         audioSource = gameObject.AddComponent<AudioSource>();
-        StartCoroutine(ShowText());
+        StartCoroutine(ShowRandomText());
     }
 
-    IEnumerator ShowText()
+    IEnumerator ShowRandomText()
     {
-        List<int> remainingLayers = new List<int>();
-        for (int i = 0; i < fullTexts.Length; i++)
-        {
-            remainingLayers.Add(i);
-        }
+        int randomIndex = Random.Range(0, fullTexts.Length); 
+        string currentLayerText = fullTexts[randomIndex];
+        charCounter = 0;
 
-        while (remainingLayers.Count > 0)
+        while (charCounter < currentLayerText.Length)
         {
-            isTyping = true;
-            int randomIndex = Random.Range(0, remainingLayers.Count);
-            currentLayer = remainingLayers[randomIndex];
-            remainingLayers.RemoveAt(randomIndex);
+            currentText = currentLayerText.Substring(0, charCounter + 1);
+            tmpText.text = currentText;
 
-            for (int i = 0; i < fullTexts[currentLayer].Length; i++)
+            if (charCounter % 2 == 0)
             {
-                currentText = fullTexts[currentLayer].Substring(0, i);
-                tmpText.text = currentText;
                 audioSource.PlayOneShot(typeSound);
-                yield return new WaitForSeconds(delay);
             }
 
-            isTyping = false;
-            yield return new WaitUntil(() => isTyping); // Wait until user interaction or event triggers the next text
-            currentText = "";
-            tmpText.text = currentText;
+            charCounter++;
+
+            yield return new WaitForSeconds(delay);
         }
 
-        currentLayer = -1; // Reset current layer after all texts have been shown
-    }
+        yield return new WaitForSeconds(displayDuration);
 
-    // Call this method to progress to the next text
-    public void NextText()
-    {
-        if (!isTyping)
-            isTyping = true;
+        
+        currentText = "";
+        tmpText.text = currentText;
     }
 }
+
+
