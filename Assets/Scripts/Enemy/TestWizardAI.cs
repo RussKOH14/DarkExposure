@@ -7,7 +7,7 @@ public class TestWizardAI : MonoBehaviour
     public Transform player;
     public float movementSpeed = 3f;
     public float stoppingRadius = 2f;
-    public GameObject lightningEffect;
+    public GameObject lightningStrikePrefab;
 
     private Rigidbody2D rb;
     private Animator animator;
@@ -60,19 +60,6 @@ public class TestWizardAI : MonoBehaviour
         {
             rb.velocity = Vector2.zero;
         }
-
-        // Enable lightning effect and start coroutine to disable it after a delay
-        if (isAttacking && !animator.GetCurrentAnimatorStateInfo(0).IsName("LightningAttack"))
-        {
-            lightningEffect.SetActive(true);
-            StartCoroutine(DisableLightningEffect());
-        }
-    }
-
-    private IEnumerator DisableLightningEffect()
-    {
-        yield return new WaitForSeconds(3f);
-        lightningEffect.SetActive(false);
     }
 
     private void Flip()
@@ -85,5 +72,28 @@ public class TestWizardAI : MonoBehaviour
     private void ResetIsAttacking()
     {
         animator.ResetTrigger(IsAttackingHash);
+    }
+
+    // Called by an animation event to perform the lightning attack
+    private void PerformLightningAttack()
+    {
+        Debug.Log("Performing lightning attack!");
+
+        // Instantiate the lightning strike prefab at the player's position
+        Instantiate(lightningStrikePrefab, player.position, Quaternion.identity);
+
+        StartCoroutine(LightningStrike());
+    }
+
+    private IEnumerator LightningStrike()
+    {
+        // Wait for a brief moment
+        yield return new WaitForSeconds(0.2f);
+
+        // Do whatever damage or effects you want to apply to the player here
+        // For example: player.TakeDamage(damageAmount);
+
+        // Reset the isAttacking flag so the wizard can attack again if the player is still in range
+        isAttacking = false;
     }
 }
