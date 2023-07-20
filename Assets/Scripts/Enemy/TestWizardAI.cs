@@ -80,9 +80,12 @@ public class TestWizardAI : MonoBehaviour
         Debug.Log("Performing lightning attack!");
 
         // Instantiate the lightning strike prefab at the player's position
-        Instantiate(lightningStrikePrefab, player.position, Quaternion.identity);
+        GameObject lightningStrike = Instantiate(lightningStrikePrefab, player.position, Quaternion.identity);
 
         StartCoroutine(LightningStrike());
+
+        // Set AttackFinished to true after the attack is done
+        animator.SetBool("AttackFinished", true);
     }
 
     private IEnumerator LightningStrike()
