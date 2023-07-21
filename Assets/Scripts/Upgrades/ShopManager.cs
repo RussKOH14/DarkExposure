@@ -13,6 +13,7 @@ public class ShopManager : MonoBehaviour
     private void Awake()
     {
         PlayerPrefs.SetInt("coinsAquired", dataContainer.coins);
+        PlayerPrefs.Save();
         int coinsAquired = PlayerPrefs.GetInt("coinsAquired");
         coins.text = coinsAquired.ToString();
 
@@ -21,6 +22,8 @@ public class ShopManager : MonoBehaviour
     }
     private void Update()
     {
+        PlayerPrefs.SetInt("coinsAquired", dataContainer.coins);
+        PlayerPrefs.Save();
         int coinsAquired = PlayerPrefs.GetInt("coinsAquired");
         coins.text = coinsAquired.ToString(); 
     }

@@ -9,13 +9,14 @@ public class Coins : MonoBehaviour
 
     private void Awake()
     {
-        PlayerPrefs.SetInt("coinsAquired", dataContainer.coins);
         int coinsAquired = PlayerPrefs.GetInt("coinsAquired");
         coinsCountText.text = coinsAquired.ToString();
         
     }
     private void Update()
     {
+        PlayerPrefs.SetInt("coinsAquired", dataContainer.coins);
+        PlayerPrefs.Save();
         int coinsAquired = PlayerPrefs.GetInt("coinsAquired");
         coinsCountText.text = coinsAquired.ToString();
         if (dataContainer.coins < 0)
