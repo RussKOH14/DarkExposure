@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7e13f0c21d8292479ced41b66af8a2d, type: 3}
   m_Name: DataContainer
   m_EditorClassIdentifier: 
-  addedHealth: 100
-  addedDamage: 100
-  coins: 4
+  addedHealth: 0
+  addedDamage: 0
+  coins: 0

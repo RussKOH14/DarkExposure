@@ -10,9 +10,9 @@ public class ShopManager : MonoBehaviour
     public int healthCost;
     public int damageCost;
     
-
     private void Awake()
     {
+        PlayerPrefs.SetInt("coinsAquired", dataContainer.coins);
         int coinsAquired = PlayerPrefs.GetInt("coinsAquired");
         coins.text = coinsAquired.ToString();
 
@@ -27,7 +27,6 @@ public class ShopManager : MonoBehaviour
 
     public void Health()
     {
-       
         if (dataContainer.coins >= healthCost)
         {
             int coinsAquired = PlayerPrefs.GetInt("coinsAquired");
