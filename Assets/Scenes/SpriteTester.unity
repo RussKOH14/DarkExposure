@@ -2147,6 +2147,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1105825120}
     - target: {fileID: 5782819740106894258, guid: 1d13d35ed095b3646bcd9414dbc005a6, type: 3}
+      propertyPath: bufferRadius
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5782819740106894258, guid: 1d13d35ed095b3646bcd9414dbc005a6, type: 3}
       propertyPath: lightningStrikePrefab
       value: 
       objectReference: {fileID: 8271606160431465291, guid: 52c5f828e8a8f4923b9cf56bdc47265a, type: 3}

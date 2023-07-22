@@ -79,13 +79,19 @@ public class TestWizardAI : MonoBehaviour
     {
         Debug.Log("Performing lightning attack!");
 
+        // Determine if the lightning should visually flip horizontally randomly
+        bool shouldFlipHorizontally = Random.Range(0, 2) == 0;
+
         // Instantiate the lightning strike prefab at the player's position
-        GameObject lightningStrike = Instantiate(lightningStrikePrefab, player.position, Quaternion.identity);
+        GameObject lightning = Instantiate(lightningStrikePrefab, player.position, Quaternion.identity);
+
+        // Get the sprite renderer of the lightning prefab
+        SpriteRenderer lightningSpriteRenderer = lightning.GetComponent<SpriteRenderer>();
+
+        // Set the flipX property of the sprite renderer to visually flip the lightning
+        lightningSpriteRenderer.flipX = shouldFlipHorizontally;
 
         StartCoroutine(LightningStrike());
-
-        // Set AttackFinished to true after the attack is done
-        animator.SetBool("AttackFinished", true);
     }
 
     private IEnumerator LightningStrike()
