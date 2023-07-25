@@ -29,7 +29,6 @@ public class WorldScrolling : MonoBehaviour
 
     private void Update()
     {
-        float startTime = Time.realtimeSinceStartup;
         playerTilePosition.x = (int)(playerTransform.position.x / tileSize);
         playerTilePosition.y = (int)(playerTransform.position.y / tileSize);
 
@@ -47,8 +46,6 @@ public class WorldScrolling : MonoBehaviour
                         UpdateTilesOnScreen();
                     }, TaskScheduler.FromCurrentSynchronizationContext());
             }, TaskScheduler.FromCurrentSynchronizationContext());
-
-        Debug.Log(((Time.realtimeSinceStartup - startTime) * 1000f) + "ms");
     }
 
     private async Task<int> CalculatePositionOnAxisAsync(float currentValue, bool horizontal)
