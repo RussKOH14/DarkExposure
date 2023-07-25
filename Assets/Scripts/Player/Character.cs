@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Unity.Jobs;
 
 public class Character : MonoBehaviour
 {
@@ -47,6 +48,9 @@ public class Character : MonoBehaviour
     private void Start()
     {
         UpdateHpBar();
+
+        JobHandle jobHandle =  UpdateHpBarTaskJob();
+        jobHandle.Complete();
     }
 
     private void Update()
@@ -97,6 +101,12 @@ public class Character : MonoBehaviour
         hpBar.SetState(currentHp, currentMaxHp);
     }
 
+    private JobHandle UpdateHpBarTaskJob()
+    {
+        UpdateHpBarJob job = new UpdateHpBarJob();
+        return job.Schedule();
+    }
+
     private void UpdateHealthText()
     {
         int addedHealth = PlayerPrefs.GetInt("addedHealth");
@@ -114,5 +124,21 @@ public class Character : MonoBehaviour
         {
             currentHp = maxHp + armour+addedHealth;
         }
+    }
+}
+
+public struct UpdateHpBarJob : IJob
+{
+    public int maxHp;
+    public int currentHp;
+
+    public int armour;
+
+    [SerializeField] StatusBar hpBar;
+    public void Execute()
+    {
+        int addedHealth = PlayerPrefs.GetInt("addedHealth");
+        int currentMaxHp = maxHp + armour + addedHealth; // Calculate current max HP with added armor
+        hpBar.SetState(currentHp, currentMaxHp);
     }
 }
