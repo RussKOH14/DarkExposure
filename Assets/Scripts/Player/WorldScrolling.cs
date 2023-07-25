@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Threading.Tasks;
 
 public class WorldScrolling : MonoBehaviour
 {
@@ -22,6 +21,7 @@ public class WorldScrolling : MonoBehaviour
     {
         terrainTiles = new GameObject[terrainTileHorizontalCount, terrainTileVerticalCount];
     }
+
     private void Start()
     {
         UpdateTilesOnScreen();
@@ -29,31 +29,14 @@ public class WorldScrolling : MonoBehaviour
 
     private void Update()
     {
-        playerTilePosition.x = (int)(playerTransform.position.x / tileSize);
+        playerTilePosition.x = (int) (playerTransform.position.x / tileSize);
         playerTilePosition.y = (int)(playerTransform.position.y / tileSize);
 
         playerTilePosition.x -= playerTransform.position.x < 0 ? 1 : 0;
         playerTilePosition.y -= playerTransform.position.y < 0 ? 1 : 0;
+        UpdateTilesOnScreen();
 
-        Task.Run(() => CalculatePositionOnAxisAsync(onTileGridPlayerPosition.x, true))
-            .ContinueWith(taskX =>
-            {
-                onTileGridPlayerPosition.x = taskX.Result;
-                Task.Run(() => CalculatePositionOnAxisAsync(onTileGridPlayerPosition.y, false))
-                    .ContinueWith(taskY =>
-                    {
-                        onTileGridPlayerPosition.y = taskY.Result;
-                        UpdateTilesOnScreen();
-                    }, TaskScheduler.FromCurrentSynchronizationContext());
-            }, TaskScheduler.FromCurrentSynchronizationContext());
     }
-
-    private async Task<int> CalculatePositionOnAxisAsync(float currentValue, bool horizontal)
-    {
-        int result = await Task.Run(() => CalculatePositionOnAxis(currentValue, horizontal));
-        return result;
-    }
-
 
     private void UpdateTilesOnScreen()
     {
