@@ -122,6 +122,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skullPrefab: {fileID: 0}
   skullCenter: {fileID: 0}
+  upgradeLevel: 0
 --- !u!114 &-3675479332633071973
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,4 +136,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
-  damage: 300
+  damage: 100
