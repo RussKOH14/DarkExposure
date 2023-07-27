@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8270244116914044918}
   - component: {fileID: -4663217935425291258}
   - component: {fileID: 8553267603001068664}
+  - component: {fileID: -3675479332633071973}
   m_Layer: 0
   m_Name: SpinSkull
   m_TagString: Destroy
@@ -121,3 +122,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skullPrefab: {fileID: 0}
   upgradeKey: 13
+  skullCenter: {fileID: 0}
+--- !u!114 &-3675479332633071973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 982263205320046341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ba8fc6786004c84480da3d16d614e92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  damage: 300
