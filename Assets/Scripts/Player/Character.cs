@@ -31,7 +31,7 @@ public class Character : MonoBehaviour
     [Header("Skulls")]
     public float canUseSkulls = 0f;
     NewSkulls skullController;
-    public int skullCount;
+    public int skullCount = 0;
 
     [SerializeField] TextMeshProUGUI healthText;
     private void Awake()
@@ -41,7 +41,7 @@ public class Character : MonoBehaviour
         magnet = FindObjectOfType<Magnet>();
         skullController = FindObjectOfType<NewSkulls>();
         skullCount += skullController.upgradeLevel;
-        
+
     }
 
     private void Start()
@@ -51,6 +51,7 @@ public class Character : MonoBehaviour
 
     private void Update()
     {
+        
         magnet.magnetCollider.radius += colliderSize;
         hpRegenerationTimer += Time.deltaTime * hpRegenerationRate;
 

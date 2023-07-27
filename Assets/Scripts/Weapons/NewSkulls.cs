@@ -32,25 +32,35 @@ public class NewSkulls : MonoBehaviour
 
         // Start the coroutine for continuous cycle of disappearing and reappearing skulls
         continuousCycleCoroutine = StartCoroutine(ContinuousCycle());
+        if (character.canUseSkulls == 0f)
+        {
+            foreach (GameObject skull in skulls)
+            {
+                if (skull != null)
+                    skull.SetActive(false);
+            }
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        upgradeLevel = character.skullCount;
 
         // Check for the upgrade key press
         if (character.canUseSkulls >= 1f)
         {
             // Increment the upgrade level and ensure it stays within the limits
             upgradeLevel = (upgradeLevel + 1) % (MaxUpgrades + 1);
-            character.skullCount += upgradeLevel;
+            
             // Handle the upgrade and rotation behavior
             HandleUpgrade();
+            upgradeLevel = 1;
 
             // Reset the canUseSkulls value
             character.canUseSkulls = 0f;
         }
+        
 
         RotateSkullsAroundPlayer();
     }
@@ -87,9 +97,12 @@ public class NewSkulls : MonoBehaviour
         // Activate skulls based on the upgrade level
         for (int i = 0; i < upgradeLevel; i++)
         {
-            float angle = 360f / upgradeLevel * i;
-            Vector3 spawnPosition = skullCenter.position + Quaternion.Euler(0f, 0f, angle) * (Vector3.right * 10f);
-            skulls[i] = Instantiate(skullPrefab, spawnPosition, Quaternion.identity);
+            if (skulls[i] == null)
+            {
+                float angle = 360f / upgradeLevel * i;
+                Vector3 spawnPosition = skullCenter.position + Quaternion.Euler(0f, 0f, angle) * (Vector3.right * 10f);
+                skulls[i] = Instantiate(skullPrefab, spawnPosition, Quaternion.identity);
+            }
         }
 
         // Start the rotation for the active skulls

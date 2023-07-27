@@ -28,4 +28,4 @@ MonoBehaviour:
     magnetRadiusAddition: 0
     canUseManualWeapon: 0
     canUseSkulls: 0
-    skullCount: 2
+    skullCount: 1
