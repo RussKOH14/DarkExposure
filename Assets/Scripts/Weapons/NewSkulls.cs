@@ -3,11 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class NewSkulls : MonoBehaviour
-
 {
     public GameObject skullPrefab; // Prefab of the skull sprite
-    public KeyCode upgradeKey = KeyCode.Return; // Key to trigger upgrades
-
     public Transform skullCenter; // The reference transform for the center of the skulls
 
     private GameObject[] skulls; // Array to store skull instances
@@ -20,30 +17,39 @@ public class NewSkulls : MonoBehaviour
     private readonly float[] reappearTimes = { 5f, 4f, 3f, 2f };
     private readonly float[] rotationSpeeds = { 50f, 70f, 120f, 180f }; // Updated as per your request
 
+    Character character;
+    private Coroutine continuousCycleCoroutine;
+
     // Start is called before the first frame update
     void Start()
     {
         // Initialize the array to store the skulls
         skulls = new GameObject[MaxUpgrades];
+        character = GetComponent<Character>();
 
-        // Call the HandleUpgrade() function to activate the skulls immediately
+        // Call the HandleUpgrade() function to activate the initial upgrade level skulls
         HandleUpgrade();
+
+        // Start the coroutine for continuous cycle of disappearing and reappearing skulls
+        continuousCycleCoroutine = StartCoroutine(ContinuousCycle());
     }
 
     // Update is called once per frame
     void Update()
     {
         // Check for the upgrade key press
-        if (Input.GetKeyDown(upgradeKey))
+        if (character.canUseSkulls >= 1f)
         {
             // Increment the upgrade level and ensure it stays within the limits
             upgradeLevel = (upgradeLevel + 1) % (MaxUpgrades + 1);
 
-            // Otherwise, handle the upgrade and rotation behavior
+            // Handle the upgrade and rotation behavior
             HandleUpgrade();
+
+            // Reset the canUseSkulls value
+            character.canUseSkulls = 0f;
         }
 
-        // Rotate the active skulls around the player
         RotateSkullsAroundPlayer();
     }
 
@@ -90,41 +96,34 @@ public class NewSkulls : MonoBehaviour
             if (skull != null)
                 skull.SetActive(true);
         }
-
-        // If it's not the final level, start the coroutine for disappear and reappear
-        if (upgradeLevel != MaxUpgrades)
-        {
-            StartCoroutine(DisappearAndReappearSkulls());
-        }
     }
 
-    // Coroutine to make skulls disappear and then reappear
-    private System.Collections.IEnumerator DisappearAndReappearSkulls()
+    // Coroutine for continuous cycle of disappearing and reappearing skulls
+    private IEnumerator ContinuousCycle()
     {
-        // Wait for the rotation duration
-        yield return new WaitForSeconds(rotationDurations[upgradeLevel - 1]);
-
-        // Hide the active skulls after the rotation duration
-        foreach (GameObject skull in skulls)
+        while (true) // Loop the cycle continuously
         {
-            if (skull != null)
-                skull.SetActive(false);
-        }
+            // Wait for the rotation duration
+            float rotationDuration = rotationDurations[Mathf.Min(upgradeLevel, MaxUpgrades - 1)];
+            yield return new WaitForSeconds(rotationDuration);
 
-        // Wait for the reappear time
-        yield return new WaitForSeconds(reappearTimes[upgradeLevel - 1]);
+            // Hide the active skulls after the rotation duration
+            foreach (GameObject skull in skulls)
+            {
+                if (skull != null)
+                    skull.SetActive(false);
+            }
 
-        // Reappear the skulls after the reappear time
-        foreach (GameObject skull in skulls)
-        {
-            if (skull != null)
-                skull.SetActive(true);
-        }
+            // Wait for the reappear time
+            float reappearTime = reappearTimes[Mathf.Min(upgradeLevel, MaxUpgrades - 1)];
+            yield return new WaitForSecondsRealtime(reappearTime);
 
-        // If it's not the final level, start the coroutine again
-        if (upgradeLevel != MaxUpgrades)
-        {
-            StartCoroutine(DisappearAndReappearSkulls());
+            // Reappear the skulls after the reappear time
+            foreach (GameObject skull in skulls)
+            {
+                if (skull != null)
+                    skull.SetActive(true);
+            }
         }
     }
 }

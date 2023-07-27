@@ -53,7 +53,11 @@ public class knifeProjectile : MonoBehaviour
         timeToLeave -= Time.deltaTime;
         if (timeToLeave < 0f)
         {
-            Destroy(gameObject);
+            if(gameObject.name != "SpinSkull(Clone)")
+            {
+                Destroy(gameObject);
+
+            }
         }
     }
 

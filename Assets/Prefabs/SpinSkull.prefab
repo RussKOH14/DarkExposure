@@ -121,7 +121,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skullPrefab: {fileID: 0}
-  upgradeKey: 13
   skullCenter: {fileID: 0}
 --- !u!114 &-3675479332633071973
 MonoBehaviour:
