@@ -30,7 +30,7 @@ public class Character : MonoBehaviour
 
     [Header("Skulls")]
     public float canUseSkulls = 0f;
-    SkullController skullController;
+    NewSkulls skullController;
     public int skullCount;
 
     [SerializeField] TextMeshProUGUI healthText;
@@ -39,8 +39,8 @@ public class Character : MonoBehaviour
         level = GetComponent<Level>();
         coins = GetComponent<Coins>();
         magnet = FindObjectOfType<Magnet>();
-        skullController = FindObjectOfType<SkullController>();
-        skullCount = skullController.skullCount;
+        skullController = FindObjectOfType<NewSkulls>();
+        skullCount += skullController.upgradeLevel;
         
     }
 

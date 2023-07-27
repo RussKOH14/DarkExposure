@@ -46,7 +46,10 @@ public class knifeProjectile : MonoBehaviour
             }
             if (hitDetected == true)
             {
-                Destroy(gameObject);
+                if (gameObject.name != "SpinSkull(Clone)")
+                {
+                    Destroy(gameObject);
+                }
             }
         }
 

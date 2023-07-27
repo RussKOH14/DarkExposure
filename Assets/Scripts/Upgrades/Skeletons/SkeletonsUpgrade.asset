@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fd6575cbe46d3a47a9988d41211cde8, type: 3}
   m_Name: SkeletonsUpgrade
   m_EditorClassIdentifier: 
-  upgradeType: 3
+  upgradeType: 1
   icon: {fileID: 21300000, guid: e0449d10082c4a64e863e37ada7a3df1, type: 3}
   name: EVEN MORE SKULLS
   description: Upgrade Skeletons
@@ -28,4 +28,4 @@ MonoBehaviour:
     magnetRadiusAddition: 0
     canUseManualWeapon: 0
     canUseSkulls: 0
-    skullCount: 5
+    skullCount: 2

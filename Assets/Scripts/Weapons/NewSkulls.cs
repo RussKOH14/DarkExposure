@@ -8,7 +8,7 @@ public class NewSkulls : MonoBehaviour
     public Transform skullCenter; // The reference transform for the center of the skulls
 
     private GameObject[] skulls; // Array to store skull instances
-    private int upgradeLevel = 0; // Current upgrade level
+    public int upgradeLevel = 0; // Current upgrade level
 
     private const int MaxUpgrades = 4; // Total number of upgrades
 
@@ -37,12 +37,14 @@ public class NewSkulls : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+
         // Check for the upgrade key press
         if (character.canUseSkulls >= 1f)
         {
             // Increment the upgrade level and ensure it stays within the limits
             upgradeLevel = (upgradeLevel + 1) % (MaxUpgrades + 1);
-
+            character.skullCount += upgradeLevel;
             // Handle the upgrade and rotation behavior
             HandleUpgrade();
 
