@@ -17,10 +17,13 @@ public class PlayerMovement : MonoBehaviour
 
     public Animator animator;
 
+    public SpriteRenderer spriteRenderer;
+
     private void Awake()
     {
         rgbd2d = GetComponent<Rigidbody2D>();
         movementVector = new Vector3();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void Start()
@@ -42,6 +45,14 @@ public class PlayerMovement : MonoBehaviour
         if (movementVector.x != 0)
         {
             lastHorizontalVector = movementVector.x;
+            if(lastHorizontalVector <= -1)
+            {
+                spriteRenderer.flipX = true;
+            }
+            else if(lastHorizontalVector >= 1)
+            {
+                spriteRenderer.flipX = false;
+            }
         }
         if(movementVector.y != 0)
         {
