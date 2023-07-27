@@ -14,10 +14,11 @@ public class TypewriterEffect : MonoBehaviour
     public AudioClip typeSound;
     public AudioSource audioSource;
 
+   
 
     void Start()
     {
-
+        
         tmpText = GetComponent<TMP_Text>();
         StartCoroutine(ShowText());
         audioSource = gameObject.AddComponent<AudioSource>();
