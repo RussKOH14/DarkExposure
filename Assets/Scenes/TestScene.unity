@@ -6414,17 +6414,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fd9319eeca135e41a215e8f38cd18dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  easiestEnemy: {fileID: 3194697080267242835, guid: 7e1784a03de6e59499a685f02e8ef45a, type: 3}
+  easiestEnemy: {fileID: 249606059069767524, guid: 5f1e94abf86a88940af8635cbcd3496b, type: 3}
   numberOfEasiestEnemy: 1
   delay: 1
-  harderEnemies: {fileID: 3194697080267242835, guid: 654677f87910d9745bc17e90d71554b5, type: 3}
-  numberOfHarderEnemy: 1
+  harderEnemies: {fileID: 3194697080267242835, guid: 7e1784a03de6e59499a685f02e8ef45a, type: 3}
+  numberOfHarderEnemy: 3
   spawningHarderEnemies: 0
-  longerDelay: 2
-  donCheedle: {fileID: 3194697080267242835, guid: aa4f62c855a8f97409ca4feffd81bc7f, type: 3}
-  numberOfDonCheedle: 1
+  longerDelay: 1
+  donCheedle: {fileID: 3194697080267242835, guid: 654677f87910d9745bc17e90d71554b5, type: 3}
+  numberOfDonCheedle: 3
   spawningDonCheedle: 0
-  delayForCheedle: 50
+  delayForCheedle: 2
   prefabSize: {x: 0.39688808, y: 0.31750253, z: 0.39688808}
   spawnArea: {x: 20, y: 20}
   spawnTimer: 0

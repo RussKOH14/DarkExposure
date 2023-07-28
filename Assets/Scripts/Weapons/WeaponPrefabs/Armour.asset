@@ -14,7 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Armour
   stats:
-    armour: 10
+    armour: 50
+    magnetRadiusAddition: 0
+    canUseManualWeapon: 0
+    canUseSkulls: 0
+    skullCount: 0
   upgrades:
   - {fileID: 11400000, guid: ebc889e3da7190647aac570b19f7e46e, type: 2}
   - {fileID: 11400000, guid: ebc889e3da7190647aac570b19f7e46e, type: 2}
