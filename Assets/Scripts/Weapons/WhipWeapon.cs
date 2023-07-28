@@ -9,6 +9,9 @@ public class WhipWeapon : WeaponBase
 
     PlayerMovement playerMovement;
     [SerializeField] Vector2 attackSize = new Vector2(4f, 2f);
+    private Color originalColour;
+
+    
 
     private void Awake()
     {
@@ -24,7 +27,7 @@ public class WhipWeapon : WeaponBase
             {
                 int addedDamage = PlayerPrefs.GetInt("addedDamage");
                 PostDamage(weaponStats.damage + addedDamage, colliders[i].transform.position);
-                e.TakeDamage(weaponStats.damage + addedDamage);            
+                e.TakeDamage(weaponStats.damage + addedDamage);
             }
         }
     }
@@ -33,6 +36,8 @@ public class WhipWeapon : WeaponBase
     {
         StartCoroutine(AttackProcess());
     }
+
+ 
 
     IEnumerator AttackProcess()
     {

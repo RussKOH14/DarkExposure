@@ -24,10 +24,16 @@ public class Enemy : MonoBehaviour
 
     EnemyKilledScore enemyKilledScore;
 
+    private SpriteRenderer spriteRenderer;
+    private Color originalColor;
+
     private void Awake()
     {
         rgdbd2d = GetComponent<Rigidbody2D>();
         enemyKilledScore = FindObjectOfType<EnemyKilledScore>();
+
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        originalColor = spriteRenderer.color;
     }
     private void Start()
     {
@@ -66,6 +72,7 @@ public class Enemy : MonoBehaviour
         if (collision.gameObject.name.Equals("Character"))
         {
             Attack();
+
         }
     }
 
@@ -86,6 +93,8 @@ public class Enemy : MonoBehaviour
         // Apply knockback force
         Vector3 knockbackDirection = (transform.position - targetGameObject.transform.position).normalized;
         transform.position += knockbackDirection * 0.9f;
+
+        StartCoroutine(FlashWhite());
 
 
         if (hp < 1)
@@ -123,4 +132,14 @@ public class Enemy : MonoBehaviour
             
         }
     }
+    private IEnumerator FlashWhite()
+    {
+        Debug.Log("coroutine called");
+        spriteRenderer.color = Color.red;
+
+        yield return new WaitForSeconds(0.2f);
+
+        spriteRenderer.color = originalColor;
+    }
 }
+
