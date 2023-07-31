@@ -3,7 +3,8 @@ using TMPro;
 
 public class ShopManager : MonoBehaviour
 {
-    [SerializeField] TMPro.TextMeshProUGUI coinsText;
+    public DataContainer dataContainer;
+    [SerializeField] TextMeshProUGUI coinsText;
     public int healthCost;
     public int damageCost;
 
@@ -39,6 +40,15 @@ public class ShopManager : MonoBehaviour
     private void UpdateCoinsText()
     {
         coinsText.text = ShopGameManager.Instance.dataContainer.coins.ToString();
+    }
+
+    public void Reset()
+    {
+        ShopGameManager.Instance.dataContainer.coins = 0;
+        ShopGameManager.Instance.dataContainer.addedHealth = 0;
+        ShopGameManager.Instance.dataContainer.addedDamage = 0;
+        SaveData();
+        UpdateCoinsText();
     }
 
 
