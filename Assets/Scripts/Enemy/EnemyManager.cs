@@ -4,22 +4,22 @@ using UnityEngine;
 
 public class EnemyManager : MonoBehaviour
 {
-    [Header("Knights")]
-    [SerializeField] GameObject easiestEnemy;
-    [SerializeField] int numberOfEasiestEnemy = 01;
+    [Header("Golem")]
+    [SerializeField] GameObject golem;
+    [SerializeField] int numberOfGolem = 01;
     public float delay = 1f;
 
-    [Header("Fairies")]
-    [SerializeField] GameObject harderEnemies;
-    [SerializeField] int numberOfHarderEnemy = 01;
-    public bool spawningHarderEnemies=false;
+    [Header("Knight")]
+    [SerializeField] GameObject knight;
+    [SerializeField] int numberOfKnights = 01;
+    public bool spawningKnights=false;
     public float longerDelay = 2f;
 
-    [Header("DonCheedle")]
-    [SerializeField] GameObject donCheedle;
-    [SerializeField] int numberOfDonCheedle = 01;
-    public bool spawningDonCheedle = false;
-    public float delayForCheedle = 3f;
+    [Header("Fairies")]
+    [SerializeField] GameObject Fairies;
+    [SerializeField] int numberOfFairies = 01;
+    public bool spawningFairies = false;
+    public float delayForFairies = 3f;
     public Vector3 prefabSize;
 
     [Header("Other stats")]
@@ -49,16 +49,16 @@ public class EnemyManager : MonoBehaviour
                 spawnTimer -= decreaseInterval * (int)(spawnTimer / decreaseInterval);
             }
         }
-        if (delay <= 0.8 && !spawningHarderEnemies)
+        if (delay <= 0.8 && !spawningKnights)
         {
             SpawnHarderEnemy();
-            spawningHarderEnemies = true;
+            spawningKnights = true;
         }
         
-        if (delay <= 0.5 && !spawningDonCheedle)
+        if (delay <= 0.5 && !spawningFairies)
         {
             SpawnDonCheedle();
-            spawningDonCheedle = true;
+            spawningFairies = true;
         }
        
     }
@@ -70,9 +70,9 @@ public class EnemyManager : MonoBehaviour
 
         position += player.transform.position;
 
-        for (int i = 0; i < numberOfEasiestEnemy; i++) 
+        for (int i = 0; i < numberOfGolem; i++) 
         {
-            GameObject easiestEnemy = Instantiate(this.easiestEnemy);
+            GameObject easiestEnemy = Instantiate(this.golem);
             easiestEnemy.transform.position = position;
             easiestEnemy.GetComponent<Enemy>().SetTarget(player);
             easiestEnemy.transform.parent = transform;
@@ -87,9 +87,9 @@ public class EnemyManager : MonoBehaviour
 
         position += player.transform.position;
 
-        for (int i = 0; i < numberOfHarderEnemy; i++) 
+        for (int i = 0; i < numberOfKnights; i++) 
         {
-            GameObject harderEnemies = Instantiate(this.harderEnemies);
+            GameObject harderEnemies = Instantiate(this.knight);
             harderEnemies.transform.position = position;
             harderEnemies.GetComponent<Enemy>().SetTarget(player);
             harderEnemies.transform.parent = transform;
@@ -105,9 +105,9 @@ public class EnemyManager : MonoBehaviour
 
         position += player.transform.position;
 
-        for (int i = 0; i < numberOfDonCheedle; i++) 
+        for (int i = 0; i < numberOfFairies; i++) 
         {
-            GameObject donCheedle = Instantiate(this.donCheedle);
+            GameObject donCheedle = Instantiate(this.Fairies);
             donCheedle.transform.localScale = prefabSize;
             donCheedle.transform.position = position;
             donCheedle.GetComponent<Enemy>().SetTarget(player);
@@ -115,7 +115,7 @@ public class EnemyManager : MonoBehaviour
 
 
         }
-        Invoke("SpawnDonCheedle", delayForCheedle);
+        Invoke("SpawnDonCheedle", delayForFairies);
     }
 
     private Vector3 GenerateRandomPosition()
