@@ -36,6 +36,7 @@ public class Character : MonoBehaviour
     [SerializeField] TextMeshProUGUI healthText;
     private void Awake()
     {
+        
         level = GetComponent<Level>();
         coins = GetComponent<Coins>();
         magnet = FindObjectOfType<Magnet>();
@@ -93,27 +94,26 @@ public class Character : MonoBehaviour
 
     private void UpdateHpBar()
     {
-        int addedHealth = PlayerPrefs.GetInt("addedHealth");
-        int currentMaxHp = maxHp + armour +addedHealth; // Calculate current max HP with added armor
+       
+        int currentMaxHp = maxHp + armour + ShopGameManager.Instance.dataContainer.addedHealth;
         hpBar.SetState(currentHp, currentMaxHp);
     }
 
     private void UpdateHealthText()
     {
-        int addedHealth = PlayerPrefs.GetInt("addedHealth");
-        string formattedText = $"{currentHp} / {maxHp + armour +addedHealth}";
+        
+        string formattedText = $"{currentHp} / {maxHp + armour + ShopGameManager.Instance.dataContainer.addedHealth}";
         healthText.text = formattedText;
     }
 
     public void Heal(int amount)
     {
-        int addedHealth = PlayerPrefs.GetInt("addedHealth");
         if (currentHp <= 0) { return; }
 
         currentHp += amount;
-        if (currentHp > maxHp + armour +addedHealth)
+        if (currentHp > maxHp + armour + ShopGameManager.Instance.dataContainer.addedHealth)
         {
-            currentHp = maxHp + armour+addedHealth;
+            currentHp = maxHp + armour + ShopGameManager.Instance.dataContainer.addedHealth;
         }
     }
 }

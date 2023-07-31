@@ -9,7 +9,7 @@ public class WhipWeapon : WeaponBase
 
     PlayerMovement playerMovement;
     [SerializeField] Vector2 attackSize = new Vector2(4f, 2f);
-    private Color originalColour;
+
 
     
 
@@ -24,10 +24,9 @@ public class WhipWeapon : WeaponBase
         {
             Enemy e = colliders[i].GetComponent<Enemy>();
             if(e != null)
-            {
-                int addedDamage = PlayerPrefs.GetInt("addedDamage");
-                PostDamage(weaponStats.damage + addedDamage, colliders[i].transform.position);
-                e.TakeDamage(weaponStats.damage + addedDamage);
+            { 
+                PostDamage(weaponStats.damage + ShopGameManager.Instance.dataContainer.addedDamage, colliders[i].transform.position);
+                e.TakeDamage(weaponStats.damage + ShopGameManager.Instance.dataContainer.addedDamage);
             }
         }
     }
