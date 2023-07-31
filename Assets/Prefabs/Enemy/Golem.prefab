@@ -168,7 +168,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dropItemPickup:
-  - {fileID: 5703790778436924279, guid: c5e2a7a450ebc0b41b9ae67c5d385e16, type: 3}
   - {fileID: 7849704173043387361, guid: c5af0d9544ef5084488e2ae16e5ae017, type: 3}
   chance: 1
 --- !u!114 &4169860051307987150
