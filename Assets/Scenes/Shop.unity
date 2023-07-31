@@ -406,6 +406,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8775906825d4d2c4f96691c8496235a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dataContainer: {fileID: 11400000, guid: 0da467fe86fe1104182c0ce055588267, type: 2}
   coinsText: {fileID: 1663882189}
   healthCost: 10
   damageCost: 20
