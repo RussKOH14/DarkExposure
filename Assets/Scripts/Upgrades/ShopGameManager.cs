@@ -33,6 +33,7 @@ public class ShopGameManager : MonoBehaviour
         dataContainer.coins = PlayerPrefs.GetInt("coinsAquired", dataContainer.coins);
         dataContainer.addedHealth = PlayerPrefs.GetInt("addedHealth", dataContainer.addedHealth);
         dataContainer.addedDamage = PlayerPrefs.GetInt("addedDamage", dataContainer.addedDamage);
+        dataContainer.speed = PlayerPrefs.GetInt("speed", dataContainer.speed);
     }
 
     public void SaveData()
@@ -40,6 +41,7 @@ public class ShopGameManager : MonoBehaviour
         PlayerPrefs.SetInt("coinsAquired", dataContainer.coins);
         PlayerPrefs.SetInt("addedHealth", dataContainer.addedHealth);
         PlayerPrefs.SetInt("addedDamage", dataContainer.addedDamage);
+        PlayerPrefs.SetInt("speed", dataContainer.speed);
         PlayerPrefs.Save();
     }
 }

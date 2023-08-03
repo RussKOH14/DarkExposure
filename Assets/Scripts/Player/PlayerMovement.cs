@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
     [HideInInspector]
     public float lastVerticalVector;
 
-    [SerializeField] float speed = 3f;
+    [SerializeField] int speed = 3;
 
     public Animator animator;
 
@@ -21,6 +21,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void Awake()
     {
+        int addedSpeed = PlayerPrefs.GetInt("speed");
+        speed = speed += addedSpeed;
+        PlayerPrefs.SetInt("originalSpeed", speed);
+        PlayerPrefs.Save();
         rgbd2d = GetComponent<Rigidbody2D>();
         movementVector = new Vector3();
         spriteRenderer = GetComponent<SpriteRenderer>();

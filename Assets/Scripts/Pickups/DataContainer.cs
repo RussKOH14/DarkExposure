@@ -9,4 +9,5 @@ public class DataContainer : ScriptableObject
     public int addedHealth;
     public int addedDamage;
     public int coins;
+    public int speed;
 }

@@ -7,6 +7,7 @@ public class ShopManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI coinsText;
     public int healthCost;
     public int damageCost;
+    public int speedCost;
 
     private void Awake()
     {
@@ -39,6 +40,19 @@ public class ShopManager : MonoBehaviour
         }
     }
 
+    public void Speed()
+    {
+        if (ShopGameManager.Instance.dataContainer.coins >= speedCost)
+        {
+            ShopGameManager.Instance.dataContainer.coins -= speedCost;
+            int originalSpeed = PlayerPrefs.GetInt("originalSpeed");
+            int speedIncrease = Mathf.RoundToInt(originalSpeed * 0.1f);
+            ShopGameManager.Instance.dataContainer.speed += speedIncrease;
+            SaveData();
+            UpdateCoinsText();
+        }
+    }
+
     private void UpdateCoinsText()
     {
         coinsText.text = ShopGameManager.Instance.dataContainer.coins.ToString();
@@ -49,6 +63,7 @@ public class ShopManager : MonoBehaviour
         ShopGameManager.Instance.dataContainer.coins = 0;
         ShopGameManager.Instance.dataContainer.addedHealth = 0;
         ShopGameManager.Instance.dataContainer.addedDamage = 0;
+        ShopGameManager.Instance.dataContainer.speed = 0;
         SaveData();
         UpdateCoinsText();
     }
