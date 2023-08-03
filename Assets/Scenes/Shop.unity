@@ -1580,7 +1580,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: +100 Health
+  m_text: +10% Health
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2fcd34f1ff8160a4f86f666d086b4b50, type: 2}
   m_sharedMaterial: {fileID: 5008557048595974691, guid: 2fcd34f1ff8160a4f86f666d086b4b50, type: 2}

@@ -20,7 +20,9 @@ public class ShopManager : MonoBehaviour
         if (ShopGameManager.Instance.dataContainer.coins >= healthCost)
         {
             ShopGameManager.Instance.dataContainer.coins -= healthCost;
-            ShopGameManager.Instance.dataContainer.addedHealth += 100;
+            int maxHp = PlayerPrefs.GetInt("maxHp");
+            int increase = Mathf.RoundToInt(maxHp * 0.1f);
+            ShopGameManager.Instance.dataContainer.addedHealth += increase;
             SaveData();
             UpdateCoinsText();
         }

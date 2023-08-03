@@ -5,8 +5,8 @@ using TMPro;
 
 public class Character : MonoBehaviour
 {
-    public int maxHp = 1000 ;
-    public int currentHp = 1000;
+    public static int maxHp = 500 ;
+    public int currentHp = 500;
 
     public int armour = 0;
 
@@ -36,6 +36,11 @@ public class Character : MonoBehaviour
     [SerializeField] TextMeshProUGUI healthText;
     private void Awake()
     {
+        int addedHealth = PlayerPrefs.GetInt("addedHealth");
+        maxHp = maxHp + addedHealth;
+        PlayerPrefs.SetInt("maxHp", maxHp);
+        PlayerPrefs.Save();
+
         level = GetComponent<Level>();
         coins = GetComponent<Coins>();
         magnet = FindObjectOfType<Magnet>();
@@ -93,27 +98,24 @@ public class Character : MonoBehaviour
 
     private void UpdateHpBar()
     {
-        int addedHealth = PlayerPrefs.GetInt("addedHealth");
-        int currentMaxHp = maxHp + armour +addedHealth; // Calculate current max HP with added armor
+        int currentMaxHp = maxHp + armour; // Calculate current max HP with added armor
         hpBar.SetState(currentHp, currentMaxHp);
     }
 
     private void UpdateHealthText()
     {
-        int addedHealth = PlayerPrefs.GetInt("addedHealth");
-        string formattedText = $"{currentHp} / {maxHp + armour +addedHealth}";
+        string formattedText = $"{currentHp} / {maxHp + armour}";
         healthText.text = formattedText;
     }
 
     public void Heal(int amount)
     {
-        int addedHealth = PlayerPrefs.GetInt("addedHealth");
         if (currentHp <= 0) { return; }
 
         currentHp += amount;
-        if (currentHp > maxHp + armour +addedHealth)
+        if (currentHp > maxHp + armour)
         {
-            currentHp = maxHp + armour+addedHealth;
+            currentHp = maxHp + armour;
         }
     }
 }
