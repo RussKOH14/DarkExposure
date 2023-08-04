@@ -1,21 +1,24 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 
 [Serializable]
 public class ItemStats
 {
     public int armour;
+    public int coins;
     public float magnetRadiusAddition;
     public float canUseManualWeapon;
     public float canUseSkulls;
     public int skullCount;
-
+    
 
     internal void Sum(ItemStats stats)
     {
         armour += stats.armour;
+        coins += stats.coins;
         magnetRadiusAddition += stats.magnetRadiusAddition;
         canUseManualWeapon += stats.canUseManualWeapon;
         canUseSkulls += stats.canUseSkulls;
@@ -41,7 +44,9 @@ public class Item : ScriptableObject
 
     public void Equip(Character character)
     {
+        stats.armour = Mathf.RoundToInt(character.currentHp * 0.1f);
         character.armour += stats.armour;
+        character.coins.Add(stats.coins);
         character.colliderSize += stats.magnetRadiusAddition;
         character.canUseManualWeapon += stats.canUseManualWeapon;
         character.canUseSkulls += stats.canUseSkulls;
@@ -55,6 +60,4 @@ public class Item : ScriptableObject
         character.canUseSkulls -= stats.canUseSkulls;
         character.skullCount -= stats.skullCount;
     }
-
-
 }

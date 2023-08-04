@@ -9,6 +9,7 @@ public class ShopGameManager : MonoBehaviour
 
 
     public DataContainer dataContainer;
+    
 
     private void Awake()
     {

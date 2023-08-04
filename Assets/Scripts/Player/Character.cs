@@ -33,6 +33,8 @@ public class Character : MonoBehaviour
     NewSkulls skullController;
     public int skullCount = 0;
 
+
+
     [SerializeField] TextMeshProUGUI healthText;
     private void Awake()
     {
