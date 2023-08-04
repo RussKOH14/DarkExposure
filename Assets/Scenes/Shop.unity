@@ -683,6 +683,11 @@ MonoBehaviour:
   healthCost: 10
   damageCost: 20
   speedCost: 10
+  healthButton: {fileID: 360017710}
+  healthCopper: {fileID: 0}
+  healthSilver: {fileID: 0}
+  healthGold: {fileID: 0}
+  healthAmethyst: {fileID: 0}
 --- !u!114 &129537187
 MonoBehaviour:
   m_ObjectHideFlags: 0

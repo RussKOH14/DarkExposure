@@ -1,5 +1,8 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
+using UnityEngine.UIElements;
+using Image = UnityEngine.UI.Image;
 
 public class ShopManager : MonoBehaviour
 {
@@ -9,24 +12,54 @@ public class ShopManager : MonoBehaviour
     public int damageCost;
     public int speedCost;
 
+    public UnityEngine.UI.Button healthButton;
+    public Sprite healthCopper;
+    public Sprite healthSilver;
+    public Sprite healthGold;
+    public Sprite healthAmethyst;
+
     private void Awake()
     {
-
         LoadData();
         UpdateCoinsText();
+    }
+    private void Update()
+    {
+        if(ShopGameManager.Instance.dataContainer.healthUpgrades == 0)
+        {
+            healthButton.GetComponent<Image>().sprite = healthCopper;
+        }
+        if(ShopGameManager.Instance.dataContainer.healthUpgrades == 1)
+        {
+            healthButton.GetComponent<Image>().sprite = healthSilver;
+        }
+        if(ShopGameManager.Instance.dataContainer.healthUpgrades == 2)
+        {
+            healthButton.GetComponent<Image>().sprite = healthGold;
+        }
+        if(ShopGameManager.Instance.dataContainer.healthUpgrades == 3)
+        {
+            healthButton.GetComponent<Image>().sprite = healthAmethyst;
+        }
     }
 
     public void Health()
     {
-        if (ShopGameManager.Instance.dataContainer.coins >= healthCost)
+        if (ShopGameManager.Instance.dataContainer.healthUpgrades < 4)
         {
-            ShopGameManager.Instance.dataContainer.coins -= healthCost;
-            int maxHp = PlayerPrefs.GetInt("maxHp");
-            int increase = Mathf.RoundToInt(maxHp * 0.1f);
-            ShopGameManager.Instance.dataContainer.addedHealth += increase;
-            SaveData();
-            UpdateCoinsText();
+            if (ShopGameManager.Instance.dataContainer.coins >= healthCost)
+            {
+                ShopGameManager.Instance.dataContainer.healthUpgrades += 1;
+                ShopGameManager.Instance.dataContainer.coins -= healthCost;
+                int maxHp = PlayerPrefs.GetInt("maxHp");
+                int increase = Mathf.RoundToInt(maxHp * 0.1f);
+                ShopGameManager.Instance.dataContainer.addedHealth += increase;
+                SaveData();
+                UpdateCoinsText();
+                Debug.Log("health");
+            }
         }
+       
     }
 
     public void Damage()
@@ -62,6 +95,7 @@ public class ShopManager : MonoBehaviour
     {
         ShopGameManager.Instance.dataContainer.coins = 0;
         ShopGameManager.Instance.dataContainer.addedHealth = 0;
+        ShopGameManager.Instance.dataContainer.healthUpgrades = 0;
         ShopGameManager.Instance.dataContainer.addedDamage = 0;
         ShopGameManager.Instance.dataContainer.speed = 0;
         SaveData();
