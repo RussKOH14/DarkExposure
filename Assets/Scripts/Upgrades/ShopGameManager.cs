@@ -35,7 +35,10 @@ public class ShopGameManager : MonoBehaviour
         dataContainer.addedHealth = PlayerPrefs.GetInt("addedHealth", dataContainer.addedHealth);
         dataContainer.healthUpgrades = PlayerPrefs.GetInt("healthUpgrades", dataContainer.healthUpgrades);
         dataContainer.addedDamage = PlayerPrefs.GetInt("addedDamage", dataContainer.addedDamage);
+        dataContainer.damageUpgrades = PlayerPrefs.GetInt("damageUpgrades", dataContainer.damageUpgrades);
         dataContainer.speed = PlayerPrefs.GetInt("speed", dataContainer.speed);
+        dataContainer.speedUpgrades = PlayerPrefs.GetInt("speedUpgrades", dataContainer.speedUpgrades);
+
     }
 
     public void SaveData()
@@ -44,7 +47,9 @@ public class ShopGameManager : MonoBehaviour
         PlayerPrefs.SetInt("addedHealth", dataContainer.addedHealth);
         PlayerPrefs.SetInt("healthUpgrades", dataContainer.healthUpgrades);
         PlayerPrefs.SetInt("addedDamage", dataContainer.addedDamage);
+        PlayerPrefs.SetInt("damageUpgrades", dataContainer.damageUpgrades);
         PlayerPrefs.SetInt("speed", dataContainer.speed);
+        PlayerPrefs.SetInt("speedUpgrades", dataContainer.speedUpgrades);
         PlayerPrefs.Save();
     }
 }

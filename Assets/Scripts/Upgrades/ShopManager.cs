@@ -14,11 +14,28 @@ public class ShopManager : MonoBehaviour
 
     public AudioSource error;
 
+    [Header("Health Buttons")]
     public UnityEngine.UI.Button healthButton;
     public Sprite healthCopper;
     public Sprite healthSilver;
     public Sprite healthGold;
     public Sprite healthAmethyst;
+    
+    [Header("Damage Buttons")]
+    public UnityEngine.UI.Button damageButtons;
+    public Sprite damageCopper;
+    public Sprite damageSilver;
+    public Sprite damageGold;
+    public Sprite damageAmethyst;
+    
+    [Header("Speed Buttons")]
+    public UnityEngine.UI.Button speedButtons;
+    public Sprite speedCopper;
+    public Sprite speedSilver;
+    public Sprite speedGold;
+    public Sprite speedAmethyst;
+
+
 
     private void Awake()
     {
@@ -42,6 +59,43 @@ public class ShopManager : MonoBehaviour
         if(ShopGameManager.Instance.dataContainer.healthUpgrades == 3)
         {
             healthButton.GetComponent<Image>().sprite = healthAmethyst;
+        }
+        
+        
+        
+        if(ShopGameManager.Instance.dataContainer.damageUpgrades == 0)
+        {
+            damageButtons.GetComponent<Image>().sprite = damageCopper;
+        }
+        if(ShopGameManager.Instance.dataContainer.damageUpgrades == 1)
+        {
+            damageButtons.GetComponent<Image>().sprite = damageSilver;
+        }
+        if(ShopGameManager.Instance.dataContainer.damageUpgrades == 2)
+        {
+            damageButtons.GetComponent<Image>().sprite = damageGold;
+        }
+        if(ShopGameManager.Instance.dataContainer.damageUpgrades == 3)
+        {
+            damageButtons.GetComponent<Image>().sprite = damageAmethyst;
+        }
+        
+        
+        if(ShopGameManager.Instance.dataContainer.speedUpgrades == 0)
+        {
+            speedButtons.GetComponent<Image>().sprite = speedCopper;
+        }
+        if(ShopGameManager.Instance.dataContainer.speedUpgrades == 1)
+        {
+            speedButtons.GetComponent<Image>().sprite = speedSilver;
+        }
+        if(ShopGameManager.Instance.dataContainer.speedUpgrades == 2)
+        {
+            speedButtons.GetComponent<Image>().sprite = speedGold;
+        }
+        if(ShopGameManager.Instance.dataContainer.speedUpgrades == 3)
+        {
+            speedButtons.GetComponent<Image>().sprite = speedAmethyst;
         }
     }
 
@@ -71,25 +125,43 @@ public class ShopManager : MonoBehaviour
 
     public void Damage()
     {
-        if (ShopGameManager.Instance.dataContainer.coins >= damageCost)
+        if (ShopGameManager.Instance.dataContainer.damageUpgrades < 3)
         {
-            ShopGameManager.Instance.dataContainer.coins -= damageCost;
-            ShopGameManager.Instance.dataContainer.addedDamage += 100;
-            SaveData();
-            UpdateCoinsText();
+            if (ShopGameManager.Instance.dataContainer.coins >= damageCost)
+            {
+                ShopGameManager.Instance.dataContainer.damageUpgrades += 1;
+                ShopGameManager.Instance.dataContainer.coins -= damageCost;
+                ShopGameManager.Instance.dataContainer.addedDamage += 100;
+                SaveData();
+                UpdateCoinsText();
+            }
+        }
+
+        else
+        {
+            error.Play();
         }
     }
 
     public void Speed()
     {
-        if (ShopGameManager.Instance.dataContainer.coins >= speedCost)
+        if (ShopGameManager.Instance.dataContainer.speedUpgrades < 3)
         {
-            ShopGameManager.Instance.dataContainer.coins -= speedCost;
-            int originalSpeed = PlayerPrefs.GetInt("originalSpeed");
-            int speedIncrease = Mathf.RoundToInt(originalSpeed * 0.1f);
-            ShopGameManager.Instance.dataContainer.speed += speedIncrease;
-            SaveData();
-            UpdateCoinsText();
+            if (ShopGameManager.Instance.dataContainer.coins >= speedCost)
+            {
+                ShopGameManager.Instance.dataContainer.speedUpgrades += 1;
+                ShopGameManager.Instance.dataContainer.coins -= speedCost;
+                int originalSpeed = PlayerPrefs.GetInt("originalSpeed");
+                int speedIncrease = Mathf.RoundToInt(originalSpeed * 0.1f);
+                ShopGameManager.Instance.dataContainer.speed += speedIncrease;
+                SaveData();
+                UpdateCoinsText();
+            }
+        }
+
+        else
+        {
+            error.Play();
         }
     }
 
@@ -104,7 +176,9 @@ public class ShopManager : MonoBehaviour
         ShopGameManager.Instance.dataContainer.addedHealth = 0;
         ShopGameManager.Instance.dataContainer.healthUpgrades = 0;
         ShopGameManager.Instance.dataContainer.addedDamage = 0;
+        ShopGameManager.Instance.dataContainer.damageUpgrades = 0;
         ShopGameManager.Instance.dataContainer.speed = 0;
+        ShopGameManager.Instance.dataContainer.speedUpgrades = 0;
         SaveData();
         UpdateCoinsText();
     }
