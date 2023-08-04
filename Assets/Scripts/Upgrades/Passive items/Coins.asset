@@ -10,19 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 83dfb554e7bd13740905dfcaf0c9f76d, type: 3}
-  m_Name: Armour
+  m_Name: Coins
   m_EditorClassIdentifier: 
-  Name: Armour
+  Name: Coins
   stats:
-    armour: 50
-    coins: 0
+    armour: 0
+    coins: 10
     magnetRadiusAddition: 0
     canUseManualWeapon: 0
     canUseSkulls: 0
     skullCount: 0
   upgrades:
-  - {fileID: 11400000, guid: 05ff6cdc010af4842ab3b79253714731, type: 2}
-  - {fileID: 11400000, guid: 05ff6cdc010af4842ab3b79253714731, type: 2}
-  - {fileID: 11400000, guid: 05ff6cdc010af4842ab3b79253714731, type: 2}
-  - {fileID: 11400000, guid: 05ff6cdc010af4842ab3b79253714731, type: 2}
-  - {fileID: 11400000, guid: 05ff6cdc010af4842ab3b79253714731, type: 2}
+  - {fileID: 11400000, guid: b3cad29cda253424f90f371d38ebe024, type: 2}
+  - {fileID: 11400000, guid: b3cad29cda253424f90f371d38ebe024, type: 2}
+  - {fileID: 11400000, guid: b3cad29cda253424f90f371d38ebe024, type: 2}
