@@ -12,6 +12,8 @@ public class ShopManager : MonoBehaviour
     public int damageCost;
     public int speedCost;
 
+    public AudioSource error;
+
     public UnityEngine.UI.Button healthButton;
     public Sprite healthCopper;
     public Sprite healthSilver;
@@ -45,7 +47,7 @@ public class ShopManager : MonoBehaviour
 
     public void Health()
     {
-        if (ShopGameManager.Instance.dataContainer.healthUpgrades < 4)
+        if (ShopGameManager.Instance.dataContainer.healthUpgrades < 3)
         {
             if (ShopGameManager.Instance.dataContainer.coins >= healthCost)
             {
@@ -58,6 +60,11 @@ public class ShopManager : MonoBehaviour
                 UpdateCoinsText();
                 Debug.Log("health");
             }
+        }
+
+        else
+        {
+            error.Play();
         }
        
     }
