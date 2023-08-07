@@ -8,5 +8,10 @@ public class ExitToMenu : MonoBehaviour
     public void Menu()
     {
         SceneManager.LoadScene("MainMenu");
+    }  
+    
+    public void Options()
+    {
+        SceneManager.LoadScene("Options");
     }
 }

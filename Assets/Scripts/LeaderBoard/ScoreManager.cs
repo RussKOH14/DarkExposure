@@ -7,14 +7,20 @@ using UnityEngine.Events;
 public class ScoreManager : MonoBehaviour
 {
     [SerializeField]
-    private TextMeshProUGUI inputScore;
-    [SerializeField]
-    private TMP_InputField inputName;
-    
+    public TextMeshProUGUI inputScore;
+    //[SerializeField]
+    //public TMP_InputField inputName;
+
+    private void Start()
+    {
+        
+    }
+
     public UnityEvent<string, int> submitScoreEvent;
 
     public void SubmitScore()
     {
-        submitScoreEvent.Invoke(inputName.text, int.Parse(inputScore.text));
+        string inputName = PlayerPrefs.GetString("Player Name");
+        submitScoreEvent.Invoke(inputName, int.Parse(inputScore.text));
     }
 }

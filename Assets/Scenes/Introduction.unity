@@ -1069,7 +1069,7 @@ MonoBehaviour:
     upon their twisted path, their every step carving a legacy of villainy. '
   typeSound: {fileID: 8300000, guid: 1cadeeb3639dd4840add03cba5111145, type: 3}
   audioSource: {fileID: 11746231}
-  sceneName: MainMenu
+  sceneName: Options
 --- !u!114 &2081701635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1283,5 +1283,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 518b0d3a0b390894aa9cffe2ada79087, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: MainMenu
+  sceneName: Options
   spaceToSkipUI: {fileID: 153305848}
