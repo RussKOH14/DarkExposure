@@ -422,7 +422,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 118.7017, y: 11.1721}
+  m_AnchoredPosition: {x: 118.70172, y: 11.172119}
   m_SizeDelta: {x: 167.7763, y: 41.9441}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &343575134
@@ -1069,6 +1069,7 @@ MonoBehaviour:
     upon their twisted path, their every step carving a legacy of villainy. '
   typeSound: {fileID: 8300000, guid: 1cadeeb3639dd4840add03cba5111145, type: 3}
   audioSource: {fileID: 11746231}
+  sceneName: MainMenu
 --- !u!114 &2081701635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1283,5 +1284,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: MainMenu
-  delay: 38
   spaceToSkipUI: {fileID: 153305848}
