@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TutorialLevelEvents : MonoBehaviour
 {
-    TutorialUI tutorialUI;
+    public TutorialUI tutorialUI;
     public GameObject gems;
 
     void Start()
@@ -15,7 +15,7 @@ public class TutorialLevelEvents : MonoBehaviour
     
     void Update()
     {
-        if(tutorialUI.isTyping && gems != null && gems.activeInHierarchy == false)
+        if(!tutorialUI.isTyping && gems != null && gems.activeInHierarchy == false)
         {
             gems.SetActive(true);
             Debug.Log("gems");
