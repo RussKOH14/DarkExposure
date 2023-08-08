@@ -9,8 +9,8 @@ public class TutorialUI : MonoBehaviour
     public float delay = 0.1f;
     public string[] fullTexts;
     private string currentText = "";
-    private TMP_Text tmpText;
-    private int currentLayer = 0;
+    public TMP_Text tmpText;
+    public int currentLayer = 0;
     private int charCounter = 0;
     public AudioClip typeSound;
     public AudioSource audioSource;
@@ -52,7 +52,7 @@ public class TutorialUI : MonoBehaviour
     //}
 
 
-    void DisplayText()
+    public void DisplayText()
     {
         if (isTyping)
         {

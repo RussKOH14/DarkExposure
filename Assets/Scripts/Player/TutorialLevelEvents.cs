@@ -5,7 +5,7 @@ using UnityEngine;
 public class TutorialLevelEvents : MonoBehaviour
 {
     public TutorialUI tutorialUI;
-    public GameObject gems;
+    public GameObject lvl1Gems;
 
     void Start()
     {
@@ -15,10 +15,22 @@ public class TutorialLevelEvents : MonoBehaviour
     
     void Update()
     {
-        if(!tutorialUI.isTyping && gems != null && gems.activeInHierarchy == false)
+        if(!tutorialUI.isTyping && lvl1Gems != null && lvl1Gems.activeInHierarchy == false)
         {
-            gems.SetActive(true);
+            lvl1Gems.SetActive(true);
             Debug.Log("gems");
+        }
+
+        if (!lvl1Gems)
+        {
+            tutorialUI.currentLayer++;
+
+            if (tutorialUI.currentLayer < tutorialUI.fullTexts.Length)
+            {
+                tutorialUI.tmpText.text = "";
+                tutorialUI.isTyping = true;
+                tutorialUI.DisplayText();
+            }
         }
     }
 }
