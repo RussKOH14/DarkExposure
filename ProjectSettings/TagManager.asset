@@ -11,6 +11,7 @@ TagManager:
   - Heart
   - Coin
   - Weapon
+  - ManualWeapon
   layers:
   - Default
   - TransparentFX
