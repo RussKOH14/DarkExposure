@@ -170,19 +170,6 @@ public class ShopManager : MonoBehaviour
         coinsText.text = ShopGameManager.Instance.dataContainer.coins.ToString();
     }
 
-    public void Reset()
-    {
-        ShopGameManager.Instance.dataContainer.coins = 0;
-        ShopGameManager.Instance.dataContainer.addedHealth = 0;
-        ShopGameManager.Instance.dataContainer.healthUpgrades = 0;
-        ShopGameManager.Instance.dataContainer.addedDamage = 0;
-        ShopGameManager.Instance.dataContainer.damageUpgrades = 0;
-        ShopGameManager.Instance.dataContainer.speed = 0;
-        ShopGameManager.Instance.dataContainer.speedUpgrades = 0;
-        SaveData();
-        UpdateCoinsText();
-    }
-
 
     private void LoadData()
     {
