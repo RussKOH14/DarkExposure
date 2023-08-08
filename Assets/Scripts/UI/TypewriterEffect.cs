@@ -17,6 +17,7 @@ public class TypewriterEffect : MonoBehaviour
     private bool isTyping = true;
 
     public string sceneName;
+    public GameObject usernameInput;
 
     void Start()
     {
@@ -47,10 +48,15 @@ public class TypewriterEffect : MonoBehaviour
                 }
                 else
                 {
-                    SceneManager.LoadScene(sceneName);
+                    usernameInput.SetActive(true);
                 }
             }
         }
+    }
+
+    public void Enter()
+    {
+        SceneManager.LoadScene(sceneName);
     }
 
     void DisplayText()
