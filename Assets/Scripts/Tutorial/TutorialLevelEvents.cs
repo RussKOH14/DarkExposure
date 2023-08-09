@@ -11,6 +11,14 @@ public class TutorialLevelEvents : MonoBehaviour
 
     public GameObject character;
     TutorialEnemySpawn tutorialEnemySpawn;
+
+    public GameObject swordButton;
+    public GameObject wandButton;
+    
+    
+    public GameObject ManualWeapon;
+
+
     void Start()
     {
         tutorialUI = FindObjectOfType<TutorialUI>();
@@ -41,10 +49,18 @@ public class TutorialLevelEvents : MonoBehaviour
         Invoke("Golem", 5);
     }
 
+    public void Wand()
+    {
+        ManualWeapon.SetActive(true);
+        Invoke("PlayText", 0.5f);
+    }
+
     public void Golem()
     {
         tutorialEnemySpawn.SpawnEnemy();
         PlayText();
+        swordButton.SetActive(false);
+        wandButton.SetActive(true);
     }
 
     public void PlayText()
