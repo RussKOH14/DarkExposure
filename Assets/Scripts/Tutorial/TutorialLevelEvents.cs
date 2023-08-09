@@ -71,6 +71,20 @@ public class TutorialLevelEvents : MonoBehaviour
         }
     }
 
+    public void Survive()
+    {
+        if(number == 2)
+        {
+            number += 1;
+            Invoke("PlayText", 0.5f);
+            Invoke("SpawnHarderEnemy", 10);
+        }
+    }
+    public void SpawnHarderEnemy()
+    {
+        tutorialEnemySpawn.SpawnHarderEnemy();
+    }
+
     public void Golem()
     {
         tutorialEnemySpawn.SpawnEnemy();

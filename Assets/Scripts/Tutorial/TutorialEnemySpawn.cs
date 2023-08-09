@@ -8,6 +8,11 @@ public class TutorialEnemySpawn : MonoBehaviour
     [SerializeField] GameObject golem;
     [SerializeField] int numberOfGolem = 01;
     public float delay = 1f;
+    
+    [Header("Knight")]
+    [SerializeField] GameObject Knight;
+    [SerializeField] int numberOfKnight = 01;
+    public float delayForKnight = 1f;
 
     [Header("Other stats")]
     [SerializeField] Vector2 spawnArea;
@@ -49,6 +54,23 @@ public class TutorialEnemySpawn : MonoBehaviour
 
         }
         Invoke("SpawnEnemy", delay);
+    }
+    public void SpawnHarderEnemy()
+    {
+        Vector3 position = GenerateRandomPosition();
+
+        position += player.transform.position;
+
+        for (int i = 0; i < numberOfGolem; i++)
+        {
+            GameObject Knight = Instantiate(this.Knight);
+            Knight.transform.position = position;
+            Knight.GetComponent<Enemy>().SetTarget(player);
+            Knight.transform.parent = transform;
+
+
+        }
+        Invoke("SpawnHarderEnemy", delay);
     }
     private Vector3 GenerateRandomPosition()
     {

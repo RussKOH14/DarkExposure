@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Analytics;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Enemy : MonoBehaviour
 {
@@ -20,6 +21,7 @@ public class Enemy : MonoBehaviour
     UseManualWeapon useManualWeapon;      //manual weapon script
     public GameObject gameManager;       //manual weapon script is in game manager
 
+    TutorialLevelEvents tutorialLevelEvents;
     EnemyKilledScore enemyKilledScore;      //player's score script
 
     private SpriteRenderer spriteRenderer;  //enemy sprite renderer
@@ -29,10 +31,12 @@ public class Enemy : MonoBehaviour
     {
         rgdbd2d = GetComponent<Rigidbody2D>();
         enemyKilledScore = FindObjectOfType<EnemyKilledScore>();
+        tutorialLevelEvents = FindObjectOfType<TutorialLevelEvents>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         originalColor = spriteRenderer.color;
         gameManager = GameObject.Find("--GAMEMANAGER--");
         useManualWeapon = gameManager.GetComponent<UseManualWeapon>();
+
     }
 
     public void SetTarget(GameObject target)    //Sets the enemy's taret to the player character
@@ -97,6 +101,10 @@ public class Enemy : MonoBehaviour
         {
             if (collision.CompareTag("ManualWeapon"))     //if enemy is in manual weapon collider
             {
+                if (SceneManager.GetActiveScene().name == "Tutorial")
+                {
+                    tutorialLevelEvents.Survive();
+                }
                 targetGameObject.GetComponent<Level>().AddExperince(experience_reward);     //gives player exp
                 GetComponent<DropOnDestroy>().CheckDrop();      //drops a pickup
                 Destroy(gameObject);        //destroys enemy
