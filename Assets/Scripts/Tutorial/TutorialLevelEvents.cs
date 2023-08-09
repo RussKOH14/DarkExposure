@@ -17,6 +17,7 @@ public class TutorialLevelEvents : MonoBehaviour
     
     
     public GameObject ManualWeapon;
+    public GameObject upgradePanel;
 
 
     void Start()
@@ -53,6 +54,21 @@ public class TutorialLevelEvents : MonoBehaviour
     {
         ManualWeapon.SetActive(true);
         Invoke("PlayText", 0.5f);
+        Invoke("DestroyUpgradePanel", 2);
+    }
+
+    public void DestroyUpgradePanel()
+    {
+        Destroy(upgradePanel);
+    }
+
+    public void UsingWand()
+    {
+        if (number == 1)
+        {
+            number += 1;
+            Invoke("PlayText", 0.5f);
+        }
     }
 
     public void Golem()
