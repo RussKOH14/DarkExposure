@@ -23,35 +23,6 @@ public class TutorialUI : MonoBehaviour
         audioSource = gameObject.AddComponent<AudioSource>();
     }
 
-    //void Update()
-    //{
-    //    if (Input.GetMouseButtonDown(0))
-    //    {
-    //        if (isTyping)
-    //        {
-    //            StopCoroutine(ShowText());
-    //            tmpText.text = fullTexts[currentLayer];
-    //            isTyping = false;
-    //        }
-    //        else
-    //        {
-    //            currentLayer++;
-
-    //            if (currentLayer < fullTexts.Length)
-    //            {
-    //                tmpText.text = "";
-    //                isTyping = true;
-    //                DisplayText();
-    //            }
-    //            else
-    //            {
-                    
-    //            }
-    //        }
-    //    }
-    //}
-
-
     public void DisplayText()
     {
         if (isTyping)
@@ -74,10 +45,11 @@ public class TutorialUI : MonoBehaviour
             }
 
             charCounter++;
-
+            
             yield return new WaitForSeconds(delay);
         }
 
         isTyping = false;
+
     }
 }
