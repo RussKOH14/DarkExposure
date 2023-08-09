@@ -9,6 +9,8 @@ public class TutorialLevelEvents : MonoBehaviour
 
     private int number = 0;
 
+    public GameObject character;
+
     void Start()
     {
         tutorialUI = FindObjectOfType<TutorialUI>();
@@ -32,7 +34,10 @@ public class TutorialLevelEvents : MonoBehaviour
         }
     }
  
-     
+    public void Sword()
+    {
+        character.GetComponent<WeaponManager>().enabled = true;
+    }
 
     public void PlayText()
     {
