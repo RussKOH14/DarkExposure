@@ -7,7 +7,7 @@ public class WeaponManager : MonoBehaviour
 {
     [SerializeField] Transform weaponObjectContainer;
 
-    [SerializeField] WeaponData startingWeapon;
+    [SerializeField]WeaponData startingWeapon;
 
     List<WeaponBase> weapons;
 
