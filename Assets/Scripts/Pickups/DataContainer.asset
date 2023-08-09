@@ -13,5 +13,10 @@ MonoBehaviour:
   m_Name: DataContainer
   m_EditorClassIdentifier: 
   addedHealth: 0
+  healthUpgrades: 0
   addedDamage: 0
+  damageUpgrades: 0
+  speed: 0
+  speedUpgrades: 0
   coins: 0
+  tutorial: 0

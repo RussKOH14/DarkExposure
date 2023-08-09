@@ -277,7 +277,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 627980455}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
@@ -613,7 +613,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "_________\u200B"
+  m_text: "\u200B"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2fcd34f1ff8160a4f86f666d086b4b50, type: 2}
   m_sharedMaterial: {fileID: 5008557048595974691, guid: 2fcd34f1ff8160a4f86f666d086b4b50, type: 2}
@@ -1651,7 +1651,6 @@ GameObject:
   - component: {fileID: 2109290072}
   - component: {fileID: 2109290071}
   - component: {fileID: 2109290070}
-  - component: {fileID: 2109290075}
   - component: {fileID: 2109290076}
   m_Layer: 5
   m_Name: Canvas
@@ -1743,20 +1742,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &2109290075
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2109290069}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 518b0d3a0b390894aa9cffe2ada79087, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneName: 
-  spaceToSkipUI: {fileID: 0}
 --- !u!114 &2109290076
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class TutorialLevelEvents : MonoBehaviour
 {
+    public DataContainer dataContainer;
+
     public TutorialUI tutorialUI;
     public GameObject lvl1Gems;
 
@@ -19,6 +21,12 @@ public class TutorialLevelEvents : MonoBehaviour
     public GameObject ManualWeapon;
     public GameObject upgradePanel;
 
+    private void Awake()
+    {
+        LoadData();
+        ShopGameManager.Instance.dataContainer.tutorial += 1;
+        SaveData();
+    }
 
     void Start()
     {
@@ -103,5 +111,17 @@ public class TutorialLevelEvents : MonoBehaviour
             tutorialUI.DisplayText();
 
         }
+    }
+
+
+
+    private void LoadData()
+    {
+        ShopGameManager.Instance.LoadData();
+    }
+
+    private void SaveData()
+    {
+        ShopGameManager.Instance.SaveData();
     }
 }

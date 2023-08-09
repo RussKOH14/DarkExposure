@@ -13,5 +13,5 @@ public class DataContainer : ScriptableObject
     public int speed;
     public int speedUpgrades;
     public int coins;
-   
+    public int tutorial;
 }

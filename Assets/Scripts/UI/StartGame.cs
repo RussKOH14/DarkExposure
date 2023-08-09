@@ -7,8 +7,18 @@ public class StartGame : MonoBehaviour
 {
     public void StartGameplay()
     {
-        SceneManager.LoadScene("TestScene");
-        Time.timeScale = 1f;
+        LoadData();
+        if(ShopGameManager.Instance.dataContainer.tutorial != 0)
+        {
+            SceneManager.LoadScene("TestScene");
+            Time.timeScale = 1f;
+        }
+        else if (ShopGameManager.Instance.dataContainer.tutorial == 0)
+        {
+            SceneManager.LoadScene("Tutorial");
+            Time.timeScale = 1f;
+        }
+
     }
 
     public void Shop()
@@ -20,5 +30,14 @@ public class StartGame : MonoBehaviour
     public void Quit()
     {
         Application.Quit();
+    }
+    private void LoadData()
+    {
+        ShopGameManager.Instance.LoadData();
+    }
+
+    private void SaveData()
+    {
+        ShopGameManager.Instance.SaveData();
     }
 }
