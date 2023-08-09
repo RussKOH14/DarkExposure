@@ -10,10 +10,11 @@ public class TutorialLevelEvents : MonoBehaviour
     private int number = 0;
 
     public GameObject character;
-
+    TutorialEnemySpawn tutorialEnemySpawn;
     void Start()
     {
         tutorialUI = FindObjectOfType<TutorialUI>();
+        tutorialEnemySpawn = FindObjectOfType<TutorialEnemySpawn>();
     }
 
     
@@ -30,13 +31,20 @@ public class TutorialLevelEvents : MonoBehaviour
         {
             number+=1;
             print("collided");
-            Invoke("PlayText", 2);
+            Invoke("PlayText", 0.5f);
         }
     }
  
     public void Sword()
     {
         character.GetComponent<WeaponManager>().enabled = true;
+        Invoke("Golem", 5);
+    }
+
+    public void Golem()
+    {
+        tutorialEnemySpawn.SpawnEnemy();
+        PlayText();
     }
 
     public void PlayText()
