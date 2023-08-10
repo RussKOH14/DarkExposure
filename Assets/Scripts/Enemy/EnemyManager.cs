@@ -21,6 +21,13 @@ public class EnemyManager : MonoBehaviour
     public bool spawningFairies = false;
     public float delayForFairies = 3f;
     public Vector3 prefabSize;
+    
+    [Header("Archer")]
+    [SerializeField] GameObject Archer;
+    [SerializeField] int numberOffArcher = 01;
+    public bool spawningArcher = false;
+    public float delayForArcher = 3f;
+    
 
     [Header("Other stats")]
     [SerializeField] Vector2 spawnArea;
@@ -57,8 +64,10 @@ public class EnemyManager : MonoBehaviour
         
         if (delay <= 0.5 && !spawningFairies)
         {
-            SpawnDonCheedle();
+            SpawnFairy();
+            SpawnArcher();
             spawningFairies = true;
+            spawningArcher = true;
         }
        
     }
@@ -99,7 +108,7 @@ public class EnemyManager : MonoBehaviour
         Invoke("SpawnHarderEnemy", longerDelay);
     }
     
-    public void SpawnDonCheedle()
+    public void SpawnFairy()
     {
         Vector3 position = GenerateRandomPosition();
 
@@ -107,15 +116,33 @@ public class EnemyManager : MonoBehaviour
 
         for (int i = 0; i < numberOfFairies; i++) 
         {
-            GameObject donCheedle = Instantiate(this.Fairies);
-            donCheedle.transform.localScale = prefabSize;
-            donCheedle.transform.position = position;
-            donCheedle.GetComponent<Enemy>().SetTarget(player);
-            donCheedle.transform.parent = transform;
+            GameObject fairy = Instantiate(this.Fairies);
+            fairy.transform.localScale = prefabSize;
+            fairy.transform.position = position;
+            fairy.GetComponent<Enemy>().SetTarget(player);
+            fairy.transform.parent = transform;
 
 
         }
-        Invoke("SpawnDonCheedle", delayForFairies);
+        Invoke("SpawnFairy", delayForFairies);
+    }
+    public void SpawnArcher()
+    {
+        Vector3 position = GenerateRandomPosition();
+
+        position += player.transform.position;
+
+        for (int i = 0; i < numberOffArcher; i++) 
+        {
+            GameObject archer = Instantiate(this.Archer);
+            archer.transform.localScale = prefabSize;
+            archer.transform.position = position;
+            archer.GetComponent<Enemy>().SetTarget(player);
+            archer.transform.parent = transform;
+
+
+        }
+        Invoke("SpawnArcher", delayForArcher);
     }
 
     private Vector3 GenerateRandomPosition()

@@ -90,7 +90,7 @@ public class Enemy : MonoBehaviour
         {
             targetGameObject.GetComponent<Level>().AddExperince(experience_reward); //gives player exp
             GetComponent<DropOnDestroy>().CheckDrop();      //drops a pickup
-            Destroy(gameObject);        //destroys enemy
+            Destroy(gameObject);//destroys enemy
             enemyKilledScore.enemiesKilled += 1;        //adds to player score
         }
     }

@@ -19,6 +19,7 @@ public class TestArcher : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         StartCoroutine(ShootingLoop());
+        player= GameObject.Find("Character").GetComponent<Transform>();
     }
 
     private void Update()
