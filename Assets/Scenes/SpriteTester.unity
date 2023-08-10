@@ -11748,7 +11748,7 @@ MonoBehaviour:
   arrowSpawnPoint: {fileID: 973096475}
   runSpeed: 5
   shootingCooldown: 2
-  shootingRange: 10
+  shootingRange: 20
   arrowSpeed: 10
 --- !u!1 &1751839208
 GameObject:
