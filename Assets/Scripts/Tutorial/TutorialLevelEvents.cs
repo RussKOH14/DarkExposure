@@ -9,7 +9,7 @@ public class TutorialLevelEvents : MonoBehaviour
     public TutorialUI tutorialUI;
     public GameObject lvl1Gems;
 
-    private int number = 0;
+    public int number = 0;
 
     public GameObject character;
     TutorialEnemySpawn tutorialEnemySpawn;
@@ -55,7 +55,7 @@ public class TutorialLevelEvents : MonoBehaviour
     public void Sword()
     {
         character.GetComponent<WeaponManager>().enabled = true;
-        Invoke("Golem", 5);
+        Invoke("Golem", 10);
     }
 
     public void Wand()

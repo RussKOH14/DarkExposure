@@ -482,19 +482,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbacd0e27f801b540b9bb1bd2ee2f271, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delay: 0.1
+  delay: 0.07
   fullTexts:
   - To start, collect the gem to level up
   - The sword you aquired fires automatically in the last direction you looked
-  - Kill the enemies to recieve drops and level up
-  - Click the wand icon to use it
-  - Aim the wand over enemies you want to defeat then left click to fire
+  - Kill enemies to get more gems and level up
+  - Click the wand icon to activate it
+  - Hover over enemies and left click to fire
   - Good Luck...
   tmpText: {fileID: 80091158}
   currentLayer: 0
   typeSound: {fileID: 8300000, guid: 1cadeeb3639dd4840add03cba5111145, type: 3}
   audioSource: {fileID: 80091157}
   isTyping: 1
+  gameManager: {fileID: 930656289}
 --- !u!82 &80091157
 AudioSource:
   m_ObjectHideFlags: 0
@@ -674,7 +675,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: -188.51826, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -705,7 +706,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 25}
+  m_AnchoredPosition: {x: -99.6, y: 25}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &89784387
@@ -946,7 +947,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 92864676}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -40, y: -60, z: 0}
+  m_LocalPosition: {x: -40, y: 40, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1421,7 +1422,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 216399215}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -60, z: 0}
+  m_LocalPosition: {x: 0, y: 40, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3282,7 +3283,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 518279310}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -20, y: -60, z: 0}
+  m_LocalPosition: {x: -20, y: 40, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5575,7 +5576,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 892564605}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 40, y: -60, z: 0}
+  m_LocalPosition: {x: 40, y: 40, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5864,6 +5865,7 @@ MonoBehaviour:
   dataContainer: {fileID: 0}
   tutorialUI: {fileID: 80091156}
   lvl1Gems: {fileID: 1170332798}
+  number: 0
   character: {fileID: 239059284}
   swordButton: {fileID: 1852451670}
   wandButton: {fileID: 885353719}
@@ -6299,7 +6301,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 984200448}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 20, y: -60, z: 0}
+  m_LocalPosition: {x: 20, y: 40, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

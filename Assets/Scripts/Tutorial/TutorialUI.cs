@@ -16,11 +16,14 @@ public class TutorialUI : MonoBehaviour
     public AudioSource audioSource;
     public bool isTyping = true;
 
+    public GameObject gameManager;
+
     void Start()
     {
         tmpText = GetComponent<TMP_Text>();
         StartCoroutine(ShowText());
         audioSource = gameObject.AddComponent<AudioSource>();
+        gameManager.GetComponent<TutorialLevelEvents>().enabled=(true);
     }
 
     public void DisplayText()
