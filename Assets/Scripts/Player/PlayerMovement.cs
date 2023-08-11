@@ -38,6 +38,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+
         movementVector.x = Input.GetAxisRaw("Horizontal");
         movementVector.y = Input.GetAxisRaw("Vertical");
 
@@ -49,16 +50,16 @@ public class PlayerMovement : MonoBehaviour
         if (movementVector.x != 0)
         {
             lastHorizontalVector = movementVector.x;
-            if(lastHorizontalVector <= -1)
+            if (lastHorizontalVector <= -1)
             {
                 spriteRenderer.flipX = true;
             }
-            else if(lastHorizontalVector >= 1)
+            else if (lastHorizontalVector >= 1)
             {
                 spriteRenderer.flipX = false;
             }
         }
-        if(movementVector.y != 0)
+        if (movementVector.y != 0)
         {
             lastVerticalVector = movementVector.y;
         }
