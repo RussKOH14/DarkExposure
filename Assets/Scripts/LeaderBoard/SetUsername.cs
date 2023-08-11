@@ -12,6 +12,7 @@ public class SetUsername : MonoBehaviour
         DontDestroyOnLoad(inputField);
         string playerName =  PlayerPrefs.GetString("Player Name");
         inputField.text = playerName;
+        inputField.characterLimit = 10;
     }
 
     void Update()
