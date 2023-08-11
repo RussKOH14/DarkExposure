@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: -7566805016151653639}
   - component: {fileID: -7423602602218832003}
   - component: {fileID: -2284386351752460355}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BasicEnemyForTutorial
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -105,8 +105,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rgdbd2d: {fileID: 3194697080267242836}
   speed: 3
-  hp: 300
-  damage: 50
+  hp: 601
+  damage: 100
   experience_reward: 25
   gameManager: {fileID: 6858895889101701366, guid: b525b6d38aec2bc488f0516f51fb5551, type: 3}
 --- !u!50 &3194697080267242836
