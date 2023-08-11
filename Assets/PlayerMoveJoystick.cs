@@ -10,7 +10,6 @@ public class PlayerMoveJoystick:MonoBehaviour
     public Vector3 movementVector;
    
     public float lastHorizontalVector;
-    WhipWeapon whipWeapon;
 
     public float lastVerticalVector;
 

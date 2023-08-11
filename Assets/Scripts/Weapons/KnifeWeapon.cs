@@ -5,6 +5,7 @@ using UnityEngine;
 public class KnifeWeapon : WeaponBase
 {
     PlayerMovement playerMovement;
+    PlayerMoveJoystick playerMoveJoystick;
 
     [SerializeField] GameObject knifePrefab;
     [SerializeField] float spread = 0.5f;
@@ -12,6 +13,7 @@ public class KnifeWeapon : WeaponBase
     private void Awake()
     {
         playerMovement = GetComponentInParent<PlayerMovement>();
+        playerMoveJoystick = GetComponentInParent<PlayerMoveJoystick>();
     }
 
     public override void Attack()
@@ -29,7 +31,9 @@ public class KnifeWeapon : WeaponBase
 
             knife.transform.position = newKnifePosition;
             knifeProjectile knifeProjectile = knife.GetComponent<knifeProjectile>();
-            knifeProjectile.SetDirection(playerMovement.lastHorizontalVector, 0f);
+            //knifeProjectile.SetDirection(playerMovement.lastHorizontalVector, 0f);
+            knifeProjectile.SetDirection(playerMoveJoystick.lastHorizontalVector, 0f);
+
             knifeProjectile.damage = weaponStats.damage;
         }
     }
