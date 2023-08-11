@@ -348,10 +348,10 @@ MonoBehaviour:
   delay: 0.07
   fullTexts:
   - To start, collect the gem to level up
-  - The sword you aquired fires automatically in the last direction you looked
+  - The sword you aquired swings automatically in the last direction you looked
   - Kill enemies to get more gems and level up
   - Click the wand icon to activate it
-  - Hover over enemies and left click to fire
+  - Drag the collider over enemies and let go to fire
   - Good Luck...
   tmpText: {fileID: 80091158}
   currentLayer: 0
