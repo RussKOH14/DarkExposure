@@ -23,7 +23,9 @@ public class UseManualWeapon : MonoBehaviour
     {
         if (coolDownOver)
         {
+
             wand.SetActive(true);
+            
             timeLeft = 10.0f;
             timerSlider.value = timeLeft;   
         }

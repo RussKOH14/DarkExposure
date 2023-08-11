@@ -97,8 +97,9 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (Input.GetMouseButton(0))        //if the player clicks left mouse button
+        if (Input.GetMouseButtonUp(0))        //if the player clicks left mouse button
         {
+            Debug.Log("Left Mouse Button Released");
             if (collision.CompareTag("ManualWeapon"))     //if enemy is in manual weapon collider
             {
                 if (SceneManager.GetActiveScene().name == "Tutorial")

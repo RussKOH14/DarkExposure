@@ -32,7 +32,7 @@ public class UpgradePanelManager : MonoBehaviour
     public void OpenPanel(List<UpgradeData> upgradeDatas)
     {
         Clean();
-        pauseManager.PauseGame();
+        Time.timeScale = 0;
         panel.SetActive(true);
 
 
@@ -61,7 +61,7 @@ public class UpgradePanelManager : MonoBehaviour
     {
         HideButtons();
 
-        pauseManager.UnPauseGame();
+        Time.timeScale = 1;
         panel.SetActive(false);
     }
 
