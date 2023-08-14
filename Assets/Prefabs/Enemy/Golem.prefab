@@ -107,7 +107,7 @@ MonoBehaviour:
   hp: 1
   damage: 1
   experience_reward: 200
-  gameManager: {fileID: 0}
+  gameManager: {fileID: 6858895889101701366, guid: b525b6d38aec2bc488f0516f51fb5551, type: 3}
 --- !u!50 &249606059069767523
 Rigidbody2D:
   serializedVersion: 4

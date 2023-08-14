@@ -6,6 +6,10 @@ public class EnemyManager : MonoBehaviour
 {
     public int maxObjectCount = 150;
     public List<GameObject> spawnedEnemies = new List<GameObject>();
+    private int numberOfCycles;
+
+    public int addedDamage;
+    public int addedHealth;
 
     [Header("Golem")]
     [SerializeField] GameObject golem;
@@ -57,6 +61,15 @@ public class EnemyManager : MonoBehaviour
 
                 // Reset the timer by subtracting the increase interval multiple times
                 spawnTimer -= decreaseInterval * (int)(spawnTimer / decreaseInterval);
+                numberOfCycles++;
+
+                if(numberOfCycles == 5)
+                {
+                    addedDamage++;
+                    addedHealth++;
+                    numberOfCycles = 0;
+                }
+                
             }
         }
         if (delay <= 0.8 && !spawningKnights)
@@ -80,6 +93,8 @@ public class EnemyManager : MonoBehaviour
             Destroy(oldestObject);
             print("Destroyed");
         }
+
+        
     }
 
 

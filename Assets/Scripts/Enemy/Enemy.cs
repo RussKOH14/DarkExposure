@@ -28,6 +28,8 @@ public class Enemy : MonoBehaviour
     private SpriteRenderer spriteRenderer;  //enemy sprite renderer
     private Color originalColor;            //original colour of the enemy
 
+    EnemyManager enemyManager;
+
     private void Awake()    //calling all the following components
     {
         rgdbd2d = GetComponent<Rigidbody2D>();
@@ -37,6 +39,10 @@ public class Enemy : MonoBehaviour
         originalColor = spriteRenderer.color;
         gameManager = GameObject.Find("--GAMEMANAGER--");
         useManualWeapon = gameManager.GetComponent<UseManualWeapon>();
+        enemyManager = FindObjectOfType<EnemyManager>();
+
+        damage = damage + enemyManager.addedDamage;
+        hp= hp+ enemyManager.addedHealth;
     }
 
  
