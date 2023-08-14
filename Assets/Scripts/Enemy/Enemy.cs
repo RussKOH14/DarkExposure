@@ -1,9 +1,10 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Analytics;
-using TMPro;
 using UnityEngine.SceneManagement;
+using Unity.Entities;
+using Unity.Jobs;
+using Unity.Transforms;
+using Unity.Mathematics;
 
 public class Enemy : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class Enemy : MonoBehaviour
 
     public Rigidbody2D rgdbd2d;     //enemy rigidbody
 
-    [SerializeField] private float speed;
+    public float speed;
     [SerializeField] int hp = 4;
     [SerializeField] int damage = 1;
     [SerializeField] int experience_reward = 400;   //enemy stats (can be changed in inspector)
@@ -38,6 +39,7 @@ public class Enemy : MonoBehaviour
         useManualWeapon = gameManager.GetComponent<UseManualWeapon>();
     }
 
+ 
     public void SetTarget(GameObject target)    //Sets the enemy's taret to the player character
     {
         targetGameObject = target;
@@ -118,6 +120,23 @@ public class Enemy : MonoBehaviour
         spriteRenderer.color = Color.red;       
         yield return new WaitForSeconds(0.2f);
         spriteRenderer.color = originalColor;       //makes enemy flash red then return to origial colour
+    }
+}
+
+public partial class MovementSpeedSystem : SystemBase
+{
+    protected override void OnUpdate()
+    {
+        float deltaTime = Time.DeltaTime;
+
+        Entities
+            .ForEach((ref Translation position, in Enemy enemy) =>
+            {
+                float3 displacement = enemy.speed * deltaTime;
+                position.Value += displacement;
+            })
+            .WithoutBurst()
+            .Run();
     }
 }
 
