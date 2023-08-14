@@ -137,6 +137,8 @@ public partial class MovementSpeedSystem : SystemBase
             })
             .WithoutBurst()
             .Run();
+
+        CompleteDependency();
     }
 }
 
