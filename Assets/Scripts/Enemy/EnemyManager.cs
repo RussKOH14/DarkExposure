@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class EnemyManager : MonoBehaviour
 {
+    public int maxObjectCount = 150;
+    public List<GameObject> spawnedEnemies = new List<GameObject>();
+
     [Header("Golem")]
     [SerializeField] GameObject golem;
     [SerializeField] int numberOfGolem = 01;
@@ -69,7 +72,14 @@ public class EnemyManager : MonoBehaviour
             spawningFairies = true;
             spawningArcher = true;
         }
-       
+
+        if (spawnedEnemies.Count > maxObjectCount)
+        {
+            GameObject oldestObject = spawnedEnemies[0];
+            spawnedEnemies.RemoveAt(0);
+            Destroy(oldestObject);
+            print("Destroyed");
+        }
     }
 
 
@@ -83,6 +93,7 @@ public class EnemyManager : MonoBehaviour
         {
             GameObject easiestEnemy = Instantiate(this.golem);
             easiestEnemy.transform.position = position;
+            spawnedEnemies.Add(easiestEnemy);
             easiestEnemy.GetComponent<Enemy>().SetTarget(player);
             easiestEnemy.transform.parent = transform;
             
@@ -100,6 +111,7 @@ public class EnemyManager : MonoBehaviour
         {
             GameObject harderEnemies = Instantiate(this.knight);
             harderEnemies.transform.position = position;
+            spawnedEnemies.Add(harderEnemies);
             harderEnemies.GetComponent<Enemy>().SetTarget(player);
             harderEnemies.transform.parent = transform;
             
@@ -119,6 +131,7 @@ public class EnemyManager : MonoBehaviour
             GameObject fairy = Instantiate(this.Fairies);
             fairy.transform.localScale = prefabSize;
             fairy.transform.position = position;
+            spawnedEnemies.Add(fairy);
             fairy.GetComponent<Enemy>().SetTarget(player);
             fairy.transform.parent = transform;
 
@@ -137,6 +150,7 @@ public class EnemyManager : MonoBehaviour
             GameObject archer = Instantiate(this.Archer);
             archer.transform.localScale = prefabSize;
             archer.transform.position = position;
+            spawnedEnemies.Add(archer);
             archer.GetComponent<Enemy>().SetTarget(player);
             archer.transform.parent = transform;
 

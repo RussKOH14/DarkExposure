@@ -6,6 +6,7 @@ public class ObjectDispose : MonoBehaviour
 {
     Transform playerTransform;
     float maxDistance = 25f;
+    
 
     private void Start()
     {
@@ -20,6 +21,7 @@ public class ObjectDispose : MonoBehaviour
                 Destroy(gameObject);
             }
         }
-        
+       
+
     }
 }
