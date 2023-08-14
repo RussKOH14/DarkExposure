@@ -36,7 +36,6 @@ public class Enemy : MonoBehaviour
         originalColor = spriteRenderer.color;
         gameManager = GameObject.Find("--GAMEMANAGER--");
         useManualWeapon = gameManager.GetComponent<UseManualWeapon>();
-
     }
 
     public void SetTarget(GameObject target)    //Sets the enemy's taret to the player character

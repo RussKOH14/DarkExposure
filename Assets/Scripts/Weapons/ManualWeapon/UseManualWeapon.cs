@@ -9,7 +9,8 @@ public class UseManualWeapon : MonoBehaviour
     public GameObject wand;
     public bool coolDownOver = true;
     public float timeLeft = 10.0f;
-    
+
+    public GameObject joystick;
 
     public Slider timerSlider;
 
@@ -26,6 +27,7 @@ public class UseManualWeapon : MonoBehaviour
 
             wand.SetActive(true);
             
+            
             timeLeft = 10.0f;
             timerSlider.value = timeLeft;   
         }
@@ -33,6 +35,15 @@ public class UseManualWeapon : MonoBehaviour
 
     private void Update()
     {
+        if (wand.activeInHierarchy)
+        {
+            joystick.SetActive(false);
+        }
+        else if (!wand.activeInHierarchy)
+        {
+            joystick.SetActive(true);
+        }
+
         if (!coolDownOver)
         {
             timeLeft -= Time.deltaTime;
