@@ -4391,7 +4391,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -6721,6 +6721,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxObjectCount: 150
   spawnedEnemies: []
+  addedDamage: 0
+  addedHealth: 0
   golem: {fileID: 249606059069767524, guid: 5f1e94abf86a88940af8635cbcd3496b, type: 3}
   numberOfGolem: 1
   delay: 1
@@ -10617,7 +10619,7 @@ RectTransform:
   m_GameObject: {fileID: 1589447517}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.38372797, y: 0.38372797, z: 0.38372797}
+  m_LocalScale: {x: 0.27859035, y: 0.27859035, z: 0.27859035}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 34257360}
@@ -10625,7 +10627,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -469, y: -191}
+  m_AnchoredPosition: {x: -324, y: -110}
   m_SizeDelta: {x: 100.69681, y: 100.69681}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1589447519
@@ -12985,7 +12987,7 @@ RectTransform:
   m_GameObject: {fileID: 1822495210}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.78767085, y: 0.78767085, z: 0.78767085}
+  m_LocalScale: {x: 0.5718569, y: 0.5718569, z: 0.5718569}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 34257360}
@@ -12993,7 +12995,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -469, y: -191}
+  m_AnchoredPosition: {x: -324, y: -110.00001}
   m_SizeDelta: {x: 133.1336, y: 133.1336}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1822495212
