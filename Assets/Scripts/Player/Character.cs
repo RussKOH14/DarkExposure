@@ -73,11 +73,18 @@ public class Character : MonoBehaviour
 
         if (canUseManualWeapon>=1f)
         {
-            buttonManualWeapon.SetActive(true);
+            if (buttonManualWeapon != null)
+            {
+                buttonManualWeapon.SetActive(true);
+            }
+            
         }
         else
         {
-            buttonManualWeapon.SetActive(false);
+            if (buttonManualWeapon != null)
+            {
+                buttonManualWeapon.SetActive(false);
+            }
         }
     }
 

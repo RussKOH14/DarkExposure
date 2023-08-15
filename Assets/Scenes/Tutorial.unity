@@ -350,8 +350,6 @@ MonoBehaviour:
   - To start, collect the gem to level up
   - The sword you aquired swings automatically in the last direction you looked
   - Kill enemies to get more gems and level up
-  - Click the wand icon to activate it
-  - Drag the collider over enemies and let go to fire
   - Good Luck...
   tmpText: {fileID: 80091158}
   currentLayer: 0
@@ -1989,8 +1987,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 05ff6cdc010af4842ab3b79253714731, type: 2}
   - {fileID: 11400000, guid: 90e003a7ae7881341ba7502edd1f61cb, type: 2}
   - {fileID: 11400000, guid: dc1fda0db1bb2964da9741663bbe262c, type: 2}
-  acquiredUpgrades:
-  - {fileID: 11400000, guid: 690b2634ff0b14244a21383ba7d71caf, type: 2}
+  acquiredUpgrades: []
   upgradesAvvailableOnStart: []
 --- !u!114 &239059292
 MonoBehaviour:
@@ -2037,7 +2034,7 @@ MonoBehaviour:
   weaponParent: {fileID: 1413399415}
   stageTimer: {fileID: 0}
   world: {fileID: 761529337}
-  enemy: {fileID: 0}
+  enemy: {fileID: 914076746}
 --- !u!114 &239059295
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6087,7 +6084,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 892564605}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 40, y: -60, z: 0}
+  m_LocalPosition: {x: -60, y: -60, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6379,8 +6376,6 @@ MonoBehaviour:
   number: 0
   character: {fileID: 239059284}
   swordButton: {fileID: 1852451670}
-  wandButton: {fileID: 885353719}
-  ManualWeapon: {fileID: 872409226}
   upgradePanel: {fileID: 1707035038}
 --- !u!4 &930656291
 Transform:
@@ -6475,7 +6470,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 941650497}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 40, y: -40, z: 0}
+  m_LocalPosition: {x: -60, y: -40, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7513,7 +7508,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1107144478}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 40, y: 20, z: 0}
+  m_LocalPosition: {x: -60, y: 20, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -9767,7 +9762,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1609402395}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 40, y: -20, z: 0}
+  m_LocalPosition: {x: -60, y: -20, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -10269,7 +10264,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1659423347}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 40, y: 0, z: 0}
+  m_LocalPosition: {x: -60, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

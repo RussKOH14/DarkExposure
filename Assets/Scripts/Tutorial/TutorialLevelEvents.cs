@@ -15,10 +15,7 @@ public class TutorialLevelEvents : MonoBehaviour
     TutorialEnemySpawn tutorialEnemySpawn;
 
     public GameObject swordButton;
-    public GameObject wandButton;
     
-    
-    public GameObject ManualWeapon;
     public GameObject upgradePanel;
 
     private void Awake()
@@ -41,7 +38,6 @@ public class TutorialLevelEvents : MonoBehaviour
         {
             lvl1Gems.SetActive(true);
             Debug.Log("gems");
-            
         }
 
         if(!lvl1Gems && number == 0)
@@ -56,13 +52,7 @@ public class TutorialLevelEvents : MonoBehaviour
     {
         character.GetComponent<WeaponManager>().enabled = true;
         Invoke("Golem", 10);
-    }
 
-    public void Wand()
-    {
-        ManualWeapon.SetActive(true);
-        Invoke("PlayText", 0.5f);
-        Invoke("DestroyUpgradePanel", 2);
     }
 
     public void DestroyUpgradePanel()
@@ -84,21 +74,21 @@ public class TutorialLevelEvents : MonoBehaviour
         if(number == 2)
         {
             number += 1;
-            Invoke("PlayText", 0.5f);
             Invoke("SpawnHarderEnemy", 10);
         }
     }
     public void SpawnHarderEnemy()
     {
         tutorialEnemySpawn.SpawnHarderEnemy();
+        Invoke("PlayText", 0.5f);
     }
 
     public void Golem()
     {
         tutorialEnemySpawn.SpawnEnemy();
         PlayText();
-        swordButton.SetActive(false);
-        wandButton.SetActive(true);
+        DestroyUpgradePanel();
+        Invoke("SpawnHarderEnemy", 10);
     }
 
     public void PlayText()

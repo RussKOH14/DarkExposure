@@ -41,8 +41,12 @@ public class Enemy : MonoBehaviour
         useManualWeapon = gameManager.GetComponent<UseManualWeapon>();
         enemyManager = FindObjectOfType<EnemyManager>();
 
-        damage = damage + enemyManager.addedDamage;
-        hp= hp+ enemyManager.addedHealth;
+        if (enemyManager != null)
+        {
+            damage = damage + enemyManager.addedDamage;
+            hp = hp + enemyManager.addedHealth;
+        }
+        
     }
 
  
