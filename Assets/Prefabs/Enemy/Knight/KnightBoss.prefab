@@ -20,7 +20,7 @@ GameObject:
   - component: {fileID: -7423602602218832003}
   - component: {fileID: -2284386351752460355}
   m_Layer: 0
-  m_Name: BasicEnemy
+  m_Name: KnightBoss
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -61,7 +61,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3bd3a997ab8d21940a64805ad8118225, type: 2}
+  - {fileID: 2100000, guid: c266e3320b9d65c44afa126ba4da52b9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -106,8 +106,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rgdbd2d: {fileID: 3194697080267242836}
-  speed: 3
-  hp: 150
+  speed: 2
+  hp: 2500
   damage: 10
   experience_reward: 25
   gameManager: {fileID: 6858895889101701366, guid: b525b6d38aec2bc488f0516f51fb5551, type: 3}
