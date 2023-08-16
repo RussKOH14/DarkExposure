@@ -107,7 +107,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rgdbd2d: {fileID: 3194697080267242836}
   speed: 3
-  hp: 150
+  hp: 200
   damage: 10
   experience_reward: 25
   gameManager: {fileID: 6858895889101701366, guid: b525b6d38aec2bc488f0516f51fb5551, type: 3}

@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class EnemyManager : MonoBehaviour
 {
+    
     public int maxObjectCount = 150;
     public List<GameObject> spawnedEnemies = new List<GameObject>();
-    private int numberOfCycles;
+    
 
     public int addedDamage;
     public int addedHealth;
@@ -46,11 +47,11 @@ public class EnemyManager : MonoBehaviour
     private void Awake()
     {
         SpawnEnemy();
+        
     }
 
     private void Update()
     {
-        
         if (delay >0.2)
         {
             spawnTimer += Time.deltaTime; // Increase the timer with the elapsed time
@@ -61,14 +62,11 @@ public class EnemyManager : MonoBehaviour
 
                 // Reset the timer by subtracting the increase interval multiple times
                 spawnTimer -= decreaseInterval * (int)(spawnTimer / decreaseInterval);
-                numberOfCycles++;
-
-                if(numberOfCycles == 5)
-                {
-                    addedDamage++;
-                    addedHealth++;
-                    numberOfCycles = 0;
-                }
+               
+                addedDamage++;
+                addedHealth++;
+                    
+                
                 
             }
         }
@@ -96,7 +94,6 @@ public class EnemyManager : MonoBehaviour
 
         
     }
-
 
     public void SpawnEnemy()
     {

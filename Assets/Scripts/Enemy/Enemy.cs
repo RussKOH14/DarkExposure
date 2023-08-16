@@ -14,8 +14,11 @@ public class Enemy : MonoBehaviour
 
     public Rigidbody2D rgdbd2d;     //enemy rigidbody
 
+    [SerializeField] StatusBar hpBar;
+
     public float speed;
     [SerializeField] int hp = 4;
+    [SerializeField] int maxHp = 4;
     [SerializeField] int damage = 1;
     [SerializeField] int experience_reward = 400;   //enemy stats (can be changed in inspector)
 
@@ -45,11 +48,27 @@ public class Enemy : MonoBehaviour
         {
             damage = damage + enemyManager.addedDamage;
             hp = hp + enemyManager.addedHealth;
+            maxHp = hp + enemyManager.addedHealth;
+        }
+        if (hpBar != null)
+        {
+            UpdateHpBar();
+        }
+    }
+    private void Update()
+    {
+        if (hpBar != null)
+        {
+            UpdateHpBar();
         }
         
     }
 
- 
+    private void UpdateHpBar()
+    {
+        hpBar.SetState(hp,maxHp);
+    }
+
     public void SetTarget(GameObject target)    //Sets the enemy's taret to the player character
     {
         targetGameObject = target;
@@ -103,6 +122,10 @@ public class Enemy : MonoBehaviour
             GetComponent<DropOnDestroy>().CheckDrop();      //drops a pickup
             Destroy(gameObject);//destroys enemy
             enemyKilledScore.enemiesKilled += 1;        //adds to player score
+        }
+        if (hpBar != null)
+        {
+            UpdateHpBar();
         }
     }
 

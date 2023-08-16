@@ -71,21 +71,7 @@ public class Character : MonoBehaviour
         UpdateHpBar();
         UpdateHealthText();
 
-        if (canUseManualWeapon>=1f)
-        {
-            if (buttonManualWeapon != null)
-            {
-                buttonManualWeapon.SetActive(true);
-            }
-            
-        }
-        else
-        {
-            if (buttonManualWeapon != null)
-            {
-                buttonManualWeapon.SetActive(false);
-            }
-        }
+        
     }
 
 
