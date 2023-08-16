@@ -32,11 +32,13 @@ public class Enemy : MonoBehaviour
     private Color originalColor;            //original colour of the enemy
 
     EnemyManager enemyManager;
+    BossSpawn bossSpawn;
 
     private void Awake()    //calling all the following components
     {
         rgdbd2d = GetComponent<Rigidbody2D>();
         enemyKilledScore = FindObjectOfType<EnemyKilledScore>();
+        bossSpawn = FindObjectOfType<BossSpawn>();
         tutorialLevelEvents = FindObjectOfType<TutorialLevelEvents>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         originalColor = spriteRenderer.color;
@@ -122,6 +124,7 @@ public class Enemy : MonoBehaviour
             GetComponent<DropOnDestroy>().CheckDrop();      //drops a pickup
             Destroy(gameObject);//destroys enemy
             enemyKilledScore.enemiesKilled += 1;        //adds to player score
+            bossSpawn.enemiesKilled += 1;        //adds to player score
         }
         if (hpBar != null)
         {

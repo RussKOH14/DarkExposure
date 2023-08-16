@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BossSpawn : MonoBehaviour
 {
-    public EnemyKilledScore enemyKilledScore;
+    public int enemiesKilled;
     [Header("Boss")]
     [SerializeField] GameObject boss;
     [SerializeField] int numberOfBoss = 01;
@@ -15,18 +15,13 @@ public class BossSpawn : MonoBehaviour
     [SerializeField] GameObject player;
  
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        enemyKilledScore = FindObjectOfType<EnemyKilledScore>();
-    }
-
     // Update is called once per frame
     void Update()
     {
-        if (enemyKilledScore.enemiesKilled >= 500 && spawnedBoss == false)
+        if (enemiesKilled >= 500)
         {
             SpawnBoss();
+            enemiesKilled = 0;
         }
     }
 
@@ -43,10 +38,10 @@ public class BossSpawn : MonoBehaviour
             boss.GetComponent<Enemy>().SetTarget(player);
             boss.transform.parent = transform;
 
-            spawnedBoss = true;
         }
 
     }
+
     private Vector3 GenerateRandomPosition()
     {
         Vector3 position = new Vector3();
