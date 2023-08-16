@@ -236,7 +236,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rgdbd2d: {fileID: 3194697080267242836}
   hpBar: {fileID: 4665464929293666798}
-  speed: 5
+  speed: 2
   hp: 3000
   maxHp: 4
   damage: 10
