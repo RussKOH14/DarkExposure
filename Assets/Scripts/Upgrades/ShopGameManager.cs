@@ -39,6 +39,7 @@ public class ShopGameManager : MonoBehaviour
         dataContainer.speed = PlayerPrefs.GetInt("speed", dataContainer.speed);
         dataContainer.speedUpgrades = PlayerPrefs.GetInt("speedUpgrades", dataContainer.speedUpgrades);
         dataContainer.tutorial = PlayerPrefs.GetInt("tutorial", dataContainer.tutorial);
+        dataContainer.keys = PlayerPrefs.GetInt("keys", dataContainer.keys);
 
     }
 
@@ -52,6 +53,7 @@ public class ShopGameManager : MonoBehaviour
         PlayerPrefs.SetInt("speed", dataContainer.speed);
         PlayerPrefs.SetInt("speedUpgrades", dataContainer.speedUpgrades);
         PlayerPrefs.SetInt("tutorial", dataContainer.tutorial);
+        PlayerPrefs.SetInt("keys", dataContainer.keys);
         PlayerPrefs.Save();
     }
 }
