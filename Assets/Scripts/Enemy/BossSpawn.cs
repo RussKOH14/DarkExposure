@@ -18,7 +18,7 @@ public class BossSpawn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (enemiesKilled >= 500)
+        if (enemiesKilled >= 250)
         {
             SpawnBoss();
             enemiesKilled = 0;
