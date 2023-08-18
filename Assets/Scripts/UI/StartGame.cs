@@ -24,16 +24,17 @@ public class StartGame : MonoBehaviour
     public void Shop()
     {
         
-        if (ShopGameManager.Instance.dataContainer.keys>= 1|| ShopGameManager.Instance.dataContainer.shopUnlocked <=1)
+        if (ShopGameManager.Instance.dataContainer.keys >= 1|| ShopGameManager.Instance.dataContainer.shopUnlocked >=1)
         {
             SceneManager.LoadScene("Shop");
             Time.timeScale = 1f;
             
-            if (ShopGameManager.Instance.dataContainer.shopUnlocked <= 0)
+            if (ShopGameManager.Instance.dataContainer.shopUnlocked == 0)
             {
+                print("unlocked");
                 ShopGameManager.Instance.dataContainer.shopUnlocked ++;
                 ShopGameManager.Instance.dataContainer.keys -= 1;
-                PlayerPrefs.Save();
+                SaveData();
             }
         }
         
