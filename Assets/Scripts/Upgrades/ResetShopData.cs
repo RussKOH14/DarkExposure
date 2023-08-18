@@ -10,7 +10,7 @@ public class ResetShopData : MonoBehaviour
     private void Awake()
     {
         LoadData();
-        UpdateCoinsText();
+
     }
 
     // Update is called once per frame
@@ -29,8 +29,9 @@ public class ResetShopData : MonoBehaviour
         ShopGameManager.Instance.dataContainer.speedUpgrades = 0;
         ShopGameManager.Instance.dataContainer.tutorial = 0;
         ShopGameManager.Instance.dataContainer.keys = 0;
+        ShopGameManager.Instance.dataContainer.shopUnlocked = 0;
         SaveData();
-        UpdateCoinsText();
+        
     }
     private void LoadData()
     {
@@ -41,8 +42,5 @@ public class ResetShopData : MonoBehaviour
     {
         ShopGameManager.Instance.SaveData();
     }
-    private void UpdateCoinsText()
-    {
-        //coinsText.text = ShopGameManager.Instance.dataContainer.coins.ToString();
-    }
+   
 }

@@ -23,8 +23,20 @@ public class StartGame : MonoBehaviour
 
     public void Shop()
     {
-        SceneManager.LoadScene("Shop");
-        Time.timeScale = 1f;
+        
+        if (ShopGameManager.Instance.dataContainer.keys>= 1|| ShopGameManager.Instance.dataContainer.shopUnlocked <=1)
+        {
+            SceneManager.LoadScene("Shop");
+            Time.timeScale = 1f;
+            
+            if (ShopGameManager.Instance.dataContainer.shopUnlocked <= 0)
+            {
+                ShopGameManager.Instance.dataContainer.shopUnlocked ++;
+                ShopGameManager.Instance.dataContainer.keys -= 1;
+                PlayerPrefs.Save();
+            }
+        }
+        
     }
 
     public void Quit()
