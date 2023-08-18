@@ -28,6 +28,7 @@ public class ResetShopData : MonoBehaviour
         ShopGameManager.Instance.dataContainer.speed = 0;
         ShopGameManager.Instance.dataContainer.speedUpgrades = 0;
         ShopGameManager.Instance.dataContainer.tutorial = 0;
+        ShopGameManager.Instance.dataContainer.keys = 0;
         SaveData();
         UpdateCoinsText();
     }

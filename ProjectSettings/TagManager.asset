@@ -13,6 +13,7 @@ TagManager:
   - Weapon
   - ManualWeapon
   - Boss
+  - Keys
   layers:
   - Default
   - TransparentFX

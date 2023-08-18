@@ -69,9 +69,7 @@ public class Character : MonoBehaviour
         }
 
         UpdateHpBar();
-        UpdateHealthText();
-
-        
+       
     }
 
 
@@ -97,11 +95,6 @@ public class Character : MonoBehaviour
         hpBar.SetState(currentHp, currentMaxHp);
     }
 
-    private void UpdateHealthText()
-    {
-        string formattedText = $"{currentHp} / {maxHp + armour}";
-        healthText.text = formattedText;
-    }
 
     public void Heal(int amount)
     {
