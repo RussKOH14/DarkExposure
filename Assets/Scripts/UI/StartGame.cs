@@ -5,6 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class StartGame : MonoBehaviour
 {
+    public GameObject shopLock;
+
+    private void Update()
+    {
+        if (ShopGameManager.Instance.dataContainer.shopUnlocked >= 1)
+        {
+            shopLock.SetActive(false);
+        }
+        else
+        {
+            shopLock.SetActive(true);
+        }
+    }
     public void StartGameplay()
     {
         LoadData();
@@ -31,6 +44,7 @@ public class StartGame : MonoBehaviour
             
             if (ShopGameManager.Instance.dataContainer.shopUnlocked == 0)
             {
+                shopLock.SetActive(false);
                 print("unlocked");
                 ShopGameManager.Instance.dataContainer.shopUnlocked ++;
                 ShopGameManager.Instance.dataContainer.keys -= 1;
