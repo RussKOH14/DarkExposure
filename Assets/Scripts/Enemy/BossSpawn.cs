@@ -13,12 +13,13 @@ public class BossSpawn : MonoBehaviour
     [Header("Other stats")]
     [SerializeField] Vector2 spawnArea;
     [SerializeField] GameObject player;
- 
+
+    [SerializeField] bool bossSpawned;
 
     // Update is called once per frame
     void Update()
     {
-        if (enemiesKilled >= 250)
+        if (enemiesKilled >= 1 && bossSpawned == false)
         {
             SpawnBoss();
             enemiesKilled = 0;
@@ -37,7 +38,7 @@ public class BossSpawn : MonoBehaviour
             boss.transform.position = position;
             boss.GetComponent<Enemy>().SetTarget(player);
             boss.transform.parent = transform;
-
+            bossSpawned = true;
         }
 
     }
