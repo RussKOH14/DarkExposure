@@ -192,5 +192,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dataContainer: {fileID: 11400000, guid: 0da467fe86fe1104182c0ce055588267, type: 2}
-  keysCountText: {fileID: 0}
-  amount: 0
+  amount: 1
