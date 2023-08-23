@@ -16,4 +16,6 @@ public class DataContainer : ScriptableObject
     public int tutorial;
     public int keys;
     public int shopUnlocked;
+    public int strengthUnlocked;
+    public int speedUnlocked;
 }

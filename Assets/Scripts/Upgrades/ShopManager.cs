@@ -35,7 +35,9 @@ public class ShopManager : MonoBehaviour
     public Sprite speedGold;
     public Sprite speedAmethyst;
 
-
+    [Header("Locks")]
+    public GameObject strengthLock;
+    public GameObject speedLock;
 
     private void Awake()
     {
@@ -44,7 +46,25 @@ public class ShopManager : MonoBehaviour
     }
     private void Update()
     {
-        if(ShopGameManager.Instance.dataContainer.healthUpgrades == 0)
+        
+        if (ShopGameManager.Instance.dataContainer.strengthUnlocked>= 1)
+        {
+            strengthLock.SetActive(false);
+        }
+        else
+        {
+            strengthLock.SetActive(true);
+        }
+        if (ShopGameManager.Instance.dataContainer.speedUnlocked >= 1)
+        {
+            speedLock.SetActive(false);
+        }
+        else
+        {
+            speedLock.SetActive(true);
+        }
+        
+        if (ShopGameManager.Instance.dataContainer.healthUpgrades == 0)
         {
             healthButton.GetComponent<Image>().sprite = healthCopper;
         }
@@ -114,6 +134,10 @@ public class ShopManager : MonoBehaviour
                 UpdateCoinsText();
                 Debug.Log("health");
             }
+            else
+            {
+                error.Play();
+            }
         }
 
         else
@@ -125,37 +149,70 @@ public class ShopManager : MonoBehaviour
 
     public void Damage()
     {
-        if (ShopGameManager.Instance.dataContainer.damageUpgrades < 3)
+
+        if (ShopGameManager.Instance.dataContainer.keys >= 1 || ShopGameManager.Instance.dataContainer.strengthUnlocked >= 1)
         {
-            if (ShopGameManager.Instance.dataContainer.coins >= damageCost)
+
+            if (ShopGameManager.Instance.dataContainer.damageUpgrades < 3)
             {
-                ShopGameManager.Instance.dataContainer.damageUpgrades += 1;
-                ShopGameManager.Instance.dataContainer.coins -= damageCost;
-                ShopGameManager.Instance.dataContainer.addedDamage += 100;
-                SaveData();
-                UpdateCoinsText();
+                if (ShopGameManager.Instance.dataContainer.strengthUnlocked == 0)
+                {
+                    strengthLock.SetActive(false);
+                    print("unlocked");
+                    ShopGameManager.Instance.dataContainer.strengthUnlocked++;
+                    ShopGameManager.Instance.dataContainer.keys -= 1;
+                    SaveData();
+                }
+                if (ShopGameManager.Instance.dataContainer.coins >= damageCost)
+                {
+                    ShopGameManager.Instance.dataContainer.damageUpgrades += 1;
+                    ShopGameManager.Instance.dataContainer.coins -= damageCost;
+                    ShopGameManager.Instance.dataContainer.addedDamage += 100;
+                    SaveData();
+                    UpdateCoinsText();
+
+                }
+                else
+                {
+                    error.Play();
+                }
             }
         }
-
         else
         {
             error.Play();
         }
+        
     }
 
     public void Speed()
     {
-        if (ShopGameManager.Instance.dataContainer.speedUpgrades < 3)
+        if (ShopGameManager.Instance.dataContainer.keys >= 1 || ShopGameManager.Instance.dataContainer.speedUnlocked >= 1)
         {
-            if (ShopGameManager.Instance.dataContainer.coins >= speedCost)
+            if (ShopGameManager.Instance.dataContainer.speedUpgrades < 3)
             {
-                ShopGameManager.Instance.dataContainer.speedUpgrades += 1;
-                ShopGameManager.Instance.dataContainer.coins -= speedCost;
-                int originalSpeed = PlayerPrefs.GetInt("originalSpeed");
-                int speedIncrease = Mathf.RoundToInt(originalSpeed * 0.1f);
-                ShopGameManager.Instance.dataContainer.speed += speedIncrease;
-                SaveData();
-                UpdateCoinsText();
+                if (ShopGameManager.Instance.dataContainer.speedUnlocked == 0)
+                {
+                    speedLock.SetActive(false);
+                    print("unlocked");
+                    ShopGameManager.Instance.dataContainer.speedUnlocked++;
+                    ShopGameManager.Instance.dataContainer.keys -= 1;
+                    SaveData();
+                }
+                if (ShopGameManager.Instance.dataContainer.coins >= speedCost)
+                {
+                    ShopGameManager.Instance.dataContainer.speedUpgrades += 1;
+                    ShopGameManager.Instance.dataContainer.coins -= speedCost;
+                    int originalSpeed = PlayerPrefs.GetInt("originalSpeed");
+                    int speedIncrease = Mathf.RoundToInt(originalSpeed * 0.1f);
+                    ShopGameManager.Instance.dataContainer.speed += speedIncrease;
+                    SaveData();
+                    UpdateCoinsText();
+                }
+                else
+                {
+                    error.Play();
+                }
             }
         }
 

@@ -30,6 +30,8 @@ public class ResetShopData : MonoBehaviour
         ShopGameManager.Instance.dataContainer.tutorial = 0;
         ShopGameManager.Instance.dataContainer.keys = 0;
         ShopGameManager.Instance.dataContainer.shopUnlocked = 0;
+        ShopGameManager.Instance.dataContainer.strengthUnlocked = 0;
+        ShopGameManager.Instance.dataContainer.speedUnlocked = 0;
         SaveData();
         
     }
