@@ -31,8 +31,8 @@ public class KnifeWeapon : WeaponBase
 
             knife.transform.position = newKnifePosition;
             knifeProjectile knifeProjectile = knife.GetComponent<knifeProjectile>();
-            //knifeProjectile.SetDirection(playerMovement.lastHorizontalVector, 0f);
-            knifeProjectile.SetDirection(playerMoveJoystick.lastHorizontalVector, 0f);
+            knifeProjectile.SetDirection(playerMovement.lastHorizontalVector, 0f);
+            //knifeProjectile.SetDirection(playerMoveJoystick.lastHorizontalVector, 0f);
 
             knifeProjectile.damage = weaponStats.damage;
         }

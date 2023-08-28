@@ -6,6 +6,7 @@ public class UpgradePanelManager : MonoBehaviour
 {
     [SerializeField] GameObject panel;
     PauseManager pauseManager;
+    public AudioSource lvlUp;
 
     [SerializeField] List<UpgradeButton> upgradeButtons;
 
@@ -63,6 +64,7 @@ public class UpgradePanelManager : MonoBehaviour
 
         Time.timeScale = 1;
         panel.SetActive(false);
+        lvlUp.Play();
     }
 
     private void HideButtons()

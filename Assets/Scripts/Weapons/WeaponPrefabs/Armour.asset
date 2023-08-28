@@ -22,7 +22,3 @@ MonoBehaviour:
     skullCount: 0
   upgrades:
   - {fileID: 11400000, guid: 05ff6cdc010af4842ab3b79253714731, type: 2}
-  - {fileID: 11400000, guid: 05ff6cdc010af4842ab3b79253714731, type: 2}
-  - {fileID: 11400000, guid: 05ff6cdc010af4842ab3b79253714731, type: 2}
-  - {fileID: 11400000, guid: 05ff6cdc010af4842ab3b79253714731, type: 2}
-  - {fileID: 11400000, guid: 05ff6cdc010af4842ab3b79253714731, type: 2}
