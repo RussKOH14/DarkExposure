@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SkeletonsAquire
   m_EditorClassIdentifier: 
   upgradeType: 3
-  icon: {fileID: 21300000, guid: e0449d10082c4a64e863e37ada7a3df1, type: 3}
+  icon: {fileID: 21300000, guid: e2692456f2150714aa2e9cb81cfd16be, type: 3}
   name: Skulls of the dead
   description: Throw Skeletons Upwards
   quote: '"Spooky Scary Skeletons"'

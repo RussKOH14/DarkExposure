@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: MagnetUpgrade
   m_EditorClassIdentifier: 
   upgradeType: 1
-  icon: {fileID: 21300000, guid: af4e386cb36b9d8409d0563ce6cd717a, type: 3}
+  icon: {fileID: 21300000, guid: 653470e474bcd844a8b0e4ebb95f07d7, type: 3}
   name: Magnet
   description: Attract Items from further away
   quote: '"Suck all that remains"'
@@ -25,6 +25,7 @@ MonoBehaviour:
   item: {fileID: 11400000, guid: 2175b806cb9e89345b745894adcaf021, type: 2}
   itemStats:
     armour: 0
+    coins: 0
     magnetRadiusAddition: 0.001
     canUseManualWeapon: 0
     canUseSkulls: 0

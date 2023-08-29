@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Whip upgrade
   m_EditorClassIdentifier: 
   upgradeType: 0
-  icon: {fileID: 21300000, guid: 10b5239823837cc4793a43e51f201f68, type: 3}
+  icon: {fileID: 21300000, guid: b7314f6e64d88f847bb650de4975e367, type: 3}
   name: Cursed Sword
   description: Sword Upgrade
   quote: '"Stained with blood it gains power"'
