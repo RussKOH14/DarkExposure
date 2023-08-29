@@ -20,6 +20,8 @@ public class Level : MonoBehaviour
     [SerializeField] List<UpgradeData> upgradesAvvailableOnStart;
 
     UpgradeDisplay upgradeDisplay;
+    public upgradeLevels magnetUpgradeLevels;
+    public upgradeLevels SwordUpgradeLevels;
 
     public int TO_LEVEL_UP
     {
@@ -34,6 +36,7 @@ public class Level : MonoBehaviour
         weaponManager = GetComponent<WeaponManager>();
         passiveItems = GetComponent<PassiveItems>();
         upgradeDisplay = FindObjectOfType<UpgradeDisplay>();
+       
     }
 
     internal void AddUpgradesIntoTheListOfAvailableUpgrades(List<UpgradeData> upgradesToAdd)
@@ -71,19 +74,17 @@ public class Level : MonoBehaviour
         {
             case UpgradeType.WeaponUpgrade:
                 weaponManager.UpgradeWeapon(upgradeData);
-                //if (upgradeDisplay.weaponSlotsParent.Count !=0)
-                //{
-                //    upgradeDisplay.DisplayWeapon(upgradeData.item);
-                //    upgradeDisplay.weaponSlotsParent.RemoveAt(0);
-                //}
+                if(upgradeData.name == "Cursed Sword")
+                {
+                    SwordUpgradeLevels.UpgradeGot();
+                }
                 break;
             case UpgradeType.ItemUpgrade:
                 passiveItems.UpgradeItem(upgradeData);
-                //if (upgradeDisplay.upgradeSlotsParent.Count != 0)
-                //{
-                //    upgradeDisplay.DisplayUpgrade(upgradeData.item);
-                //    upgradeDisplay.upgradeSlotsParent.RemoveAt(0);
-                //}
+                if (upgradeData.name == "Magnet")
+                {
+                    magnetUpgradeLevels.UpgradeGot();
+                }
                 break;
             case UpgradeType.WeaponGet:
 
@@ -97,11 +98,16 @@ public class Level : MonoBehaviour
             case UpgradeType.ItemGet:
                 passiveItems.Equip(upgradeData.item);
                 AddUpgradesIntoTheListOfAvailableUpgrades(upgradeData.item.upgrades);
-                if (upgradeDisplay.upgradeSlotsParent.Count != 0)
+
+                if(upgradeData.name!= "Free Coins")
                 {
-                    upgradeDisplay.DisplayUpgrade(upgradeData.item);
-                    upgradeDisplay.upgradeSlotsParent.RemoveAt(0);
+                    if (upgradeDisplay.upgradeSlotsParent.Count != 0)
+                    {
+                        upgradeDisplay.DisplayUpgrade(upgradeData.item);
+                        upgradeDisplay.upgradeSlotsParent.RemoveAt(0);
+                    }
                 }
+               
                 break;
         }
 
