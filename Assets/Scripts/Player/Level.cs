@@ -10,6 +10,7 @@ public class Level : MonoBehaviour
     [SerializeField] UpgradePanelManager upgradePanel;
 
     [SerializeField] List<UpgradeData> upgrades;
+    [SerializeField] List<UpgradeData> lastUpgrades;
     List<UpgradeData> selecetedUpgrade;
 
     [SerializeField] List<UpgradeData> acquiredUpgrades;
@@ -164,8 +165,11 @@ public class Level : MonoBehaviour
 
         if (count > upgrades.Count)
         {
+            AddUpgradesIntoTheListOfAvailableUpgrades(lastUpgrades);
             count = upgrades.Count;
         }
+
+
 
         for (int i = 0; i < count; i++)
         {
