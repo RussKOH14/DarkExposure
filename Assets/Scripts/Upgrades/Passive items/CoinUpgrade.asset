@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CoinUpgrade
   m_EditorClassIdentifier: 
   upgradeType: 3
-  icon: {fileID: 21300000, guid: 0ba0c53e5e969a84099eea6c90d4a317, type: 3}
+  icon: {fileID: 21300000, guid: 15a625e91b8502f4597b9abb93f85387, type: 3}
   name: Free Coins
   description: +10 Coins
   quote: '"Get Money!"'

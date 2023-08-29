@@ -103,8 +103,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rgdbd2d: {fileID: 249606059069767523}
+  hpBar: {fileID: 0}
   speed: 2
   hp: 1
+  maxHp: 4
   damage: 1
   experience_reward: 200
   gameManager: {fileID: 6858895889101701366, guid: b525b6d38aec2bc488f0516f51fb5551, type: 3}
