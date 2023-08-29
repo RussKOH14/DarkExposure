@@ -22,9 +22,10 @@ MonoBehaviour:
     damage: 50
     timeToAttack: -0.5
     numberOfAttacks: 1
-  item: {fileID: 0}
+  item: {fileID: 11400000, guid: 107706cadc4403d4e940e329f02dfb76, type: 2}
   itemStats:
     armour: 0
+    coins: 0
     magnetRadiusAddition: 0
     canUseManualWeapon: 0
     canUseSkulls: 0

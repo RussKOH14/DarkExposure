@@ -25,6 +25,7 @@ MonoBehaviour:
   item: {fileID: 11400000, guid: 6f2d21dde778df94cb9c08c8b2eadeda, type: 2}
   itemStats:
     armour: 0
+    coins: 0
     magnetRadiusAddition: 0
     canUseManualWeapon: 0
     canUseSkulls: 0

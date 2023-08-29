@@ -1,26 +1,49 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 public class UpgradeDisplay : MonoBehaviour
 {
-    public Transform upgradeSlotsParent; // Assign the parent transform of your upgrade slots in the Inspector.
-    public GameObject upgradeSlotPrefab; // Assign the upgrade slot prefab in the Inspector.
-    public Item upgradeItem; // Assign the Item scriptable object for the upgrade in the Inspector.
+    public List<Transform> upgradeSlotsParent;
+    public List<Transform> weaponSlotsParent;
+    public GameObject upgradeSlotPrefab; 
+    public Item upgradeItem;
+    
+    Level level;
 
     private void Start()
     {
-        DisplayUpgrade(upgradeItem);
+        //DisplayUpgrade(upgradeItem);
+        level = FindObjectOfType<Level>();
     }
 
     public void DisplayUpgrade(Item upgrade)
     {
-        GameObject slot = Instantiate(upgradeSlotPrefab, upgradeSlotsParent);
-        Image slotImage = slot.GetComponent<Image>();
-
-        if (upgrade.upgrades.Count > 0)
+        if (upgradeSlotsParent != null)
         {
-            Sprite upgradeIcon = upgrade.upgrades[0].icon;
-            slotImage.sprite = upgradeIcon;
+            GameObject slot = Instantiate(upgradeSlotPrefab, upgradeSlotsParent[0]);
+            Image slotImage = slot.GetComponent<Image>();
+
+            if (upgrade.upgrades.Count > 0)
+            {
+                Sprite upgradeIcon = upgrade.upgrades[0].icon;
+                slotImage.sprite = upgradeIcon;
+            }
+        }
+
+    }  
+    public void DisplayWeapon(Item upgrade)
+    {
+        if(weaponSlotsParent != null)
+        {
+            GameObject slot = Instantiate(upgradeSlotPrefab, weaponSlotsParent[0]);
+            Image slotImage = slot.GetComponent<Image>();
+
+            if (upgrade.upgrades.Count > 0)
+            {
+                Sprite upgradeIcon = upgrade.upgrades[0].icon;
+                slotImage.sprite = upgradeIcon;
+            }
         }
     }
 }

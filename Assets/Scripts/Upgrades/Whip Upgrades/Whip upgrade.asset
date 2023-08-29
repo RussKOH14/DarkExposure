@@ -22,7 +22,7 @@ MonoBehaviour:
     damage: 20
     timeToAttack: -0.5
     numberOfAttacks: 0
-  item: {fileID: 0}
+  item: {fileID: 11400000, guid: b2e05258e6f334142a9bade92c873b93, type: 2}
   itemStats:
     armour: 0
     coins: 0

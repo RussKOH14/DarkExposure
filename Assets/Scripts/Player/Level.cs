@@ -19,6 +19,8 @@ public class Level : MonoBehaviour
 
     [SerializeField] List<UpgradeData> upgradesAvvailableOnStart;
 
+    UpgradeDisplay upgradeDisplay;
+
     public int TO_LEVEL_UP
     {
         get
@@ -31,6 +33,7 @@ public class Level : MonoBehaviour
     {
         weaponManager = GetComponent<WeaponManager>();
         passiveItems = GetComponent<PassiveItems>();
+        upgradeDisplay = FindObjectOfType<UpgradeDisplay>();
     }
 
     internal void AddUpgradesIntoTheListOfAvailableUpgrades(List<UpgradeData> upgradesToAdd)
@@ -47,6 +50,8 @@ public class Level : MonoBehaviour
         experienceBar.UpdateExperienceSlider(experience, TO_LEVEL_UP);
         experienceBar.SetLevelText(level);
         AddUpgradesIntoTheListOfAvailableUpgrades(upgradesAvvailableOnStart);
+
+
     }
 
     public void AddExperince(int amount)
@@ -66,16 +71,37 @@ public class Level : MonoBehaviour
         {
             case UpgradeType.WeaponUpgrade:
                 weaponManager.UpgradeWeapon(upgradeData);
+                if (upgradeDisplay.weaponSlotsParent.Count !=0)
+                {
+                    upgradeDisplay.DisplayWeapon(upgradeData.item);
+                    upgradeDisplay.weaponSlotsParent.RemoveAt(0);
+                }
                 break;
             case UpgradeType.ItemUpgrade:
                 passiveItems.UpgradeItem(upgradeData);
+                if (upgradeDisplay.upgradeSlotsParent.Count != 0)
+                {
+                    upgradeDisplay.DisplayUpgrade(upgradeData.item);
+                    upgradeDisplay.upgradeSlotsParent.RemoveAt(0);
+                }
                 break;
             case UpgradeType.WeaponGet:
+
                 weaponManager.AddWeapon(upgradeData.weaponData);
+                if (upgradeDisplay.weaponSlotsParent.Count != 0)
+                {
+                    upgradeDisplay.DisplayWeapon(upgradeData.item);
+                    upgradeDisplay.weaponSlotsParent.RemoveAt(0);
+                }
                 break;
             case UpgradeType.ItemGet:
                 passiveItems.Equip(upgradeData.item);
                 AddUpgradesIntoTheListOfAvailableUpgrades(upgradeData.item.upgrades);
+                if (upgradeDisplay.upgradeSlotsParent.Count != 0)
+                {
+                    upgradeDisplay.DisplayUpgrade(upgradeData.item);
+                    upgradeDisplay.upgradeSlotsParent.RemoveAt(0);
+                }
                 break;
         }
 
