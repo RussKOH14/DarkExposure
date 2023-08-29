@@ -71,19 +71,19 @@ public class Level : MonoBehaviour
         {
             case UpgradeType.WeaponUpgrade:
                 weaponManager.UpgradeWeapon(upgradeData);
-                if (upgradeDisplay.weaponSlotsParent.Count !=0)
-                {
-                    upgradeDisplay.DisplayWeapon(upgradeData.item);
-                    upgradeDisplay.weaponSlotsParent.RemoveAt(0);
-                }
+                //if (upgradeDisplay.weaponSlotsParent.Count !=0)
+                //{
+                //    upgradeDisplay.DisplayWeapon(upgradeData.item);
+                //    upgradeDisplay.weaponSlotsParent.RemoveAt(0);
+                //}
                 break;
             case UpgradeType.ItemUpgrade:
                 passiveItems.UpgradeItem(upgradeData);
-                if (upgradeDisplay.upgradeSlotsParent.Count != 0)
-                {
-                    upgradeDisplay.DisplayUpgrade(upgradeData.item);
-                    upgradeDisplay.upgradeSlotsParent.RemoveAt(0);
-                }
+                //if (upgradeDisplay.upgradeSlotsParent.Count != 0)
+                //{
+                //    upgradeDisplay.DisplayUpgrade(upgradeData.item);
+                //    upgradeDisplay.upgradeSlotsParent.RemoveAt(0);
+                //}
                 break;
             case UpgradeType.WeaponGet:
 

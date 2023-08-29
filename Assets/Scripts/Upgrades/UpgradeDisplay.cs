@@ -19,8 +19,6 @@ public class UpgradeDisplay : MonoBehaviour
 
     public void DisplayUpgrade(Item upgrade)
     {
-        if (upgradeSlotsParent != null)
-        {
             GameObject slot = Instantiate(upgradeSlotPrefab, upgradeSlotsParent[0]);
             Image slotImage = slot.GetComponent<Image>();
 
@@ -29,13 +27,9 @@ public class UpgradeDisplay : MonoBehaviour
                 Sprite upgradeIcon = upgrade.upgrades[0].icon;
                 slotImage.sprite = upgradeIcon;
             }
-        }
-
     }  
     public void DisplayWeapon(Item upgrade)
     {
-        if(weaponSlotsParent != null)
-        {
             GameObject slot = Instantiate(upgradeSlotPrefab, weaponSlotsParent[0]);
             Image slotImage = slot.GetComponent<Image>();
 
@@ -44,6 +38,5 @@ public class UpgradeDisplay : MonoBehaviour
                 Sprite upgradeIcon = upgrade.upgrades[0].icon;
                 slotImage.sprite = upgradeIcon;
             }
-        }
     }
 }
