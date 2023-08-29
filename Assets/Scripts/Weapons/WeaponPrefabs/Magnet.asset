@@ -14,9 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Magnet
   stats:
-    armour: 30
-    magnetRadiusAddition: 0
+    armour: 50
+    coins: 0
+    magnetRadiusAddition: 0.034999996
     canUseManualWeapon: 0
+    canUseSkulls: 0
+    skullCount: 0
   upgrades:
   - {fileID: 11400000, guid: fa6c91deb720c7a4eb2be5283fc95d2b, type: 2}
-  magnet: {fileID: 0}

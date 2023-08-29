@@ -22,6 +22,7 @@ public class Level : MonoBehaviour
     UpgradeDisplay upgradeDisplay;
     public upgradeLevels magnetUpgradeLevels;
     public upgradeLevels SwordUpgradeLevels;
+    private bool armourAquired = false;
 
     public int TO_LEVEL_UP
     {
@@ -76,14 +77,22 @@ public class Level : MonoBehaviour
                 weaponManager.UpgradeWeapon(upgradeData);
                 if(upgradeData.name == "Cursed Sword")
                 {
-                    SwordUpgradeLevels.UpgradeGot();
+                    if (SwordUpgradeLevels.level.Count != 0)
+                    {
+                        SwordUpgradeLevels.UpgradeGot();
+
+                    }
                 }
                 break;
             case UpgradeType.ItemUpgrade:
                 passiveItems.UpgradeItem(upgradeData);
                 if (upgradeData.name == "Magnet")
                 {
-                    magnetUpgradeLevels.UpgradeGot();
+                    if (magnetUpgradeLevels.level.Count != 0)
+                    {
+                        magnetUpgradeLevels.UpgradeGot();
+
+                    }
                 }
                 break;
             case UpgradeType.WeaponGet:
@@ -101,10 +110,24 @@ public class Level : MonoBehaviour
 
                 if(upgradeData.name!= "Free Coins")
                 {
-                    if (upgradeDisplay.upgradeSlotsParent.Count != 0)
+                    if (upgradeData.name == "Heartless" && armourAquired == false)
                     {
-                        upgradeDisplay.DisplayUpgrade(upgradeData.item);
-                        upgradeDisplay.upgradeSlotsParent.RemoveAt(0);
+                        if (upgradeDisplay.upgradeSlotsParent.Count != 0)
+                        {
+                            upgradeDisplay.DisplayUpgrade(upgradeData.item);
+                            upgradeDisplay.upgradeSlotsParent.RemoveAt(0);
+                            armourAquired = true;
+                            Debug.Log("armour");
+                        }
+                    }
+                    else if (upgradeData.name != "Heartless")
+                    {
+                        if (upgradeDisplay.upgradeSlotsParent.Count != 0)
+                        {
+                            upgradeDisplay.DisplayUpgrade(upgradeData.item);
+                            upgradeDisplay.upgradeSlotsParent.RemoveAt(0);
+                            armourAquired = true;
+                        }
                     }
                 }
                
