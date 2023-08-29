@@ -34,6 +34,7 @@ public class UpgradePanelManager : MonoBehaviour
     {
         Clean();
         Time.timeScale = 0;
+        lvlUp.Play();
         panel.SetActive(true);
 
 
@@ -56,6 +57,7 @@ public class UpgradePanelManager : MonoBehaviour
     {
         GameManager.instance.playerTransform.GetComponent<Level>().Upgrade(pressedButtonID);
         ClosePanel();
+        lvlUp.Play();
     }
 
     public void ClosePanel()
@@ -64,7 +66,7 @@ public class UpgradePanelManager : MonoBehaviour
 
         Time.timeScale = 1;
         panel.SetActive(false);
-        lvlUp.Play();
+        
     }
 
     private void HideButtons()
