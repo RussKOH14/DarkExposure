@@ -13,32 +13,32 @@ public class MainMenu : MonoBehaviour
         pauseManager = GetComponent<PauseManager>();
     }
 
-    void Update()
-    {
+    //    void Update()
+    //    {
 
 
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            if (panel.activeInHierarchy == false)
-            {
-                OpenMenu();
-            }
-            else
-            {
-                CloseMenu();
-            }
-        }
-    }
+    //        if (Input.GetKeyDown(KeyCode.Escape))
+    //        {
+    //            if (panel.activeInHierarchy == false)
+    //            {
+    //                OpenMenu();
+    //            }
+    //            else
+    //            {
+    //                CloseMenu();
+    //            }
+    //        }
+    //    }
 
     public void CloseMenu()
-    {
-        pauseManager.UnPauseGame();
-        panel.SetActive(false);
-    }
+{
+    pauseManager.UnPauseGame();
+    panel.SetActive(false);
+}
 
-    public void OpenMenu()
-    {
-        pauseManager.PauseGame();
-        panel.SetActive(true);
-    }
+    //    public void OpenMenu()
+    //    {
+    //        pauseManager.PauseGame();
+    //        panel.SetActive(true);
+    //    }
 }
