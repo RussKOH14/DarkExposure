@@ -27,6 +27,15 @@ public class UpgradeDisplay : MonoBehaviour
                 Sprite upgradeIcon = upgrade.upgrades[0].icon;
                 slotImage.sprite = upgradeIcon;
             }
+    }   
+    public void DisplayIcon(Sprite sprite)
+    {
+            GameObject slot = Instantiate(upgradeSlotPrefab, upgradeSlotsParent[0]);
+            Image slotImage = slot.GetComponent<Image>();
+
+            Sprite upgradeIcon =sprite;
+            slotImage.sprite = upgradeIcon;
+            
     }  
     public void DisplayWeapon(Item upgrade)
     {

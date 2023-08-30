@@ -18,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
     public Animator animator;
 
     public SpriteRenderer spriteRenderer;
+    public SpriteRenderer RemyspriteRenderer;
 
     private void Awake()
     {
@@ -38,6 +39,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        RemyspriteRenderer.flipX = spriteRenderer.flipX;
 
         movementVector.x = Input.GetAxisRaw("Horizontal");
         movementVector.y = Input.GetAxisRaw("Vertical");

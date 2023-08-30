@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Level : MonoBehaviour
 {
@@ -25,6 +26,10 @@ public class Level : MonoBehaviour
     public upgradeLevels SwordUpgradeLevels;
     private bool armourAquired = false;
 
+    [Header("Merges")]
+    public bool cheeseRushPossible;
+    [SerializeField] List<UpgradeData> cheeseRushMerge;
+
     public int TO_LEVEL_UP
     {
         get
@@ -38,7 +43,8 @@ public class Level : MonoBehaviour
         weaponManager = GetComponent<WeaponManager>();
         passiveItems = GetComponent<PassiveItems>();
         upgradeDisplay = FindObjectOfType<UpgradeDisplay>();
-       
+
+        cheeseRushPossible = false;
     }
 
     internal void AddUpgradesIntoTheListOfAvailableUpgrades(List<UpgradeData> upgradesToAdd)
@@ -55,8 +61,6 @@ public class Level : MonoBehaviour
         experienceBar.UpdateExperienceSlider(experience, TO_LEVEL_UP);
         experienceBar.SetLevelText(level);
         AddUpgradesIntoTheListOfAvailableUpgrades(upgradesAvvailableOnStart);
-
-
     }
 
     public void AddExperince(int amount)
@@ -95,6 +99,7 @@ public class Level : MonoBehaviour
 
                     }
                 }
+
                 break;
             case UpgradeType.WeaponGet:
 
@@ -109,13 +114,13 @@ public class Level : MonoBehaviour
                 passiveItems.Equip(upgradeData.item);
                 AddUpgradesIntoTheListOfAvailableUpgrades(upgradeData.item.upgrades);
 
-                if(upgradeData.name!= "Free Coins")
+                if (upgradeData.name!= "Free Coins")
                 {
                     if (upgradeData.name == "Heartless" && armourAquired == false)
                     {
                         if (upgradeDisplay.upgradeSlotsParent.Count != 0)
                         {
-                            upgradeDisplay.DisplayUpgrade(upgradeData.item);
+                            upgradeDisplay.DisplayIcon(upgradeData.icon);
                             upgradeDisplay.upgradeSlotsParent.RemoveAt(0);
                             armourAquired = true;
                             Debug.Log("armour");
@@ -125,9 +130,8 @@ public class Level : MonoBehaviour
                     {
                         if (upgradeDisplay.upgradeSlotsParent.Count != 0)
                         {
-                            upgradeDisplay.DisplayUpgrade(upgradeData.item);
+                            upgradeDisplay.DisplayIcon(upgradeData.icon);
                             upgradeDisplay.upgradeSlotsParent.RemoveAt(0);
-                            armourAquired = true;
                         }
                     }
                 }
@@ -157,6 +161,12 @@ public class Level : MonoBehaviour
         experience -= TO_LEVEL_UP;
         level += 1;
         experienceBar.SetLevelText(level);
+
+        if (cheeseRushPossible)
+        {
+            AddUpgradesIntoTheListOfAvailableUpgrades(cheeseRushMerge);
+            cheeseRushMerge = null;
+        }
     }
 
     public List<UpgradeData> GetUpgrades(int count)
@@ -168,8 +178,6 @@ public class Level : MonoBehaviour
             AddUpgradesIntoTheListOfAvailableUpgrades(lastUpgrades);
             count = upgrades.Count;
         }
-
-
 
         for (int i = 0; i < count; i++)
         {

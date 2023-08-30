@@ -33,9 +33,10 @@ public class Character : MonoBehaviour
     NewSkulls skullController;
     public int skullCount = 0;
 
+    [Header("Cheese Rush")]
+    public GameObject remy;
+    public int hasRemy;
 
-
-    [SerializeField] TextMeshProUGUI healthText;
     private void Awake()
     {
         int addedHealth = PlayerPrefs.GetInt("addedHealth");
@@ -48,12 +49,12 @@ public class Character : MonoBehaviour
         magnet = FindObjectOfType<Magnet>();
         skullController = FindObjectOfType<NewSkulls>();
         skullCount += skullController.upgradeLevel;
-
     }
 
     private void Start()
     {
         UpdateHpBar();
+        hasRemy = 0;
     }
 
     private void Update()
@@ -70,6 +71,11 @@ public class Character : MonoBehaviour
 
         UpdateHpBar();
        
+        if (hasRemy >= 1)
+        {
+            remy.SetActive(true);
+        }
+
     }
 
 
