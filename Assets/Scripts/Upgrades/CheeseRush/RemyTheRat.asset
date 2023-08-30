@@ -30,4 +30,5 @@ MonoBehaviour:
     canUseManualWeapon: 0
     canUseSkulls: 0
     skullCount: 0
-    hasRemy: 1
+    hasRemy: 0
+    hasCheese: 0

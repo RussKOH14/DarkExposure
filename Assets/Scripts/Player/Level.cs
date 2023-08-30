@@ -30,6 +30,7 @@ public class Level : MonoBehaviour
     public bool cheeseRushPossible;
     [SerializeField] List<UpgradeData> cheeseRushMerge;
 
+    Character character;
     public int TO_LEVEL_UP
     {
         get
@@ -43,7 +44,7 @@ public class Level : MonoBehaviour
         weaponManager = GetComponent<WeaponManager>();
         passiveItems = GetComponent<PassiveItems>();
         upgradeDisplay = FindObjectOfType<UpgradeDisplay>();
-
+        character = FindObjectOfType<Character>();
         cheeseRushPossible = false;
     }
 
@@ -63,6 +64,13 @@ public class Level : MonoBehaviour
         AddUpgradesIntoTheListOfAvailableUpgrades(upgradesAvvailableOnStart);
     }
 
+    private void Update()
+    {
+        if (character.hasCheese >=1 && character.hasRemy>=1)
+        {
+            cheeseRushPossible = true;
+        }
+    }
     public void AddExperince(int amount)
     {
         experience += amount;

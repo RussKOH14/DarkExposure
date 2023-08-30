@@ -10,15 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 83dfb554e7bd13740905dfcaf0c9f76d, type: 3}
-  m_Name: CheeseRush
+  m_Name: CheeseItem
   m_EditorClassIdentifier: 
-  Name: Remy
+  Name: Cheese
   stats:
-    armour: 0
+    armour: 10
     coins: 0
     magnetRadiusAddition: 0
     canUseManualWeapon: 0
     canUseSkulls: 0
     skullCount: 0
     hasRemy: 0
+    hasCheese: 1
   upgrades: []

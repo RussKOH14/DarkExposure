@@ -36,6 +36,7 @@ public class Character : MonoBehaviour
     [Header("Cheese Rush")]
     public GameObject remy;
     public int hasRemy;
+    public int hasCheese;
 
     private void Awake()
     {
@@ -55,6 +56,7 @@ public class Character : MonoBehaviour
     {
         UpdateHpBar();
         hasRemy = 0;
+        hasCheese = 0;
     }
 
     private void Update()
