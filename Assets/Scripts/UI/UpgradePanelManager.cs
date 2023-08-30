@@ -25,10 +25,7 @@ public class UpgradePanelManager : MonoBehaviour
         {
             Time.timeScale = 0;
         }
-        else
-        {
-            Time.timeScale = 1;
-        }
+
     }
     public void OpenPanel(List<UpgradeData> upgradeDatas)
     {
