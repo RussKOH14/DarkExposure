@@ -18,7 +18,7 @@ public class Skulls : MonoBehaviour
     // Arrays to store the rotation duration, reappear time, and rotation speed for each upgrade level
     private readonly float[] rotationDurations = { 5f, 7f, 9f, float.PositiveInfinity }; // float.PositiveInfinity for the final level
     private readonly float[] reappearTimes = { 5f, 4f, 3f, 2f };
-    private readonly float[] rotationSpeeds = { 50f, 70f, 120f, 180f }; // Updated as per your request
+    private readonly float[] rotationSpeeds = { 100f, 150f, 200f, 300f }; // Updated as per your request
 
     // Start is called before the first frame update
     void Start()
@@ -57,8 +57,8 @@ public class Skulls : MonoBehaviour
                 // Calculate the rotation angle based on the upgrade level
                 float angle = Time.time * rotationSpeeds[upgradeLevel - 1] % 360f;
 
-                // Calculate the spawn position based on the angle and the fixed radius (10 units)
-                Vector3 spawnPosition = skullCenter.position + Quaternion.Euler(0f, 0f, angle + 360f / upgradeLevel * i) * (Vector3.right * 10f);
+                // Calculate the spawn position based on the angle and the fixed radius (5 units)
+                Vector3 spawnPosition = skullCenter.position + Quaternion.Euler(0f, 0f, angle + 360f / upgradeLevel * i) * (Vector3.right * 5f);
 
                 // Update the skull's position to maintain the fixed radius
                 skulls[i].transform.position = spawnPosition;
