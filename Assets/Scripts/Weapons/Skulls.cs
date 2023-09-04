@@ -1,17 +1,18 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Skulls : MonoBehaviour
 
 {
+    Character character;
+    public bool usingSkulls;
     public GameObject skullPrefab; // Prefab of the skull sprite
     public KeyCode upgradeKey = KeyCode.Return; // Key to trigger upgrades
 
     public Transform skullCenter; // The reference transform for the center of the skulls
 
     private GameObject[] skulls; // Array to store skull instances
-    private int upgradeLevel = 0; // Current upgrade level
+    public int upgradeLevel = 0; // Current upgrade level
 
     private const int MaxUpgrades = 4; // Total number of upgrades
 
@@ -27,28 +28,40 @@ public class Skulls : MonoBehaviour
         skulls = new GameObject[MaxUpgrades];
 
         // Call the HandleUpgrade() function to activate the skulls immediately
-        HandleUpgrade();
+        //HandleUpgrade();
+        character = GetComponent<Character>();
+        usingSkulls = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        // Check for the upgrade key press
-        if (Input.GetKeyDown(upgradeKey))
+       
+        if (character.canUseSkulls == 1f && usingSkulls == false)
         {
-            // Increment the upgrade level and ensure it stays within the limits
+            //Increment the upgrade level and ensure it stays within the limits
             upgradeLevel = (upgradeLevel + 1) % (MaxUpgrades + 1);
 
-            // Otherwise, handle the upgrade and rotation behavior
+            //Otherwise, handle the upgrade and rotation behavior
             HandleUpgrade();
+            upgradeLevel = character.skullCount;
+            usingSkulls = true;
+           
         }
 
+        //if (usingSkulls)
+        //{
+        //    //HandleUpgrade();
+        //    upgradeLevel = character.skullCount;
+            
+        //}
         // Rotate the active skulls around the player
         RotateSkullsAroundPlayer();
+
     }
 
     // Function to rotate the skulls around the player
-    private void RotateSkullsAroundPlayer()
+    public void RotateSkullsAroundPlayer()
     {
         for (int i = 0; i < upgradeLevel; i++)
         {
@@ -67,7 +80,7 @@ public class Skulls : MonoBehaviour
     }
 
     // Function to handle upgrades
-    private void HandleUpgrade()
+    public void HandleUpgrade()
     {
         // Deactivate all existing skulls
         foreach (GameObject skull in skulls)
@@ -99,7 +112,7 @@ public class Skulls : MonoBehaviour
     }
 
     // Coroutine to make skulls disappear and then reappear
-    private System.Collections.IEnumerator DisappearAndReappearSkulls()
+    private IEnumerator DisappearAndReappearSkulls()
     {
         // Wait for the rotation duration
         yield return new WaitForSeconds(rotationDurations[upgradeLevel - 1]);
@@ -125,6 +138,7 @@ public class Skulls : MonoBehaviour
         if (upgradeLevel != MaxUpgrades)
         {
             StartCoroutine(DisappearAndReappearSkulls());
+
         }
     }
 }

@@ -14674,6 +14674,7 @@ MonoBehaviour:
   skullPrefab: {fileID: 982263205320046341, guid: 99d9a615b28304a70a6d2bcffd1116c1, type: 3}
   upgradeKey: 32
   skullCenter: {fileID: 1823067644}
+  upgradeLevel: 1
 --- !u!1 &1824825415
 GameObject:
   m_ObjectHideFlags: 0

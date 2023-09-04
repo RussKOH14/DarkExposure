@@ -30,8 +30,9 @@ public class Character : MonoBehaviour
 
     [Header("Skulls")]
     public float canUseSkulls = 0f;
-    NewSkulls skullController;
+    Skulls skullController;
     public int skullCount = 0;
+    private int oldSkullCount;
 
     [Header("Cheese Rush")]
     public GameObject remy;
@@ -48,7 +49,7 @@ public class Character : MonoBehaviour
         level = GetComponent<Level>();
         coins = GetComponent<Coins>();
         magnet = FindObjectOfType<Magnet>();
-        skullController = FindObjectOfType<NewSkulls>();
+        skullController = FindObjectOfType<Skulls>();
         skullCount += skullController.upgradeLevel;
     }
 
@@ -57,10 +58,21 @@ public class Character : MonoBehaviour
         UpdateHpBar();
         hasRemy = 0;
         hasCheese = 0;
+        oldSkullCount = 1;
     }
 
     private void Update()
     {
+        if (skullController.usingSkulls)
+        {
+            if (skullCount > oldSkullCount)
+            {
+                skullController.upgradeLevel = skullCount;
+                skullController.HandleUpgrade();
+                oldSkullCount = skullCount;
+            }
+           
+        }
         
         magnet.magnetCollider.radius += colliderSize;
         hpRegenerationTimer += Time.deltaTime * hpRegenerationRate;
@@ -79,7 +91,6 @@ public class Character : MonoBehaviour
         }
 
     }
-
 
 
     public void TakeDamage(int damage)
