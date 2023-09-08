@@ -15,6 +15,7 @@ public class ItemStats
     public int skullCount;
     public int hasRemy;
     public int hasCheese;
+    public int cheeseRush;
 
     internal void Sum(ItemStats stats)
     {
@@ -26,6 +27,7 @@ public class ItemStats
         skullCount += stats.skullCount;
         hasRemy += stats.hasRemy;
         hasCheese += stats.hasCheese;
+        cheeseRush += stats.cheeseRush;
     }
     
 }
@@ -55,6 +57,7 @@ public class Item : ScriptableObject
         character.skullCount += stats.skullCount;
         character.hasRemy += stats.hasRemy;
         character.hasCheese += stats.hasCheese;
+        character.cheeseRush += stats.cheeseRush;
     }
     public void UnEquip(Character character)
     {
@@ -65,5 +68,6 @@ public class Item : ScriptableObject
         character.skullCount -= stats.skullCount;
         character.hasRemy -= stats.hasRemy;
         character.hasCheese -= stats.hasCheese;
+        character.cheeseRush -= stats.cheeseRush;
     }
 }

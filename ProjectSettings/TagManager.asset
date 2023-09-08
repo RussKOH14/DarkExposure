@@ -14,6 +14,7 @@ TagManager:
   - ManualWeapon
   - Boss
   - Keys
+  - CheeseRush
   layers:
   - Default
   - TransparentFX

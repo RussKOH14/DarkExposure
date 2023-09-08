@@ -38,6 +38,9 @@ public class Character : MonoBehaviour
     public GameObject remy;
     public int hasRemy;
     public int hasCheese;
+    public GameObject cheeseRushHd;
+    public int cheeseRush;
+    public Animator animatorCheese;
 
     private void Awake()
     {
@@ -88,6 +91,12 @@ public class Character : MonoBehaviour
         if (hasRemy >= 1)
         {
             remy.SetActive(true);
+        }
+
+        if(cheeseRush == 1)
+        {
+            animatorCheese.SetTrigger("CheeseRush");
+            cheeseRush++;
         }
 
     }

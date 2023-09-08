@@ -34,6 +34,8 @@ public class Enemy : MonoBehaviour
     EnemyManager enemyManager;
     BossSpawn bossSpawn;
 
+    public Sprite cheese;
+
     private void Awake()    //calling all the following components
     {
         rgdbd2d = GetComponent<Rigidbody2D>();
@@ -45,6 +47,7 @@ public class Enemy : MonoBehaviour
         gameManager = GameObject.Find("--GAMEMANAGER--");
         useManualWeapon = gameManager.GetComponent<UseManualWeapon>();
         enemyManager = FindObjectOfType<EnemyManager>();
+        cheese =Resources.Load<Sprite>("Cheese");
 
         if (enemyManager != null)
         {
@@ -64,6 +67,15 @@ public class Enemy : MonoBehaviour
             UpdateHpBar();
         }
         
+    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("CheeseRush"))
+        {
+            Debug.Log("c");
+            speed = 0f;
+            spriteRenderer.sprite = cheese;
+        }
     }
 
     private void UpdateHpBar()
