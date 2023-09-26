@@ -29,6 +29,8 @@ public class Level : MonoBehaviour
     [Header("Merges")]
     public bool cheeseRushPossible;
     [SerializeField] List<UpgradeData> cheeseRushMerge;
+    public bool trianglesPossible;
+    [SerializeField] List<UpgradeData> trianglesMerge;
 
     Character character;
     public int TO_LEVEL_UP
@@ -46,6 +48,7 @@ public class Level : MonoBehaviour
         upgradeDisplay = FindObjectOfType<UpgradeDisplay>();
         character = FindObjectOfType<Character>();
         cheeseRushPossible = false;
+        trianglesPossible = false;
     }
 
     internal void AddUpgradesIntoTheListOfAvailableUpgrades(List<UpgradeData> upgradesToAdd)
@@ -69,6 +72,11 @@ public class Level : MonoBehaviour
         if (character.hasCheese >=1 && character.hasRemy>=1)
         {
             cheeseRushPossible = true;
+        }
+
+        if (character.power>=1 && character.wisedom >=1 && character.courage >= 1)
+        {
+            trianglesPossible = true;
         }
     }
     public void AddExperince(int amount)
@@ -174,6 +182,12 @@ public class Level : MonoBehaviour
         {
             AddUpgradesIntoTheListOfAvailableUpgrades(cheeseRushMerge);
             cheeseRushMerge = null;
+        }
+
+        if (trianglesPossible)
+        {
+            AddUpgradesIntoTheListOfAvailableUpgrades(trianglesMerge);
+            trianglesMerge = null;
         }
     }
 

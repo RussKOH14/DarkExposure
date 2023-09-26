@@ -123,6 +123,9 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        Character character= FindObjectOfType<Character>();
+        damage = damage + character.damage;
+
         hp -= damage;   //applies damage to enemy
 
         Vector3 knockbackDirection = (transform.position - targetGameObject.transform.position).normalized;

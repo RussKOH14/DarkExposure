@@ -23,13 +23,14 @@ public class WhipWeapon : WeaponBase
 
     private void ApplyDamage(Collider2D[] colliders)
     {
+        Character character = FindObjectOfType<Character>();
         for (int i = 0; i < colliders.Length; i++)
         {
             Enemy e = colliders[i].GetComponent<Enemy>();
             if(e != null)
             {
                 int addedDamage = PlayerPrefs.GetInt("addedDamage");
-                PostDamage(weaponStats.damage + addedDamage, colliders[i].transform.position);
+                PostDamage(weaponStats.damage + addedDamage+ character.damage, colliders[i].transform.position);
                 e.TakeDamage(weaponStats.damage + addedDamage);
             }
         }

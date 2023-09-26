@@ -16,6 +16,8 @@ public class ItemStats
     public int hasRemy;
     public int hasCheese;
     public int cheeseRush;
+    public int power;
+    public int triangleOfPower;
 
     internal void Sum(ItemStats stats)
     {
@@ -28,6 +30,8 @@ public class ItemStats
         hasRemy += stats.hasRemy;
         hasCheese += stats.hasCheese;
         cheeseRush += stats.cheeseRush;
+        power += stats.power;
+        triangleOfPower += stats.triangleOfPower;
     }
     
 }
@@ -58,6 +62,8 @@ public class Item : ScriptableObject
         character.hasRemy += stats.hasRemy;
         character.hasCheese += stats.hasCheese;
         character.cheeseRush += stats.cheeseRush;
+        character.power += stats.power;
+        character.damage += stats.triangleOfPower;
     }
     public void UnEquip(Character character)
     {

@@ -18,6 +18,7 @@ public class KnifeWeapon : WeaponBase
 
     public override void Attack()
     {
+        Character character = FindObjectOfType<Character>();
         for (int i = 0; i < weaponStats.numberOfAttacks; i++)
         {
             GameObject knife = Instantiate(knifePrefab);
@@ -34,7 +35,7 @@ public class KnifeWeapon : WeaponBase
             knifeProjectile.SetDirection(playerMovement.lastHorizontalVector, 0f);
             //knifeProjectile.SetDirection(playerMoveJoystick.lastHorizontalVector, 0f);
 
-            knifeProjectile.damage = weaponStats.damage;
+            knifeProjectile.damage = weaponStats.damage+character.damage;
         }
     }
 }

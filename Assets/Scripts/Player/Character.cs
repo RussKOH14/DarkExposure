@@ -42,6 +42,12 @@ public class Character : MonoBehaviour
     public int cheeseRush;
     public Animator animatorCheese;
 
+    [Header("Triangles")]
+    public int power;
+    public int damage;
+    public int wisedom;
+    public int courage;
+
     private void Awake()
     {
         int addedHealth = PlayerPrefs.GetInt("addedHealth");
