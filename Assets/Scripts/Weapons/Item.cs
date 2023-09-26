@@ -18,6 +18,8 @@ public class ItemStats
     public int cheeseRush;
     public int power;
     public int triangleOfPower;
+    public int wisdom;
+    public int triangleOfWisdom;
 
     internal void Sum(ItemStats stats)
     {
@@ -32,6 +34,8 @@ public class ItemStats
         cheeseRush += stats.cheeseRush;
         power += stats.power;
         triangleOfPower += stats.triangleOfPower;
+        wisdom += stats.wisdom;
+        triangleOfWisdom += stats.triangleOfWisdom;
     }
     
 }
@@ -52,6 +56,7 @@ public class Item : ScriptableObject
 
     public void Equip(Character character)
     {
+        Level level = FindObjectOfType<Level>();
         stats.armour = Mathf.RoundToInt(character.currentHp * 0.1f);
         character.armour += stats.armour;
         character.coins.Add(stats.coins);
@@ -64,6 +69,9 @@ public class Item : ScriptableObject
         character.cheeseRush += stats.cheeseRush;
         character.power += stats.power;
         character.damage += stats.triangleOfPower;
+        character.wisedom += stats.wisdom;
+        stats.triangleOfWisdom = Mathf.RoundToInt(level.experience * 0.1f);
+        level.experience += stats.triangleOfWisdom;
     }
     public void UnEquip(Character character)
     {
