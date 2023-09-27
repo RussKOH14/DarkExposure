@@ -20,6 +20,8 @@ public class ItemStats
     public int triangleOfPower;
     public int wisdom;
     public int triangleOfWisdom;
+    public int courage;
+    public int triangleOfCourage;
 
     internal void Sum(ItemStats stats)
     {
@@ -36,6 +38,8 @@ public class ItemStats
         triangleOfPower += stats.triangleOfPower;
         wisdom += stats.wisdom;
         triangleOfWisdom += stats.triangleOfWisdom;
+        courage += stats.courage;
+        triangleOfCourage += stats.triangleOfCourage;
     }
     
 }
@@ -57,6 +61,7 @@ public class Item : ScriptableObject
     public void Equip(Character character)
     {
         Level level = FindObjectOfType<Level>();
+        PlayerMovement playerMovement = FindObjectOfType<PlayerMovement>(); 
         stats.armour = Mathf.RoundToInt(character.currentHp * 0.1f);
         character.armour += stats.armour;
         character.coins.Add(stats.coins);
@@ -72,6 +77,10 @@ public class Item : ScriptableObject
         character.wisedom += stats.wisdom;
         stats.triangleOfWisdom = Mathf.RoundToInt(level.experience * 0.1f);
         level.experience += stats.triangleOfWisdom;
+        character.courage += stats.courage;
+        stats.triangleOfCourage = Mathf.RoundToInt(playerMovement.speed * 0.1f);
+        playerMovement.speed += stats.triangleOfCourage;
+
     }
     public void UnEquip(Character character)
     {
