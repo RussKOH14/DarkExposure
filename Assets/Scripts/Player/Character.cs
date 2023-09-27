@@ -47,6 +47,8 @@ public class Character : MonoBehaviour
     public int damage;
     public int wisedom;
     public int courage;
+    public int hasSacredTriangle;
+    public Animator animatorSacredTriangle;
 
     private void Awake()
     {
@@ -105,8 +107,20 @@ public class Character : MonoBehaviour
             cheeseRush++;
         }
 
+        if (hasSacredTriangle == 1)
+        {
+            UseSacredTriangle();
+            hasSacredTriangle++;
+        }
+
     }
 
+    public void UseSacredTriangle()
+    {
+        animatorSacredTriangle.SetTrigger("TriangleActivated");
+
+        Invoke("UseSacredTriangle", 90);
+    }
 
     public void TakeDamage(int damage)
     {
@@ -140,4 +154,6 @@ public class Character : MonoBehaviour
             currentHp = maxHp + armour;
         }
     }
+
+
 }

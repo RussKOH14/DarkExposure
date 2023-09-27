@@ -22,6 +22,7 @@ public class ItemStats
     public int triangleOfWisdom;
     public int courage;
     public int triangleOfCourage;
+    public int SacredTriangle;
 
     internal void Sum(ItemStats stats)
     {
@@ -40,6 +41,7 @@ public class ItemStats
         triangleOfWisdom += stats.triangleOfWisdom;
         courage += stats.courage;
         triangleOfCourage += stats.triangleOfCourage;
+        SacredTriangle += stats.SacredTriangle;
     }
     
 }
@@ -78,8 +80,8 @@ public class Item : ScriptableObject
         stats.triangleOfWisdom = Mathf.RoundToInt(level.experience * 0.1f);
         level.experience += stats.triangleOfWisdom;
         character.courage += stats.courage;
-        stats.triangleOfCourage = Mathf.RoundToInt(playerMovement.speed * 0.1f);
         playerMovement.speed += stats.triangleOfCourage;
+        character.hasSacredTriangle += stats.SacredTriangle;
 
     }
     public void UnEquip(Character character)

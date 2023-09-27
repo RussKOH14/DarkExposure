@@ -15,6 +15,7 @@ TagManager:
   - Boss
   - Keys
   - CheeseRush
+  - Triangle
   layers:
   - Default
   - TransparentFX

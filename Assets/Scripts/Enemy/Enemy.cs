@@ -76,6 +76,14 @@ public class Enemy : MonoBehaviour
             speed = 0f;
             spriteRenderer.sprite = cheese;
         }
+        if (other.CompareTag("Triangle"))
+        {
+            targetGameObject.GetComponent<Level>().AddExperince(experience_reward); //gives player exp
+            GetComponent<DropOnDestroy>().CheckDrop();      //drops a pickup
+            Destroy(gameObject);//destroys enemy
+            enemyKilledScore.enemiesKilled += 1;        //adds to player score
+            bossSpawn.enemiesKilled += 1;        //adds to player score
+        }
     }
 
     private void UpdateHpBar()

@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 83dfb554e7bd13740905dfcaf0c9f76d, type: 3}
-  m_Name: CourageItem
+  m_Name: SacredTriangleItem
   m_EditorClassIdentifier: 
-  Name: Triangle Of Courage
+  Name: Sacred Triangle
   stats:
     armour: 0
     coins: 0
@@ -27,7 +27,7 @@ MonoBehaviour:
     triangleOfPower: 0
     wisdom: 0
     triangleOfWisdom: 0
-    courage: 1
-    triangleOfCourage: 2
-    SacredTriangle: 0
+    courage: 0
+    triangleOfCourage: 0
+    SacredTriangle: 1
   upgrades: []
