@@ -23,6 +23,7 @@ public class ItemStats
     public int courage;
     public int triangleOfCourage;
     public int SacredTriangle;
+    public int eldestWand;
 
     internal void Sum(ItemStats stats)
     {
@@ -42,6 +43,7 @@ public class ItemStats
         courage += stats.courage;
         triangleOfCourage += stats.triangleOfCourage;
         SacredTriangle += stats.SacredTriangle;
+        eldestWand += stats.eldestWand;
     }
     
 }
@@ -82,6 +84,7 @@ public class Item : ScriptableObject
         character.courage += stats.courage;
         playerMovement.speed += stats.triangleOfCourage;
         character.hasSacredTriangle += stats.SacredTriangle;
+        character.eldestWand += stats.eldestWand;
 
     }
     public void UnEquip(Character character)

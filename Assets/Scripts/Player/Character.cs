@@ -50,6 +50,10 @@ public class Character : MonoBehaviour
     public int hasSacredTriangle;
     public Animator animatorSacredTriangle;
 
+    [Header("Eldest Wand")]
+    public GameObject EldestWand;
+    public int eldestWand;
+
     private void Awake()
     {
         int addedHealth = PlayerPrefs.GetInt("addedHealth");
@@ -111,6 +115,10 @@ public class Character : MonoBehaviour
         {
             UseSacredTriangle();
             hasSacredTriangle++;
+        }
+        if (eldestWand == 1)
+        {
+            EldestWand.SetActive(true);
         }
 
     }
