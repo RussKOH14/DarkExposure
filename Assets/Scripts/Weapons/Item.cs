@@ -24,6 +24,8 @@ public class ItemStats
     public int triangleOfCourage;
     public int SacredTriangle;
     public int eldestWand;
+    public int nobody;
+    public int hasNobody;
 
     internal void Sum(ItemStats stats)
     {
@@ -44,6 +46,8 @@ public class ItemStats
         triangleOfCourage += stats.triangleOfCourage;
         SacredTriangle += stats.SacredTriangle;
         eldestWand += stats.eldestWand;
+        nobody += stats.nobody;
+        hasNobody += stats.hasNobody;
     }
     
 }
@@ -85,6 +89,14 @@ public class Item : ScriptableObject
         playerMovement.speed += stats.triangleOfCourage;
         character.hasSacredTriangle += stats.SacredTriangle;
         character.eldestWand += stats.eldestWand;
+        stats.nobody = Mathf.RoundToInt(character.currentHp * 0.1f);
+        if (character.currentHp < 450)
+        {
+            character.currentHp += stats.nobody;
+            character.hasNobody += stats.hasNobody;
+        }
+        
+        
 
     }
     public void UnEquip(Character character)

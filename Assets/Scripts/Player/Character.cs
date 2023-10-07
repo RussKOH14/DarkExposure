@@ -54,6 +54,9 @@ public class Character : MonoBehaviour
     public GameObject EldestWand;
     public int eldestWand;
 
+    [Header("Nobody")]
+    public int hasNobody;
+
     private void Awake()
     {
         int addedHealth = PlayerPrefs.GetInt("addedHealth");
@@ -70,6 +73,7 @@ public class Character : MonoBehaviour
 
     private void Start()
     {
+        Item item = FindObjectOfType<Item>();
         UpdateHpBar();
         hasRemy = 0;
         hasCheese = 0;
@@ -98,6 +102,10 @@ public class Character : MonoBehaviour
             hpRegenerationTimer -= 1f;
         }
 
+        if (hasNobody == 1)
+        {
+            UpdateHpBar();
+        }
         UpdateHpBar();
        
         if (hasRemy >= 1)
@@ -147,6 +155,7 @@ public class Character : MonoBehaviour
 
     private void UpdateHpBar()
     {
+        
         int currentMaxHp = maxHp + armour; // Calculate current max HP with added armor
         hpBar.SetState(currentHp, currentMaxHp);
     }
