@@ -23,7 +23,7 @@ public class StartGame : MonoBehaviour
         LoadData();
         if(ShopGameManager.Instance.dataContainer.tutorial != 0)
         {
-            SceneManager.LoadScene("TestScene");
+            SceneManager.LoadScene("Villain1");
             Time.timeScale = 1f;
         }
         else if (ShopGameManager.Instance.dataContainer.tutorial == 0)

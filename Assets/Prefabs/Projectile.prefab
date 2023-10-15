@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6537890134024219899}
   - component: {fileID: 3801604999502711378}
   - component: {fileID: 3644589267693340497}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Projectile
   m_TagString: EldestWand
   m_Icon: {fileID: 0}
