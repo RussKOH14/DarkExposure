@@ -26,6 +26,7 @@ public class ItemStats
     public int eldestWand;
     public int nobody;
     public int hasNobody;
+    public int hasStrangeHead;
 
     internal void Sum(ItemStats stats)
     {
@@ -48,6 +49,7 @@ public class ItemStats
         eldestWand += stats.eldestWand;
         nobody += stats.nobody;
         hasNobody += stats.hasNobody;
+        hasStrangeHead += stats.hasStrangeHead;
     }
     
 }
@@ -95,7 +97,7 @@ public class Item : ScriptableObject
             character.currentHp += stats.nobody;
             character.hasNobody += stats.hasNobody;
         }
-        
+        character.hasStrangeHead += stats.hasStrangeHead;
         
 
     }

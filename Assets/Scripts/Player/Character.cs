@@ -56,6 +56,10 @@ public class Character : MonoBehaviour
 
     [Header("Nobody")]
     public int hasNobody;
+    
+    [Header("Strange Head")]
+    public int hasStrangeHead;
+    public Animator strangeHeadAnimator;
 
     private void Awake()
     {
@@ -124,6 +128,12 @@ public class Character : MonoBehaviour
             UseSacredTriangle();
             hasSacredTriangle++;
         }
+        if (hasStrangeHead == 1)
+        {
+            strangeHeadAnimator.SetTrigger("StrangeHead");
+        }
+
+
         if (eldestWand == 1)
         {
             EldestWand.SetActive(true);
