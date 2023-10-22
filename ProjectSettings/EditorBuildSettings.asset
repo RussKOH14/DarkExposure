@@ -18,9 +18,15 @@ EditorBuildSettings:
     path: Assets/Scenes/Tutorial.unity
     guid: 065c4bd36f3cdf14f9144135c6ab1a64
   - enabled: 1
+    path: Assets/Scenes/ChooseYourVillain.unity
+    guid: f515d80d3f7306d4ea8289aca08f7ea2
+  - enabled: 1
     path: Assets/Scenes/Shop.unity
     guid: eec995d77f69c4241a39c0f60dc27af4
   - enabled: 1
     path: Assets/Scenes/Villain1.unity
     guid: ee2bbc1f2663aac4092c37fc1011d795
+  - enabled: 1
+    path: Assets/Scenes/Villain2.unity
+    guid: 01b75207218dcc343a1e24fd7da7f2cb
   m_configObjects: {}

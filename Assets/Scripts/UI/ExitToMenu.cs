@@ -14,4 +14,13 @@ public class ExitToMenu : MonoBehaviour
     {
         SceneManager.LoadScene("Options");
     }
+
+    public void Villain1()
+    {
+        SceneManager.LoadScene("Villain1");
+    }
+    public void Villain2()
+    {
+        SceneManager.LoadScene("Villain2");
+    }
 }

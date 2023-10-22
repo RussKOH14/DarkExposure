@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 331315633419456723}
   - component: {fileID: 5611691431789103231}
   - component: {fileID: 4665464929293666798}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: HPBarBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108,7 +108,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3933627663953766977}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: HPContainer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -147,7 +147,7 @@ GameObject:
   - component: {fileID: 8506138651857619011}
   - component: {fileID: -7566805016151653639}
   - component: {fileID: -7423602602218832003}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: KnightBoss
   m_TagString: Boss
   m_Icon: {fileID: 0}
@@ -242,6 +242,7 @@ MonoBehaviour:
   damage: 10
   experience_reward: 100
   gameManager: {fileID: 6858895889101701366, guid: b525b6d38aec2bc488f0516f51fb5551, type: 3}
+  cheese: {fileID: 0}
 --- !u!50 &3194697080267242836
 Rigidbody2D:
   serializedVersion: 4
@@ -347,7 +348,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4336885503336733829}
   - component: {fileID: 2367481015835131796}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: 'HPBar '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
