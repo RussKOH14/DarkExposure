@@ -20,5 +20,7 @@ MonoBehaviour:
   speedUpgrades: 0
   coins: 0
   tutorial: 1
-  keys: 1
-  shopUnlocked: 1
+  keys: 0
+  shopUnlocked: 0
+  strengthUnlocked: 0
+  speedUnlocked: 0
