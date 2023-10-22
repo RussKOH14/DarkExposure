@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1307569252227791505}
   - component: {fileID: 6534280707097027977}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: AttackPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ GameObject:
   - component: {fileID: 202343695217473263}
   - component: {fileID: -5410397284222846302}
   - component: {fileID: 5529626191088299609}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Arrow
   m_TagString: Destroy
   m_Icon: {fileID: 0}
