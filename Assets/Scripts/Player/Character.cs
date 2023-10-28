@@ -61,6 +61,10 @@ public class Character : MonoBehaviour
     public int hasStrangeHead;
     public Animator strangeHeadAnimator;
 
+    [Header("Ice Shards")]
+    public int hasIceShards;
+    public GameObject iceShards;
+
     private void Awake()
     {
         int addedHealth = PlayerPrefs.GetInt("addedHealth");
@@ -137,6 +141,11 @@ public class Character : MonoBehaviour
         if (eldestWand == 1)
         {
             EldestWand.SetActive(true);
+        }
+
+        if(hasIceShards == 1)
+        {
+            iceShards.SetActive(true);
         }
 
     }

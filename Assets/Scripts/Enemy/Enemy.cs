@@ -84,6 +84,11 @@ public class Enemy : MonoBehaviour
             enemyKilledScore.enemiesKilled += 1;        //adds to player score
             bossSpawn.enemiesKilled += 1;        //adds to player score
         }
+        if (other.CompareTag("IceShards"))
+        {
+            speed -= speed * 0.8f;
+        }
+
     }
 
     private void UpdateHpBar()
@@ -154,6 +159,7 @@ public class Enemy : MonoBehaviour
             UpdateHpBar();
         }
     }
+    
 
     private void OnTriggerStay2D(Collider2D collision)
     {

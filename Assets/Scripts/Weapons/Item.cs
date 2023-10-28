@@ -27,6 +27,7 @@ public class ItemStats
     public int nobody;
     public int hasNobody;
     public int hasStrangeHead;
+    public int iceShards;
 
     internal void Sum(ItemStats stats)
     {
@@ -50,6 +51,7 @@ public class ItemStats
         nobody += stats.nobody;
         hasNobody += stats.hasNobody;
         hasStrangeHead += stats.hasStrangeHead;
+        iceShards += stats.iceShards;
     }
     
 }
@@ -98,6 +100,7 @@ public class Item : ScriptableObject
             character.hasNobody += stats.hasNobody;
         }
         character.hasStrangeHead += stats.hasStrangeHead;
+        character.hasIceShards += stats.iceShards;
         
 
     }
