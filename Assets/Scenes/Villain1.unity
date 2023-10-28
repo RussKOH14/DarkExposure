@@ -2504,7 +2504,6 @@ MonoBehaviour:
   upgradePanel: {fileID: 846057740}
   upgrades:
   - {fileID: 11400000, guid: 4906e640dc28f5f4ebf6eae8241a49bb, type: 2}
-  - {fileID: 11400000, guid: 90e003a7ae7881341ba7502edd1f61cb, type: 2}
   - {fileID: 11400000, guid: dc1fda0db1bb2964da9741663bbe262c, type: 2}
   - {fileID: 11400000, guid: dc1fda0db1bb2964da9741663bbe262c, type: 2}
   - {fileID: 11400000, guid: dc1fda0db1bb2964da9741663bbe262c, type: 2}
@@ -2514,14 +2513,11 @@ MonoBehaviour:
   - {fileID: 11400000, guid: fa6c91deb720c7a4eb2be5283fc95d2b, type: 2}
   - {fileID: 11400000, guid: fa6c91deb720c7a4eb2be5283fc95d2b, type: 2}
   - {fileID: 11400000, guid: 05ff6cdc010af4842ab3b79253714731, type: 2}
-  - {fileID: 11400000, guid: 5cf931ca33f59264cb892ca316eb4378, type: 2}
-  - {fileID: 11400000, guid: c7157d39bd0da0649a6b537adeeca58a, type: 2}
   - {fileID: 11400000, guid: 130b556aff221b842a8ad95ce17f9319, type: 2}
   - {fileID: 11400000, guid: 8a5fed02a5215304eb2dec430ddaa512, type: 2}
   - {fileID: 11400000, guid: 5b8cb6420779e0f4d8b603e2ac7a6bc2, type: 2}
   - {fileID: 11400000, guid: a53ee8e4f71d9784ca49b5e443c5e00a, type: 2}
   - {fileID: 11400000, guid: 516f801280ab6ec47bac7f005c545a12, type: 2}
-  - {fileID: 11400000, guid: 31f26022cce97b7469a40f22f0cb6ec2, type: 2}
   lastUpgrades:
   - {fileID: 11400000, guid: b3cad29cda253424f90f371d38ebe024, type: 2}
   - {fileID: 11400000, guid: 05ff6cdc010af4842ab3b79253714731, type: 2}
@@ -2531,8 +2527,7 @@ MonoBehaviour:
   magnetUpgradeLevels: {fileID: 789650631}
   SwordUpgradeLevels: {fileID: 869584923}
   cheeseRushPossible: 0
-  cheeseRushMerge:
-  - {fileID: 11400000, guid: 45b9cb2c9d32527499b9a32ad92da33e, type: 2}
+  cheeseRushMerge: []
   trianglesPossible: 0
   trianglesMerge:
   - {fileID: 11400000, guid: 64964e5a2a222ca4fbccf1381d94e3b1, type: 2}

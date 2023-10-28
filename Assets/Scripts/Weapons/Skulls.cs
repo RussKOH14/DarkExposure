@@ -17,9 +17,9 @@ public class Skulls : MonoBehaviour
     private const int MaxUpgrades = 4; // Total number of upgrades
 
     // Arrays to store the rotation duration, reappear time, and rotation speed for each upgrade level
-    private readonly float[] rotationDurations = { 5f, 7f, 9f, float.PositiveInfinity }; // float.PositiveInfinity for the final level
-    private readonly float[] reappearTimes = { 5f, 4f, 3f, 2f };
-    private readonly float[] rotationSpeeds = { 100f, 150f, 200f, 300f }; // Updated as per your request
+    private readonly float[] rotationDurations = { 5f, 5f, 5f, 5f }; // float.PositiveInfinity for the final level
+    private readonly float[] reappearTimes = { 5f, 5f, 5f, 5f };
+    private readonly float[] rotationSpeeds = { 100f, 100f, 100f, 100f }; // Updated as per your request
 
     // Start is called before the first frame update
     void Start()
@@ -48,14 +48,6 @@ public class Skulls : MonoBehaviour
             usingSkulls = true;
            
         }
-
-        //if (usingSkulls)
-        //{
-        //    //HandleUpgrade();
-        //    upgradeLevel = character.skullCount;
-            
-        //}
-        // Rotate the active skulls around the player
         RotateSkullsAroundPlayer();
 
     }
