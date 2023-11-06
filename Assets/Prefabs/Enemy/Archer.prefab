@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 6424665773479594612}
   - component: {fileID: 4169860051307987150}
   - component: {fileID: -2220607529893845125}
+  - component: {fileID: 3409897270515296718}
   m_Layer: 0
   m_Name: Archer
   m_TagString: Enemy
@@ -104,11 +105,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rgdbd2d: {fileID: 249606059069767523}
+  hpBar: {fileID: 0}
   speed: 0
   hp: 300
+  maxHp: 4
   damage: 0
   experience_reward: 200
   gameManager: {fileID: 0}
+  cheese: {fileID: 0}
 --- !u!50 &249606059069767523
 Rigidbody2D:
   serializedVersion: 4
@@ -143,18 +147,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.02831328, y: -0.048455775}
+  m_Offset: {x: -0.4684376, y: -0.80011415}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.51, y: 1.4}
+    oldSize: {x: 3, y: 2.8}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.1893389, y: 1.3882276}
+  m_Size: {x: 1.826152, y: 2.3816423}
   m_EdgeRadius: 0
 --- !u!114 &6424665773479594612
 MonoBehaviour:
@@ -202,6 +206,27 @@ MonoBehaviour:
   shootingCooldown: 2
   shootingRange: 10
   arrowSpeed: 10
+--- !u!95 &3409897270515296718
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 249606059069767524}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 523229cc428a6412da87b3495d7f4700, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &787012047889554794
 GameObject:
   m_ObjectHideFlags: 0
