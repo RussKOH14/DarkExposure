@@ -36,8 +36,8 @@ public class ShopManager : MonoBehaviour
     public Sprite speedAmethyst;
 
     [Header("Locks")]
-    public GameObject strengthLock;
-    public GameObject speedLock;
+    public Image strengthLock;
+    public Image speedLock;
 
     private void Awake()
     {
@@ -49,19 +49,19 @@ public class ShopManager : MonoBehaviour
         
         if (ShopGameManager.Instance.dataContainer.strengthUnlocked>= 1)
         {
-            strengthLock.SetActive(false);
+            strengthLock.enabled = false;
         }
         else
         {
-            strengthLock.SetActive(true);
+            strengthLock.enabled  = true;
         }
         if (ShopGameManager.Instance.dataContainer.speedUnlocked >= 1)
         {
-            speedLock.SetActive(false);
+            speedLock.enabled = false;
         }
         else
         {
-            speedLock.SetActive(true);
+            speedLock.enabled = true;
         }
         
         if (ShopGameManager.Instance.dataContainer.healthUpgrades == 0)
@@ -157,7 +157,7 @@ public class ShopManager : MonoBehaviour
             {
                 if (ShopGameManager.Instance.dataContainer.strengthUnlocked == 0)
                 {
-                    strengthLock.SetActive(false);
+                    strengthLock.enabled = false;
                     print("unlocked");
                     ShopGameManager.Instance.dataContainer.strengthUnlocked++;
                     ShopGameManager.Instance.dataContainer.keys -= 1;
@@ -193,7 +193,7 @@ public class ShopManager : MonoBehaviour
             {
                 if (ShopGameManager.Instance.dataContainer.speedUnlocked == 0)
                 {
-                    speedLock.SetActive(false);
+                    speedLock.enabled = false;
                     print("unlocked");
                     ShopGameManager.Instance.dataContainer.speedUnlocked++;
                     ShopGameManager.Instance.dataContainer.keys -= 1;

@@ -1,21 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class StartGame : MonoBehaviour
 {
-    public GameObject shopLock;
+    public Image shopLock;
 
     private void Update()
     {
         if (ShopGameManager.Instance.dataContainer.shopUnlocked >= 1)
         {
-            shopLock.SetActive(false);
+            shopLock.enabled = false;
         }
         else
         {
-            shopLock.SetActive(true);
+            shopLock.enabled = true;
         }
     }
     public void StartGameplay()
@@ -44,7 +45,7 @@ public class StartGame : MonoBehaviour
             
             if (ShopGameManager.Instance.dataContainer.shopUnlocked == 0)
             {
-                shopLock.SetActive(false);
+                shopLock.enabled = false;
                 print("unlocked");
                 ShopGameManager.Instance.dataContainer.shopUnlocked ++;
                 ShopGameManager.Instance.dataContainer.keys -= 1;
