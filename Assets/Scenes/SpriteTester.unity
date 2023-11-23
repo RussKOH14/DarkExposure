@@ -14539,6 +14539,8 @@ MonoBehaviour:
   SwordUpgradeLevels: {fileID: 971809618}
   cheeseRushPossible: 0
   cheeseRushMerge: []
+  trianglesPossible: 0
+  trianglesMerge: []
 --- !u!114 &1823067641
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14567,6 +14569,22 @@ MonoBehaviour:
   remy: {fileID: 1006411972}
   hasRemy: 0
   hasCheese: 0
+  cheeseRushHd: {fileID: 0}
+  cheeseRush: 0
+  animatorCheese: {fileID: 0}
+  power: 0
+  damage: 0
+  wisedom: 0
+  courage: 0
+  hasSacredTriangle: 0
+  animatorSacredTriangle: {fileID: 0}
+  EldestWand: {fileID: 0}
+  eldestWand: 0
+  hasNobody: 0
+  hasStrangeHead: 0
+  strangeHeadAnimator: {fileID: 0}
+  hasIceShards: 0
+  iceShards: {fileID: 0}
 --- !u!114 &1823067642
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14671,6 +14689,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2efdaa8c835f48b28b6d4588ba2cc21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  usingSkulls: 0
   skullPrefab: {fileID: 982263205320046341, guid: 99d9a615b28304a70a6d2bcffd1116c1, type: 3}
   upgradeKey: 32
   skullCenter: {fileID: 1823067644}
