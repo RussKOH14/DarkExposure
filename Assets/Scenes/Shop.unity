@@ -840,23 +840,20 @@ MonoBehaviour:
   speedCost: 10
   error: {fileID: 129537188}
   healthButton: {fileID: 360017710}
-  healthSprites:
-  - {fileID: 21300000, guid: e8d18cc9d8f279044915fec1c6aa4e1d, type: 3}
-  - {fileID: 21300000, guid: 087b4d02f30cfbd4baae81423a9f5d8d, type: 3}
-  - {fileID: 21300000, guid: f7910e4a04fa84144a7b768dc5f4d114, type: 3}
-  - {fileID: 21300000, guid: 3487ded67053f2349ac99af6017d53f7, type: 3}
+  healthCopper: {fileID: 21300000, guid: e8d18cc9d8f279044915fec1c6aa4e1d, type: 3}
+  healthSilver: {fileID: 21300000, guid: 087b4d02f30cfbd4baae81423a9f5d8d, type: 3}
+  healthGold: {fileID: 21300000, guid: f7910e4a04fa84144a7b768dc5f4d114, type: 3}
+  healthAmethyst: {fileID: 21300000, guid: 3487ded67053f2349ac99af6017d53f7, type: 3}
   damageButtons: {fileID: 1097527534}
-  damageSprites:
-  - {fileID: 21300000, guid: 0c268922f3cbfda4384cf17f712e5533, type: 3}
-  - {fileID: 21300000, guid: 4b648f488ccb3064e92cd01610ca1aeb, type: 3}
-  - {fileID: 21300000, guid: b09b9abade9dab54399855f53818757c, type: 3}
-  - {fileID: 21300000, guid: 38db792db9307d5428e547ed31da1f4e, type: 3}
+  damageCopper: {fileID: 21300000, guid: 0c268922f3cbfda4384cf17f712e5533, type: 3}
+  damageSilver: {fileID: 21300000, guid: 4b648f488ccb3064e92cd01610ca1aeb, type: 3}
+  damageGold: {fileID: 21300000, guid: b09b9abade9dab54399855f53818757c, type: 3}
+  damageAmethyst: {fileID: 21300000, guid: 38db792db9307d5428e547ed31da1f4e, type: 3}
   speedButtons: {fileID: 550750909}
-  speedSprites:
-  - {fileID: 21300000, guid: b5b5f9bd6e984214c8bf1d753c05f9f1, type: 3}
-  - {fileID: 21300000, guid: 3574429438e6d2944adce04857991df4, type: 3}
-  - {fileID: 21300000, guid: 5927aa6fff979c446832003cbda6ddf9, type: 3}
-  - {fileID: 21300000, guid: 05dddb9b11d6c3248a94cee0dbf61ebe, type: 3}
+  speedCopper: {fileID: 21300000, guid: b5b5f9bd6e984214c8bf1d753c05f9f1, type: 3}
+  speedSilver: {fileID: 21300000, guid: 3574429438e6d2944adce04857991df4, type: 3}
+  speedGold: {fileID: 21300000, guid: 5927aa6fff979c446832003cbda6ddf9, type: 3}
+  speedAmethyst: {fileID: 21300000, guid: 05dddb9b11d6c3248a94cee0dbf61ebe, type: 3}
   strengthLock: {fileID: 2034101569}
   speedLock: {fileID: 2094589787}
 --- !u!114 &129537187

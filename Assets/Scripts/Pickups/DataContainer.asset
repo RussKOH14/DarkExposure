@@ -21,6 +21,6 @@ MonoBehaviour:
   coins: 0
   tutorial: 0
   keys: 0
-  shopUnlocked: 0
+  shopUnlocked: 1
   strengthUnlocked: 0
   speedUnlocked: 0
