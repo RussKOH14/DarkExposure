@@ -39,7 +39,10 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        RemyspriteRenderer.flipX = spriteRenderer.flipX;
+        if (RemyspriteRenderer != null)
+        {
+            RemyspriteRenderer.flipX = spriteRenderer.flipX;
+        }
 
         movementVector.x = Input.GetAxisRaw("Horizontal");
         movementVector.y = Input.GetAxisRaw("Vertical");

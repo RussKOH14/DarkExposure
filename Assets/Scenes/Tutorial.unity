@@ -1730,7 +1730,7 @@ MonoBehaviour:
   lastVerticalVector: 0
   speed: 8
   animator: {fileID: 239059296}
-  spriteRenderer: {fileID: 0}
+  spriteRenderer: {fileID: 239059287}
   RemyspriteRenderer: {fileID: 0}
 --- !u!50 &239059286
 Rigidbody2D:
@@ -1857,7 +1857,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 239059284}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a37ebc2ad73d5e04e857f4c205fc1e8b, type: 3}
   m_Name: 
@@ -2148,10 +2148,10 @@ MonoBehaviour:
   lastVerticalVector: 0
   speed: 8
   animator: {fileID: 239059296}
-  spriteRenderer: {fileID: 0}
-  joystickScript: {fileID: 0}
-  joystick: {fileID: 0}
-  joystickBG: {fileID: 0}
+  spriteRenderer: {fileID: 239059287}
+  joystickScript: {fileID: 256655990}
+  joystick: {fileID: 817116717}
+  joystickBG: {fileID: 354816072}
 --- !u!1 &256655987
 GameObject:
   m_ObjectHideFlags: 0
@@ -11463,7 +11463,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 10b5239823837cc4793a43e51f201f68, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 72bb6485640e9f247917e60cb9e81214, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
