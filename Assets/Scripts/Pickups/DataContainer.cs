@@ -18,4 +18,6 @@ public class DataContainer : ScriptableObject
     public int shopUnlocked;
     public int strengthUnlocked;
     public int speedUnlocked;
+    public int creditsUnlocked;
+    public int creditsBought;
 }
