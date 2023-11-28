@@ -29,7 +29,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Villain2.unity
     guid: 01b75207218dcc343a1e24fd7da7f2cb
-  - enabled: 1
-    path: Assets/Scenes/Credits.unity
-    guid: 327197e8461939743bb3f238fd0bc715
   m_configObjects: {}

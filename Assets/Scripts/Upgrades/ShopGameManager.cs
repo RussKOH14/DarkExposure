@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class ShopGameManager : MonoBehaviour
 {
-
+ 
     public static ShopGameManager Instance;
 
 
     public DataContainer dataContainer;
-
+    
 
     private void Awake()
     {
@@ -41,8 +41,6 @@ public class ShopGameManager : MonoBehaviour
         dataContainer.tutorial = PlayerPrefs.GetInt("tutorial", dataContainer.tutorial);
         dataContainer.keys = PlayerPrefs.GetInt("keys", dataContainer.keys);
         dataContainer.shopUnlocked = PlayerPrefs.GetInt("shopUnlocked", dataContainer.shopUnlocked);
-        dataContainer.creditsUnlocked = PlayerPrefs.GetInt("creditsUnlocked", dataContainer.creditsUnlocked);
-        dataContainer.creditsBought = PlayerPrefs.GetInt("creditsBought", dataContainer.creditsBought);
 
     }
 
@@ -58,8 +56,6 @@ public class ShopGameManager : MonoBehaviour
         PlayerPrefs.SetInt("tutorial", dataContainer.tutorial);
         PlayerPrefs.SetInt("keys", dataContainer.keys);
         PlayerPrefs.SetInt("shopUnlocked", dataContainer.shopUnlocked);
-        PlayerPrefs.SetInt("creditsUnlocked", dataContainer.creditsUnlocked);
-        PlayerPrefs.SetInt("creditsBought", dataContainer.creditsBought);
         PlayerPrefs.Save();
     }
 }
