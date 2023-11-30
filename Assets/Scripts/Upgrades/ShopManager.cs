@@ -3,6 +3,7 @@ using TMPro;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
 using Image = UnityEngine.UI.Image;
+using UnityEngine.SceneManagement;
 
 public class ShopManager : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class ShopManager : MonoBehaviour
     public int healthCost;
     public int damageCost;
     public int speedCost;
+    public int creditsCost;
 
     public AudioSource error;
 
@@ -38,6 +40,11 @@ public class ShopManager : MonoBehaviour
     [Header("Locks")]
     public Image strengthLock;
     public Image speedLock;
+    public Image creditsLock;
+
+    [Header("Credits")]
+    public TextMeshProUGUI nameCredits;
+    public TextMeshProUGUI costCredits;
 
     private void Awake()
     {
@@ -46,6 +53,11 @@ public class ShopManager : MonoBehaviour
     }
     private void Update()
     {
+        if (ShopGameManager.Instance.dataContainer.creditsBought == 1)
+        {
+            nameCredits.text = "Credits";
+            costCredits.text = "";
+        }
 
         if (ShopGameManager.Instance.dataContainer.strengthUnlocked >= 1)
         {
@@ -62,6 +74,14 @@ public class ShopManager : MonoBehaviour
         else
         {
             speedLock.enabled = true;
+        }
+        if (ShopGameManager.Instance.dataContainer.creditsUnlocked >= 1)
+        {
+            creditsLock.enabled = false;
+        }
+        else
+        {
+            creditsLock.enabled = true;
         }
 
         if (ShopGameManager.Instance.dataContainer.healthUpgrades == 0)
@@ -219,6 +239,34 @@ public class ShopManager : MonoBehaviour
         else
         {
             error.Play();
+        }
+    }
+    public void Credits()
+    {
+        if (ShopGameManager.Instance.dataContainer.keys >= 1 || ShopGameManager.Instance.dataContainer.creditsUnlocked >= 1)
+        {
+            if (ShopGameManager.Instance.dataContainer.creditsUnlocked == 0)
+            {
+                creditsLock.enabled = false;
+                print("unlocked");
+                ShopGameManager.Instance.dataContainer.creditsUnlocked++;
+                ShopGameManager.Instance.dataContainer.keys -= 1;
+                SaveData();
+            }
+            if (ShopGameManager.Instance.dataContainer.coins >= creditsCost)
+            {
+                SceneManager.LoadScene("Credits");
+                ShopGameManager.Instance.dataContainer.coins -= creditsCost;
+                ShopGameManager.Instance.dataContainer.creditsBought++;
+                SaveData();
+                UpdateCoinsText();
+            }
+            if (ShopGameManager.Instance.dataContainer.creditsBought == 1)
+            {
+                SceneManager.LoadScene("Credits");
+                nameCredits.text = "Credits";
+                costCredits.text = "";
+            }
         }
     }
 

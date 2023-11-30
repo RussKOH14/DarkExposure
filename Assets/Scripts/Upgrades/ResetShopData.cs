@@ -16,7 +16,7 @@ public class ResetShopData : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
     public void Reset()
     {
@@ -32,8 +32,10 @@ public class ResetShopData : MonoBehaviour
         ShopGameManager.Instance.dataContainer.shopUnlocked = 0;
         ShopGameManager.Instance.dataContainer.strengthUnlocked = 0;
         ShopGameManager.Instance.dataContainer.speedUnlocked = 0;
+        ShopGameManager.Instance.dataContainer.creditsBought = 0;
+        ShopGameManager.Instance.dataContainer.creditsUnlocked = 0;
         SaveData();
-        
+
     }
     private void LoadData()
     {
@@ -44,5 +46,5 @@ public class ResetShopData : MonoBehaviour
     {
         ShopGameManager.Instance.SaveData();
     }
-   
+
 }

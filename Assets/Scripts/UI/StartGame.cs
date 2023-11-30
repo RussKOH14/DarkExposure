@@ -10,19 +10,23 @@ public class StartGame : MonoBehaviour
 
     private void Update()
     {
-        if (ShopGameManager.Instance.dataContainer.shopUnlocked >= 1)
+        if (shopLock != null)
         {
-            shopLock.enabled = false;
+            if (ShopGameManager.Instance.dataContainer.shopUnlocked >= 1)
+            {
+                shopLock.enabled = false;
+            }
+            else
+            {
+                shopLock.enabled = true;
+            }
         }
-        else
-        {
-            shopLock.enabled = true;
-        }
+
     }
     public void StartGameplay()
     {
         LoadData();
-        if(ShopGameManager.Instance.dataContainer.tutorial != 0)
+        if (ShopGameManager.Instance.dataContainer.tutorial != 0)
         {
             SceneManager.LoadScene("ChooseYourVillain");
             Time.timeScale = 1f;
@@ -37,22 +41,22 @@ public class StartGame : MonoBehaviour
 
     public void Shop()
     {
-        
-        if (ShopGameManager.Instance.dataContainer.keys >= 1|| ShopGameManager.Instance.dataContainer.shopUnlocked >=1)
+
+        if (ShopGameManager.Instance.dataContainer.keys >= 1 || ShopGameManager.Instance.dataContainer.shopUnlocked >= 1)
         {
             SceneManager.LoadScene("Shop");
             Time.timeScale = 1f;
-            
+
             if (ShopGameManager.Instance.dataContainer.shopUnlocked == 0)
             {
                 shopLock.enabled = false;
                 print("unlocked");
-                ShopGameManager.Instance.dataContainer.shopUnlocked ++;
+                ShopGameManager.Instance.dataContainer.shopUnlocked++;
                 ShopGameManager.Instance.dataContainer.keys -= 1;
                 SaveData();
             }
         }
-        
+
     }
 
     public void Quit()
