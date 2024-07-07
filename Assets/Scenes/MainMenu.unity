@@ -807,7 +807,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0.055706, y: 159.215}
+  m_AnchoredPosition: {x: 0.055706, y: 155.5}
   m_SizeDelta: {x: 174.9018, y: 55.7315}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1502644039
@@ -1190,6 +1190,7 @@ MonoBehaviour:
   healthCost: 0
   damageCost: 0
   speedCost: 0
+  creditsCost: 0
   error: {fileID: 0}
   healthButton: {fileID: 0}
   healthCopper: {fileID: 0}
@@ -1208,6 +1209,9 @@ MonoBehaviour:
   speedAmethyst: {fileID: 0}
   strengthLock: {fileID: 0}
   speedLock: {fileID: 0}
+  creditsLock: {fileID: 0}
+  nameCredits: {fileID: 0}
+  costCredits: {fileID: 0}
 --- !u!114 &1552733343
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1541,6 +1545,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prompt: {fileID: 1004405502}
+  strengthPrompt: {fileID: 0}
+  speedPrompt: {fileID: 0}
+  creditsPrompt: {fileID: 0}
 --- !u!114 &1696188405
 MonoBehaviour:
   m_ObjectHideFlags: 0
